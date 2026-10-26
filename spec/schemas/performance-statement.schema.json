@@ -1,0 +1,503 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:black4:ocp:experimental:0.2.0:performance-statement",
+  "title": "OCP experimental synthetic aggregate statement",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experimental",
+    "synthetic",
+    "statement_id",
+    "subject",
+    "issuer",
+    "metric",
+    "period",
+    "observed_at",
+    "published_at",
+    "expires_at",
+    "freshness_limit_days",
+    "comparison",
+    "refund_policy",
+    "lineage",
+    "assurance",
+    "status",
+    "methodology_url"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0"
+    },
+    "experimental": {
+      "const": true
+    },
+    "synthetic": {
+      "const": true
+    },
+    "statement_id": {
+      "type": "string",
+      "pattern": "^fixture-[a-z0-9-]{10,100}$"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "id"
+      ],
+      "properties": {
+        "type": {
+          "const": "merchant"
+        },
+        "id": {
+          "enum": [
+            "fictional:merchant-a",
+            "fictional:merchant-b",
+            "fictional:merchant-unknown"
+          ]
+        }
+      }
+    },
+    "issuer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "role",
+        "financial_relationship"
+      ],
+      "properties": {
+        "id": {
+          "const": "https://example.invalid/black4-fixture-issuer"
+        },
+        "role": {
+          "const": "research_fixture"
+        },
+        "financial_relationship": {
+          "const": "Black 4 local synthetic research; no placement or affiliate payments"
+        }
+      }
+    },
+    "metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "definition_version",
+        "status",
+        "unit",
+        "numerator",
+        "denominator",
+        "eligible_n",
+        "observed_n",
+        "unknown_n",
+        "censored_n",
+        "cancelled_n",
+        "unfulfilled_n",
+        "value",
+        "lower_bound",
+        "upper_bound",
+        "coverage_fraction",
+        "followup_days",
+        "minimum_public_cohort",
+        "source_reconciled",
+        "reason",
+        "cohort_n",
+        "privacy_suppressed"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "fulfilled_on_time_rate",
+            "order_complete_rate",
+            "order_refund_incidence"
+          ]
+        },
+        "definition_version": {
+          "const": "0.2.0"
+        },
+        "status": {
+          "enum": [
+            "observed",
+            "partial",
+            "not_observed",
+            "suppressed",
+            "disputed"
+          ]
+        },
+        "unit": {
+          "const": "fraction"
+        },
+        "numerator": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "denominator": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "eligible_n": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "observed_n": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "unknown_n": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "censored_n": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "cancelled_n": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "unfulfilled_n": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "lower_bound": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "upper_bound": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "coverage_fraction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "followup_days": {
+          "enum": [
+            0,
+            30,
+            60
+          ]
+        },
+        "minimum_public_cohort": {
+          "const": 30
+        },
+        "source_reconciled": {
+          "type": "boolean"
+        },
+        "reason": {
+          "enum": [
+            "conflicting checkout promise",
+            "cohort/outcome privacy or maturation suppression",
+            "source rows incomplete; eligible denominator unknown",
+            "required signals missing",
+            "exact observed synthetic calculation"
+          ]
+        },
+        "cohort_n": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "privacy_suppressed": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "observed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "numerator": {
+                "type": "integer"
+              },
+              "denominator": {
+                "type": "integer",
+                "minimum": 30
+              },
+              "value": {
+                "type": "number"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "numerator": {
+                "type": "null"
+              },
+              "denominator": {
+                "type": "null"
+              },
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "not_observed",
+                  "suppressed",
+                  "disputed"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "lower_bound": {
+                "type": "null"
+              },
+              "upper_bound": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "period": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end",
+        "end_exclusive"
+      ],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 32
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 32
+        },
+        "end_exclusive": {
+          "const": true
+        }
+      }
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 32
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 32
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 32
+    },
+    "freshness_limit_days": {
+      "const": 7
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "country",
+        "channel",
+        "service",
+        "category",
+        "population"
+      ],
+      "properties": {
+        "country": {
+          "const": "US"
+        },
+        "channel": {
+          "const": "shipped"
+        },
+        "service": {
+          "const": "standard"
+        },
+        "category": {
+          "const": "general-commerce"
+        },
+        "population": {
+          "const": "paid non-test orders in purchase calendar quarter; cancellations retained"
+        }
+      }
+    },
+    "refund_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "as_of",
+        "url"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "returns-accepted-60-days",
+            "no-refunds"
+          ]
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 32
+        },
+        "url": {
+          "const": "https://example.invalid/refund-policy"
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "access_mode",
+        "adapter_version",
+        "source_observed_at",
+        "source_record_count",
+        "expected_record_count",
+        "method_manifest_sha256"
+      ],
+      "properties": {
+        "source_type": {
+          "const": "synthetic"
+        },
+        "access_mode": {
+          "const": "synthetic_read_only"
+        },
+        "adapter_version": {
+          "const": "shopify_mock/0.2.0"
+        },
+        "source_observed_at": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 32
+        },
+        "source_record_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "expected_record_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "method_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "assurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_authenticated",
+        "calculation_reproduced",
+        "independent_corroboration",
+        "independently_audited",
+        "limitations"
+      ],
+      "properties": {
+        "source_authenticated": {
+          "const": false
+        },
+        "calculation_reproduced": {
+          "const": false
+        },
+        "independent_corroboration": {
+          "const": false
+        },
+        "independently_audited": {
+          "const": false
+        },
+        "limitations": {
+          "const": "Synthetic fixture only. Signature proves signed origin, not source truth, completeness, delivery or audit. Calculation reproduction is computed separately."
+        }
+      }
+    },
+    "status": {
+      "const": "published"
+    },
+    "methodology_url": {
+      "type": "string",
+      "pattern": "^/v0/methods/(fulfilled_on_time_rate|order_complete_rate|order_refund_incidence)/0\\.2\\.0$"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://black4.ai/ocp/unhosted/2026-10-25/catalog-evidence.schema.json",
+  "name": "ai.black4.commerce.performance",
+  "version": "2026-10-25",
+  "title": "UNHOSTED experimental catalog evidence reference extension",
+  "description": "Local vendor fixture; no accepted UCP core extension or hosted schema claim.",
+  "requires": {
+    "protocol": {
+      "min": "2026-08-25",
+      "max": "2026-08-25"
+    },
+    "capabilities": {
+      "dev.ucp.shopping.catalog.lookup": {
+        "min": "2026-08-25",
+        "max": "2026-08-25"
+      }
+    }
+  },
+  "$defs": {
+    "dev.ucp.shopping.catalog.lookup": {
+      "allOf": [
+        {
+          "$ref": "https://ucp.dev/schemas/shopping/catalog_lookup.json#/$defs/lookup_response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ocp_evidence": {
+              "type": "array",
+              "maxItems": 10,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "subject_type",
+                  "subject_id",
+                  "uri"
+                ],
+                "properties": {
+                  "subject_type": {
+                    "const": "merchant"
+                  },
+                  "subject_id": {
+                    "type": "string",
+                    "pattern": "^fictional:merchant-"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^https://merchant\\.example\\.invalid/ocp/"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

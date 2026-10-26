@@ -1,0 +1,14 @@
+{
+  "ucp": {
+    "head": "69895b84b451925a92ac0c9122353eab310e1a23",
+    "version": "v2026-08-25"
+  },
+  "acp": {
+    "head": "7fdd78df677a94dce04c770644b0fbbb1401272b",
+    "version": "2026-04-17"
+  },
+  "ap2": {
+    "head": "e1ea56db72a6385bce3e5c1112b3a56ce60acb43",
+    "version": "v0.2.0"
+  }
+}

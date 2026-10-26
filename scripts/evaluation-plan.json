@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "registered_before_results": "2026-10-25",
+  "type": "deterministic synthetic regression demonstration; no model calls, raters or real consumer outcomes",
+  "frozen_fixture_clock": "2026-10-25T20:00:00Z",
+  "fixed_inputs": ["same product", "same candidate offers", "price", "availability", "shopper constraints", "method and policy versions"],
+  "arms": ["base_without_evidence", "valid_operational_evidence", "placebo_unusable_evidence", "tampered_evidence"],
+  "cases": [
+    {"scenario":"delivery","expected_choice":"fictional:merchant-a","abstain_acceptable_without_evidence":true},
+    {"scenario":"price","expected_choice":"fictional:merchant-unknown","abstain_acceptable_without_evidence":false},
+    {"scenario":"tight","expected_choice":null,"abstain_acceptable_without_evidence":true}
+  ],
+  "primary": "scenario expectation agreement and hard price/availability constraint satisfaction",
+  "regret": "not measured: no independent post-purchase outcomes or utility labels",
+  "blindness": "not a blinded model evaluation; fixture labels and policy are visible",
+  "limitations": "No causal, model, commercial or consumer benefit inference. Formal blinded evaluation and lawful pilots are separate."
+}

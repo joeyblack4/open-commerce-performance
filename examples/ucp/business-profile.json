@@ -1,0 +1,34 @@
+{
+  "ucp": {
+    "version": "2026-08-25",
+    "services": {
+      "dev.ucp.shopping": [
+        {
+          "version": "2026-08-25",
+          "transport": "rest",
+          "endpoint": "https://merchant.example.invalid/ucp/v1",
+          "schema": "https://ucp.dev/2026-08-25/services/shopping/rest.openapi.json",
+          "spec": "https://ucp.dev/2026-08-25/specification/overview"
+        }
+      ]
+    },
+    "capabilities": {
+      "dev.ucp.shopping.catalog.lookup": [
+        {
+          "version": "2026-08-25",
+          "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json",
+          "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/lookup"
+        }
+      ],
+      "ai.black4.commerce.performance": [
+        {
+          "version": "2026-10-25",
+          "extends": "dev.ucp.shopping.catalog.lookup",
+          "schema": "https://black4.ai/ocp/unhosted/2026-10-25/catalog-evidence.schema.json",
+          "spec": "https://black4.ai/ocp/unhosted/2026-10-25/catalog-evidence"
+        }
+      ]
+    },
+    "payment_handlers": {}
+  }
+}

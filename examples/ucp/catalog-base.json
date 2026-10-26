@@ -1,0 +1,50 @@
+{
+  "ucp": {
+    "version": "2026-08-25",
+    "capabilities": {
+      "dev.ucp.shopping.catalog.lookup": [
+        {
+          "version": "2026-08-25"
+        }
+      ]
+    }
+  },
+  "products": [
+    {
+      "id": "fictional-product-box",
+      "title": "Fictional grocery box",
+      "description": {
+        "plain": "Identical synthetic comparison item."
+      },
+      "price_range": {
+        "min": {
+          "amount": 2400,
+          "currency": "USD"
+        },
+        "max": {
+          "amount": 2400,
+          "currency": "USD"
+        }
+      },
+      "variants": [
+        {
+          "id": "fictional-variant-box",
+          "title": "Standard box",
+          "description": {
+            "plain": "Synthetic item, not for sale."
+          },
+          "price": {
+            "amount": 2400,
+            "currency": "USD"
+          },
+          "inputs": [
+            {
+              "id": "fictional-variant-box",
+              "match": "exact"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
