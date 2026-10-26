@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "./black4-theme.css";
+
+body {margin:0; font-family:Inter,sans-serif; font-size:14px; background:var(--background);color:var(--foreground)}
+main {max-width:1200px;margin:0 auto;padding:40px 28px 72px}
+header {display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin:28px 0}
+h1 {font-size:22px;font-weight:600;margin:0 0 8px} h2 {font-size:16px;font-weight:600;margin:0 0 12px}
+p {line-height:1.6} .subtle {color:var(--muted)} .notice {padding:14px 18px;background:var(--surface);border-radius:var(--radius);line-height:1.6}
+.table-scroll {overflow:auto;background:var(--surface);border-radius:var(--radius);margin:24px 0}
+table {border-collapse:collapse;width:100%;min-width:780px} th,td {text-align:left;padding:20px 22px;border-bottom:1px solid var(--border);vertical-align:top} th {font-weight:500;font-size:14px}
+td:first-child {width:30%} .number {font-size:26px;font-weight:600;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+.details {font-size:12px;color:var(--muted);line-height:1.7;margin-top:6px}.methods {display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.proof-row {display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:18px 0;border-bottom:1px solid var(--border)}
+pre {font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:50vh;overflow:auto} .modal-copy {max-width:65ch;line-height:1.7}
+@media(max-width:600px){main{padding:20px 16px 48px}header{display:block}header>a{display:inline-block;margin-top:12px}h1{font-size:20px}.table-scroll{margin:18px 0}th,td{padding:16px}.number{font-size:24px}}
+section{margin-top:28px} .section-heading{margin-top:36px}.decision{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-top:24px;padding:24px;background:var(--surface);border-radius:var(--radius)}.decision h2{font-size:22px;margin:10px 0}.decision p{margin-bottom:0;max-width:70ch}footer{margin-top:36px}.assessment-list .proof-row{align-items:flex-start}.assessment-list strong{min-width:190px}
+@media(max-width:600px){.decision{display:block;padding:18px}.decision .chip{margin-top:14px}.assessment-list .proof-row{gap:6px}.assessment-list strong{min-width:100%}}
+.evidence-summary{display:grid;grid-template-columns:160px 1fr;gap:12px 20px;margin:0 0 24px}.evidence-summary dt{font-weight:500}.evidence-summary dd{margin:0;line-height:1.6;overflow-wrap:anywhere}summary{cursor:pointer;font-weight:500;padding:10px 0}@media(max-width:600px){.evidence-summary{grid-template-columns:1fr;gap:4px}.evidence-summary dd{margin-bottom:12px}}

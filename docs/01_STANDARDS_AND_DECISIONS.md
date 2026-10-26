@@ -1,3 +1,5 @@
+> Archived handoff context. Current implementation: ADR 0001/0002, METRICS.md and IMPLEMENTATION_GAP_REPORT.md supersede historical decisions and pending items below.
+
 # Alignment-first protocol compatibility — mandatory gate
 
 **Verified research snapshot 2026-10-25. This is a STARTING POINT. Codex must refresh upstream directly before building.**

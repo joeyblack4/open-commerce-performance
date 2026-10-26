@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.2.0",
+  "experimental": true,
+  "synthetic": true,
+  "statement_id": "fixture-a-order-complete-rate-20260401-20260701-v020",
+  "subject": {
+    "type": "merchant",
+    "id": "fictional:merchant-a"
+  },
+  "issuer": {
+    "id": "https://example.invalid/black4-fixture-issuer",
+    "role": "research_fixture",
+    "financial_relationship": "Black 4 local synthetic research; no placement or affiliate payments"
+  },
+  "metric": {
+    "id": "order_complete_rate",
+    "definition_version": "0.2.0",
+    "status": "observed",
+    "unit": "fraction",
+    "numerator": 950,
+    "denominator": 1000,
+    "value": 0.95,
+    "lower_bound": null,
+    "upper_bound": null,
+    "coverage_fraction": 1.0,
+    "eligible_n": 1000,
+    "observed_n": 1000,
+    "unknown_n": 0,
+    "censored_n": 0,
+    "cohort_n": 1000,
+    "cancelled_n": 0,
+    "unfulfilled_n": 0,
+    "followup_days": 0,
+    "minimum_public_cohort": 30,
+    "source_reconciled": true,
+    "reason": "exact observed synthetic calculation",
+    "privacy_suppressed": false
+  },
+  "period": {
+    "start": "2026-04-01T00:00:00Z",
+    "end": "2026-07-01T00:00:00Z",
+    "end_exclusive": true
+  },
+  "observed_at": "2026-10-25T12:00:00Z",
+  "published_at": "2026-10-25T12:00:00Z",
+  "expires_at": "2026-11-01T12:00:00Z",
+  "freshness_limit_days": 7,
+  "comparison": {
+    "country": "US",
+    "channel": "shipped",
+    "service": "standard",
+    "category": "general-commerce",
+    "population": "paid non-test orders in purchase calendar quarter; cancellations retained"
+  },
+  "refund_policy": {
+    "id": "returns-accepted-60-days",
+    "as_of": "2026-04-01T00:00:00Z",
+    "url": "https://example.invalid/refund-policy"
+  },
+  "lineage": {
+    "source_type": "synthetic",
+    "access_mode": "synthetic_read_only",
+    "adapter_version": "shopify_mock/0.2.0",
+    "source_observed_at": "2026-10-25T12:00:00Z",
+    "source_record_count": 1000,
+    "expected_record_count": 1000,
+    "method_manifest_sha256": "997ee52a1e2a3e5e1841b6ad6fc6f15c2c2cfcee33fd00b73ad480a08322c0d8"
+  },
+  "assurance": {
+    "source_authenticated": false,
+    "calculation_reproduced": false,
+    "independent_corroboration": false,
+    "independently_audited": false,
+    "limitations": "Synthetic fixture only. Signature proves signed origin, not source truth, completeness, delivery or audit. Calculation reproduction is computed separately."
+  },
+  "status": "published",
+  "methodology_url": "/v0/methods/order_complete_rate/0.2.0"
+}

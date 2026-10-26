@@ -1,0 +1,55 @@
+{
+  "ucp": {
+    "version": "2026-08-25",
+    "capabilities": {
+      "dev.ucp.shopping.order": [
+        {
+          "version": "2026-08-25"
+        }
+      ]
+    }
+  },
+  "id": "fictional-order-not-evidence",
+  "checkout_id": "fictional-checkout-not-implemented",
+  "permalink_url": "https://merchant.example.invalid/orders/fictional",
+  "line_items": [
+    {
+      "id": "fictional-line",
+      "item": {
+        "id": "fictional-variant-box",
+        "title": "Fictional box",
+        "price": 2400
+      },
+      "quantity": {
+        "total": 1,
+        "fulfilled": 1
+      },
+      "totals": [
+        {
+          "type": "subtotal",
+          "amount": 2400
+        },
+        {
+          "type": "total",
+          "amount": 2400
+        }
+      ],
+      "status": "fulfilled"
+    }
+  ],
+  "fulfillment": {
+    "expectations": [],
+    "events": []
+  },
+  "currency": "USD",
+  "totals": [
+    {
+      "type": "subtotal",
+      "amount": 2400
+    },
+    {
+      "type": "total",
+      "amount": 2400
+    }
+  ]
+}

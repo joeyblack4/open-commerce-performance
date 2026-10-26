@@ -1,0 +1,17 @@
+# ADR 0002: narrow flattened JWS profile
+
+Checked and implemented 2026-10-25, America/Los_Angeles. Supersedes the initial exact-byte custom envelope in ADR 0001. The reusable aggregate statement remains independent of UCP/ACP.
+
+Use [RFC 7515 §7.2.2 flattened JWS JSON serialization](https://www.rfc-editor.org/rfc/rfc7515.html#section-7.2.2) via maintained [`joserfc` 1.7.7](https://jose.authlib.org/en/guide/jws/). The exact members are `protected`, `payload`, `signature`. The signing input is the ASCII base64url protected header, a dot, and base64url exact payload bytes. JSON reserialization is not part of verification. This is an embedded payload JWS, not detached, JWT or VC.
+
+Use the fully specified `Ed25519` JOSE identifier from [RFC 9864 §2.2 and §4.1](https://www.rfc-editor.org/rfc/rfc9864.html#section-2.2), with OKP/Ed25519 JWKs per [RFC 8037](https://www.rfc-editor.org/rfc/rfc8037.html). `joserfc` explicitly supports RFC 9864; the code passes `algorithms=['Ed25519']` for signing and verification. It does not silently map deprecated polymorphic `EdDSA` to the new identifier.
+
+Protected headers must contain exactly `alg`, `kid`, `typ`, `cty`. Statements use `typ=ocp-statement+jws`; status uses `typ=ocp-status+jws`; both use `cty=application/json`. These experimental media-type hints are not registered media types. No unprotected headers, general multi-signature form, compact input, `none`, critical extensions, `b64=false`, embedded JWK, `jku`, `x5u`, unknown headers or algorithm fallback. Reject duplicate JSON members, noncanonical/padded base64url, nonfinite numbers, oversized bytes and nesting before consuming data. A public JWK never contains private material.
+
+A trusted key is supplied out of band and binds issuer, tenant, subject and validity. No URL in a payload or header is fetched. Explicit local bootstrap is TOFU against a loopback fixture process, not domain/merchant authentication. A separate pinned status authority signs the statement digest, status, consent and key revocation with at most 60 seconds freshness. Unavailable, stale, mismatched, superseded, disputed, withdrawn or revoked status fails closed. No production key discovery, transparency or global trust registry is invented.
+
+Rotation adds a deliberately trusted replacement key; old public keys remain valid only through the claims they cover and configured expiry. A compromised key is revoked irrespective of issue time; current signed status prevents use of old cached statements. Tests demonstrate both trusted keys, revoked keys, an untrusted replacement authority, status tampering and replay expiry. In production, keys belong to the existing platform's key lifecycle and governed consent/status owner; no private key is written by the demo.
+
+`signature_valid`, `arithmetic_consistent`, `current`, `calculation_reproduced`, `source_truth` and audit status remain separate. The independent consumer checks signature/schema/arithmetic/method/period/status and decision criteria, and cannot reproduce the private source snapshot. A coherently fabricated, validly signed claim can pass origin/internal consistency while remaining false. The source-reproduction test proves that distinction.
+
+Independent interoperability: Python/`joserfc` signatures are verified by Node's crypto implementation over the RFC signing input; a Node-generated signature is verified by `joserfc` in the same test. This is useful implementation evidence, not third-party certification of this profile.

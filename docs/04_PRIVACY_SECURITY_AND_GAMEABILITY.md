@@ -1,3 +1,5 @@
+> Archived handoff context. Current implementation: ADR 0001/0002, METRICS.md and IMPLEMENTATION_GAP_REPORT.md supersede historical decisions and pending items below.
+
 # Threat model, privacy, verification and incentives
 
 ## Threat actors / failure modes
