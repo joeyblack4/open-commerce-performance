@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a deterministic, allowlisted PRIVATE review archive from a clean committed HEAD."""
+"""Build a deterministic, allowlisted experimental reference archive from a clean committed HEAD."""
 
 from hashlib import sha256
 import json
@@ -11,6 +11,8 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = {
     "README.md",
+    "LICENSE",
+    "NOTICE",
     "AGENTS.md",
     "CODEX_HANDOFF.md",
     "THIRD_PARTY_NOTICES.md",
@@ -92,6 +94,8 @@ def build(root=ROOT, output=None):
         entries.append((path, raw, metadata.startswith(b"100755")))
     required = {
         "README.md",
+        "LICENSE",
+        "NOTICE",
         "docs/SHARE_PACKAGE.md",
         "THIRD_PARTY_NOTICES.md",
         "docs/LICENSE_RECOMMENDATION.md",
@@ -100,10 +104,10 @@ def build(root=ROOT, output=None):
     if not required <= {path for path, _, _ in entries}:
         raise ValueError("review package lacks entry point or license notices")
     manifest = {
-        "kind": "PRIVATE REVIEW SNAPSHOT — no publication authorization",
+        "kind": "EXPERIMENTAL REFERENCE SNAPSHOT",
         "commit": commit,
         "synthetic_only": True,
-        "public_license": "proposed Apache-2.0; not yet applied",
+        "public_license": "Apache-2.0; third-party material retains its own notices",
         "files": {path: sha256(raw).hexdigest() for path, raw, _ in sorted(entries)},
     }
     output = output or root / "artifacts/open-commerce-performance-review.zip"

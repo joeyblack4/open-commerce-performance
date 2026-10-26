@@ -1,7 +1,7 @@
-# Licensing recommendation for review
+# Licensing decision — Apache 2.0
 
-Recommend **Apache License 2.0** for Black 4-authored schema, calculator, verifier, adapters, examples and documentation when the human authorizes public distribution. UCP's Apache-2.0 dependencies, explicit patent grant, notice obligations and permissive implementation model make it a practical fit for reusable ecosystem examples.
+On October 26, 2026, the owner explicitly authorized making this repository public under **Apache License 2.0 as an experimental reference**. This supersedes the October 25 recommendation-only status.
 
-This is a reviewable recommendation, not a claim that Black 4-authored code has already been publicly licensed. The private review archive labels this distinction. Its inclusion of source does not authorize public redistribution or change repository visibility.
+The root [LICENSE](../LICENSE) contains the unmodified Apache 2.0 text. [NOTICE](../NOTICE) identifies Black 4 LLC and the experimental scope. Black 4-authored code, schema, examples and documentation are covered by that license. Vendored UCP schemas remain unmodified and retain their original Apache license and attribution; dependency licenses remain with their respective owners. See [third-party notices](../THIRD_PARTY_NOTICES.md).
 
-Before public release, confirm ownership and contributor rights, apply the chosen license to Black 4-authored material, retain UCP's unmodified Apache license/attribution and dependency notices, and verify screenshots contain only fictional data. Public hosting, company outreach and upstream submission are separate decisions. No contributor agreement is signed by this document.
+The npm package remains marked private to prevent accidental npm publication; this does not restrict the Apache source license. Repository publication does not deploy the demo, connect merchant accounts, establish platform adoption or authorize company outreach/upstream submissions. No contributor agreement is signed by this decision.

@@ -114,7 +114,8 @@ def create_server(port=8787, registry=None, clock=None):
                     200,
                     {
                         "prepared": package.is_file(),
-                        "private_review_only": True,
+                        "experimental_reference": True,
+                        "license": "Apache-2.0",
                         "prepare_command": "npm run package:review",
                     },
                 )

@@ -1,5 +1,7 @@
 # Product direction: useful evidence in an agent's commerce decision
 
+Historical build brief; repository publication under Apache-2.0 was authorized on October 26, 2026. See [the licensing decision](LICENSE_RECOMMENDATION.md).
+
 Decision date: 2026-10-25, America/Los_Angeles. Scope: private, local, synthetic prototype.
 
 ## Consumer promise

@@ -1,5 +1,7 @@
 # Open Commerce Performance
 
+**Experimental reference · Apache-2.0 · fictional data.** See [LICENSE](LICENSE), [NOTICE](NOTICE) and [third-party notices](THIRD_PARTY_NOTICES.md).
+
 A **local synthetic prototype** for shopper-directed commerce decisions using optional, explicitly scoped operational evidence. No universal score, paid placement, product-quality inference, real merchant access or purchasing.
 
 Three fictional merchants sell the same grocery box at fixed delivered prices. Set a real budget and a 75%, 85% or 95% historical delivery preference; see the choice, its price tradeoff and when there is not enough evidence. Unknown history never establishes poor performance.
@@ -91,7 +93,7 @@ The protocol audit uses authenticated `gh` for read-only GitHub access and publi
 | `/v0/recommendation?budget=2500&priority=delivery&threshold=85&evidence=on` | Bounded shopper preferences; no source cohort slicing or submitted evidence |
 | `/v0/merchant-preview?state=shared` | Read-only projection; `shared`, `withdrawn`, `disputed`; served registry is unchanged |
 | `/v0/interop` | Offline pinned UCP fixture result |
-| `/v0/release-info`, `/v0/release-package` | Prepared private review ZIP status/download; no publication |
+| `/v0/release-info`, `/v0/release-package` | Prepared experimental reference ZIP status/download |
 
 All reads use `Cache-Control: no-store`, ETags and security headers. No write API, remote fetches, UCP checkout or ACP feeds. Shopper preference queries never select source cohorts; unknown or duplicate parameters are rejected. GET `/.well-known/ucp` intentionally returns 404. Revocation lives only in this process; restart resets the synthetic demonstration, so this is not a production revocation service.
 
@@ -101,6 +103,6 @@ Read [upstream alignment](docs/ADRs/0001-upstream-alignment.md), [signature prof
 
 After committing the reviewed source, run `npm run package:review`. The ZIP in `artifacts/open-commerce-performance-review.zip` contains allowlisted committed source, screenshots, locked dependencies, protocol snapshots, notices and a per-file digest manifest. It excludes dependency directories, environment/key files, git internals, trust pins and machine-local paths. The builder path offers the download only when the archive exists. The archive does not include installed dependencies or a prebuilt dist; the same quickstart works from extracted source. Git is needed to repackage; authenticated gh is needed only for a fresh protocol audit.
 
-[Apache-2.0 is recommended for review](docs/LICENSE_RECOMMENDATION.md), not yet applied to Black 4-authored code. Private development/review is authorized; changing visibility, public licensing/hosting, named outreach, real merchant access and upstream submission remain separate human decisions.
+Black 4-authored material is licensed under [Apache-2.0](LICENSE); third-party material retains its own notices. Repository publication was authorized on October 26, 2026. The app still runs locally with fictional data. Hosted deployment, named outreach, real merchant access and upstream submission remain separate decisions. See the [licensing decision](docs/LICENSE_RECOMMENDATION.md).
 
 ![Shopper controls and tradeoff](docs/screenshots/shopper-desktop.png)

@@ -1,6 +1,7 @@
 [project]
 name = "black4-open-commerce-performance"
 version = "0.2.0"
+license = "Apache-2.0"
 description = "Experimental aggregate evidence; synthetic local reference only"
 requires-python = ">=3.11"
 dependencies = [

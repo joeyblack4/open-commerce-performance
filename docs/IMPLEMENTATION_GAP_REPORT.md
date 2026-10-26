@@ -18,7 +18,7 @@ Checked 2026-10-25, America/Los_Angeles. Owner: Black 4. Synthetic reference, no
 
 A1: official upstream checked; local architecture decided under delegated product authority. No upstream adoption/ratification requested. A2–A5: synthetic labels, aggregate allowlist, strict validation, source-truth/proof separation and adversarial/privacy tests establish reference behavior. They cannot prove a source API captures all economic events or prevent a merchant fabricating coherent input records.
 
-A6: frozen-clock local demo is reproducible. Real-time verification rejects expired statements. No checkout, payments or provider mutation. UCP checks are offline fixture/schema compatibility. A7: no public hosting, deployment, upstream issue/discussion/PR, outreach, customer/provider reads or writes. The human separately authorized the owning private repository; private branch backup/review is distinct from public release.
+A6: frozen-clock local demo is reproducible. Real-time verification rejects expired statements. No checkout, payments or provider mutation. UCP checks are offline fixture/schema compatibility. A7: no public hosting, deployment, upstream issue/discussion/PR, outreach, customer/provider reads or writes. The owner authorized public repository distribution under Apache-2.0 on October 26, 2026. This does not authorize hosting, outreach or real merchant access.
 
 ## Unsupported claims and why
 
@@ -44,4 +44,4 @@ The loopback Python development server is not Internet hosting infrastructure. K
 
 The first UI limitations have received targeted verification: connected Chrome desktop, independent clean-session 320px/390px views, keyboard budget/threshold controls, actual network-failure/retry injection and reduced-motion dialog focus return. These are point-in-time checks, not accessibility certification or real participant comprehension testing. See the current VERIFICATION record for exact scope.
 
-A private review package and screenshots now accompany the source. Apache-2.0 is recommended but not applied to Black 4-authored code. Square's official UCP Food TC role and Poppy's adjacent in-progress Draft 0.3/source-version discrepancy are documented; no additional connector/auth runtime was invented. Consumer enthusiasm, merchant commercial benefit and platform uptake remain unmeasured.
+An experimental reference package and screenshots now accompany the source. Apache-2.0 applies to Black 4-authored material following explicit owner authorization on October 26, 2026. Square's official UCP Food TC role and Poppy's adjacent in-progress Draft 0.3/source-version discrepancy are documented; no additional connector/auth runtime was invented. Consumer enthusiasm, merchant commercial benefit and platform uptake remain unmeasured.

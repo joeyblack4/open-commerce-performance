@@ -8,7 +8,7 @@ The human interface is a static React/HeroUI build served by the same loopback-o
 
 ## Placement
 
-The owning repository is `joeyblack4/open-commerce-performance`, created privately at the human's request. Retail Edge was inspected at commit `0b7a1ac25f31dbdeffe6c810c758f39a1c86d9e3` and remains a read-only reference. No Retail Edge code changes are required by this prototype. Its original untracked output was preserved; the unused managed worktree was archived without OCP changes.
+The owning repository is `joeyblack4/open-commerce-performance`, created privately at the human's request and authorized for public Apache-2.0 distribution on October 26, 2026. Retail Edge was inspected at commit `0b7a1ac25f31dbdeffe6c810c758f39a1c86d9e3` and remains a read-only reference. No Retail Edge code changes are required by this prototype. Its original untracked output was preserved; the unused managed worktree was archived without OCP changes.
 
 Inspected ownership and actual code:
 

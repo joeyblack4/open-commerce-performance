@@ -64,4 +64,4 @@ No conversion, revenue or distribution lift is established yet. Those are pilot 
 
 ## Sharing package
 
-Prepare a concise walkthrough, runnable repository/archive, consumer and merchant screenshots, compatibility example, evidence methods, threat model, contribution draft and transparent gap report. Keep license choice, public visibility, hosted deployment and named outreach reviewable before executing those external steps.
+Prepare a concise walkthrough, runnable repository/archive, consumer and merchant screenshots, compatibility example, evidence methods, threat model, contribution draft and transparent gap report. Repository publication under Apache-2.0 was authorized on October 26, 2026; the license and notices are included. Hosted deployment and named outreach remain separate decisions.

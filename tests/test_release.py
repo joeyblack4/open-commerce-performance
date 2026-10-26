@@ -59,6 +59,8 @@ class ReviewPackageTests(unittest.TestCase):
             root = Path(temporary)
             files = [
                 "README.md",
+                "LICENSE",
+                "NOTICE",
                 "docs/SHARE_PACKAGE.md",
                 "THIRD_PARTY_NOTICES.md",
                 "docs/LICENSE_RECOMMENDATION.md",

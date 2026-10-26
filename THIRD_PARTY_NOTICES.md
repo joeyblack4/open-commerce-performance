@@ -8,4 +8,4 @@
 
 Python dependencies (cryptography/jsonschema/joserfc and transitive packages) and JavaScript dependencies retain their own licenses; versions are locked in uv.lock/package-lock.json. They are not vendored.
 
-Black 4-authored code has not selected a public distribution license. Public release/licensing is a separate human decision; this notice does not relicense upstream material.
+Black 4-authored material is licensed under Apache License 2.0; see the root LICENSE and NOTICE. Third-party material retains its original license and attribution. Repository publication and this license were explicitly authorized on October 26, 2026.

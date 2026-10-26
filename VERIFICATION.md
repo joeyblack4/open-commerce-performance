@@ -1,6 +1,6 @@
-# Current local verification — 2026-10-25
+# Product verification — 2026-10-25; publication update — 2026-10-26
 
-Private repository `joeyblack4/open-commerce-performance`, branch `codex/local-synthetic-prototype`, draft review PR #1. Source and synthetic demo only; no public release, live merchant data, production deployment, named outreach or upstream submission.
+Repository `joeyblack4/open-commerce-performance`, implemented in PR #1. The owner authorized public distribution under Apache-2.0 on October 26, 2026. Source and synthetic demo only; no live merchant data, production deployment, named outreach or upstream submission.
 
 ## Automated checks
 
@@ -54,6 +54,16 @@ These are focused observations, not full accessibility certification, a comprehe
 
 ## Review package
 
-`npm run package:review` exports only allowlisted committed source and screenshots, with the upstream license/notices and per-file SHA256 manifest. It refuses machine-local paths and known private-key material, excludes environment/key files, pins, dependencies and git internals, and requires clean committed source. The archive is a private review snapshot; public Apache-2.0 licensing is recommended, not yet applied.
+`npm run package:review` exports only allowlisted committed source and screenshots, with the upstream license/notices and per-file SHA256 manifest. It refuses machine-local paths and known private-key material, excludes environment/key files, pins, dependencies and git internals, and requires clean committed source. The archive is an experimental reference snapshot including the Apache-2.0 LICENSE, NOTICE and retained third-party attribution.
 
 The final archive is rebuilt after each source commit. Its exact commit, bytes and digest are reported by the exporter and final handoff, avoiding a self-referential hash in this source document. Clean extracted-source reproduction and archive inspection are performed before handoff; any remaining failure is reported explicitly rather than called a public release.
+
+## Publication preparation — October 26, 2026
+
+Applied the owner-approved Apache-2.0 license and NOTICE, retained unmodified upstream attribution, updated package metadata and public archive labels, and required both root license files in the exporter. Re-ran all 69 Python and 9 React tests, TypeScript/Vite build, Python lint/format and diff checks successfully. The locked Python environment remains valid. Relative documentation links resolve.
+
+Reviewed all 175 pre-publication historical file blobs for known credential-token/private-key patterns, machine-local paths and unexpected tracked environment/dependency/artifact paths; no matches were found. This is a bounded content check, not a guarantee against every possible secret format. Prior screenshot review found fictional content only.
+
+The fresh official-source audit detected UCP development HEAD changes and was reviewed explicitly, as documented in ADR 0001 and the dated publication snapshot. Released schemas are unchanged. Evaluating that snapshot against the updated reviewed baseline passes; the original drift result is retained in the snapshot for provenance.
+
+Public repository distribution is authorized. The demo remains local and synthetic; no hosted deployment, real merchant access, company outreach or upstream submission accompanies publication.

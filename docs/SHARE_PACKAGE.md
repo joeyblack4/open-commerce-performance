@@ -1,6 +1,6 @@
 # Better choices from useful operational facts
 
-**Private review package · synthetic reference · prepared 2026-10-25.** No merchant data, purchasing, deployment, upstream submission or platform endorsement.
+**Experimental reference · Apache-2.0 · publication authorized 2026-10-26.** No merchant data, purchasing, deployment, upstream submission or platform endorsement.
 
 A shopper choosing the same grocery box can prefer low price or an established delivery record. A merchant can voluntarily make that record understandable. An agent can independently verify signed origin and current status before deciding what the facts mean for that shopper. No universal merchant score or paid ranking advantage.
 
@@ -30,9 +30,9 @@ This demonstrates coherent behavior on fictional data. Consumer enthusiasm, merc
 
 ## Package and release boundary
 
-`npm run package:review` exports allowlisted committed files from a clean HEAD into a deterministic ZIP with a per-file SHA256 manifest. It excludes ignored artifacts/trust pins, dependencies, git internals, environment/key files and machine-local paths. Upstream licenses/notices travel with it. [Apache-2.0 is recommended](LICENSE_RECOMMENDATION.md) for a reviewed public release; it has not been applied to Black 4-authored code.
+`npm run package:review` exports allowlisted committed files from a clean HEAD into a deterministic ZIP with a per-file SHA256 manifest. It excludes ignored artifacts/trust pins, dependencies, git internals, environment/key files and machine-local paths. Upstream licenses/notices travel with it. The root Apache-2.0 license and NOTICE travel with the archive; third-party licenses remain intact. See the [licensing decision](LICENSE_RECOMMENDATION.md).
 
-The package is ready for private technical review. Making the repository public, applying a public license, hosting a demo, sending the package to named companies and posting upstream remain explicit human decisions about the finished artifact.
+Repository publication under Apache-2.0 was explicitly authorized on October 26, 2026. This is an experimental reference for technical review and local testing. Hosting a demo, sending the package to named companies and posting upstream remain separate decisions.
 
 ## Walkthrough images
 
