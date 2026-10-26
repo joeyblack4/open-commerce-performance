@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Read-only official-source audit. gh supplies authentication; no token is logged."""
+
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
@@ -12,123 +13,190 @@ from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
 REPOS = {
- 'ucp': 'Universal-Commerce-Protocol/ucp',
- 'ucp_js': 'Universal-Commerce-Protocol/js-sdk',
- 'ucp_python': 'Universal-Commerce-Protocol/python-sdk',
- 'ucp_conformance': 'Universal-Commerce-Protocol/conformance',
- 'acp': 'agentic-commerce-protocol/agentic-commerce-protocol',
- 'ap2': 'google-agentic-commerce/AP2',
- 'mcp': 'modelcontextprotocol/modelcontextprotocol',
- 'a2a': 'a2aproject/A2A',
- 'vc': 'w3c/vc-data-model',
+    "ucp": "Universal-Commerce-Protocol/ucp",
+    "ucp_js": "Universal-Commerce-Protocol/js-sdk",
+    "ucp_python": "Universal-Commerce-Protocol/python-sdk",
+    "ucp_conformance": "Universal-Commerce-Protocol/conformance",
+    "acp": "agentic-commerce-protocol/agentic-commerce-protocol",
+    "ap2": "google-agentic-commerce/AP2",
+    "mcp": "modelcontextprotocol/modelcontextprotocol",
+    "a2a": "a2aproject/A2A",
+    "vc": "w3c/vc-data-model",
+    "poppy": "personal-agent-protocol/personal-agent-protocol",
 }
 LINKS = [
- 'https://ucp.dev/specification/overview/',
- 'https://ucp.dev/documentation/contributing/',
- 'https://ucp.dev/versioning/',
- 'https://www.agenticcommerce.dev/',
- 'https://developers.openai.com/commerce/specs/feed',
- 'https://developers.openai.com/commerce/specs/checkout',
- 'https://ap2-protocol.org/ap2/specification/',
- 'https://www.w3.org/TR/vc-data-model-2.0/',
- 'https://www.w3.org/TR/vc-data-integrity/',
- 'https://modelcontextprotocol.io/specification/2026-07-28',
- 'https://a2a-protocol.org/latest/specification/',
- 'https://shopify.dev/docs/api/usage/access-scopes',
- 'https://json-schema.org/draft/2020-12',
+    "https://ucp.dev/specification/overview/",
+    "https://ucp.dev/documentation/contributing/",
+    "https://ucp.dev/versioning/",
+    "https://www.agenticcommerce.dev/",
+    "https://developers.openai.com/commerce/specs/feed",
+    "https://developers.openai.com/commerce/specs/checkout",
+    "https://ap2-protocol.org/ap2/specification/",
+    "https://www.w3.org/TR/vc-data-model-2.0/",
+    "https://www.w3.org/TR/vc-data-integrity/",
+    "https://modelcontextprotocol.io/specification/2026-07-28",
+    "https://a2a-protocol.org/latest/specification/",
+    "https://shopify.dev/docs/api/usage/access-scopes",
+    "https://json-schema.org/draft/2020-12",
+    "https://ucp.dev/documentation/announcements/",
+    "https://personalagentprotocol.org/docs/spec",
+    "https://sierra.ai/blog/introducing-personal-agent-protocol",
+    "https://www.w3.org/2026/ecommerce-agents/agenda.html",
 ]
 
+
 def gh(path, *params):
-    result = subprocess.run(['gh', 'api', '-X', 'GET', path, *params],
-                            capture_output=True, text=True, timeout=25)
+    result = subprocess.run(
+        ["gh", "api", "-X", "GET", path, *params], capture_output=True, text=True, timeout=25
+    )
     if result.returncode:
-        raise RuntimeError('GitHub request failed: ' + path)
+        raise RuntimeError("GitHub request failed: " + path)
     return json.loads(result.stdout)
+
 
 def repo_audit(item):
     name, repo = item
-    result = {'name': name, 'repository': repo, 'errors': []}
-    for label, path in [('head', 'commits/HEAD'), ('releases', 'releases?per_page=100'),
-                        ('tags', 'tags?per_page=100')]:
+    result = {"name": name, "repository": repo, "errors": []}
+    for label, path in [
+        ("head", "commits/HEAD"),
+        ("releases", "releases?per_page=100"),
+        ("tags", "tags?per_page=100"),
+    ]:
         try:
-            data = gh(f'repos/{repo}/{path}')
-            if label == 'head':
-                result[label] = {'sha': data['sha'], 'committed_at': data['commit']['committer']['date']}
-            elif label == 'releases':
-                result[label] = [{'tag': x['tag_name'], 'published_at': x['published_at'],
-                                  'prerelease': x['prerelease'], 'url': x['html_url']} for x in data]
+            data = gh(f"repos/{repo}/{path}")
+            if label == "head":
+                result[label] = {"sha": data["sha"], "committed_at": data["commit"]["committer"]["date"]}
+            elif label == "releases":
+                result[label] = [
+                    {
+                        "tag": x["tag_name"],
+                        "published_at": x["published_at"],
+                        "prerelease": x["prerelease"],
+                        "url": x["html_url"],
+                    }
+                    for x in data
+                ]
             else:
-                result[label] = [{'tag': x['name'], 'sha': x['commit']['sha']} for x in data]
+                result[label] = [{"tag": x["name"], "sha": x["commit"]["sha"]} for x in data]
         except Exception:
-            result['errors'].append(label + ': network/API/tool failure; unverified')
-    if name in ('ucp', 'acp', 'ap2'):
+            result["errors"].append(label + ": network/API/tool failure; unverified")
+    if name in ("ucp", "acp", "ap2"):
         found = {}
-        for term in ('trust', 'reputation', 'performance', 'quality', 'evidence', 'correspondence'):
+        for term in ("trust", "reputation", "performance", "quality", "evidence", "correspondence"):
             try:
-                data = gh('search/issues', '-f', f'q=repo:{repo} is:open {term}', '-f', 'per_page=100')
-                if data.get('incomplete_results') or data['total_count'] > 100:
-                    result['errors'].append('search truncated/incomplete: ' + term)
-                for x in data['items']:
-                    found[x['number']] = {'number': x['number'], 'title': x['title'],
-                                         'url': x['html_url'], 'pr': 'pull_request' in x}
+                data = gh("search/issues", "-f", f"q=repo:{repo} is:open {term}", "-f", "per_page=100")
+                if data.get("incomplete_results") or data["total_count"] > 100:
+                    result["errors"].append("search truncated/incomplete: " + term)
+                for x in data["items"]:
+                    found[x["number"]] = {
+                        "number": x["number"],
+                        "title": x["title"],
+                        "url": x["html_url"],
+                        "pr": "pull_request" in x,
+                    }
             except Exception:
-                result['errors'].append('search unavailable: ' + term)
-        result['open_search_matches'] = sorted(found.values(), key=lambda x: x['number'])
-    if name == 'acp' and 'head' in result:
+                result["errors"].append("search unavailable: " + term)
+        result["open_search_matches"] = sorted(found.values(), key=lambda x: x["number"])
+    if name == "poppy" and "head" in result:
+        try:
+            from base64 import b64decode
+
+            data = gh(f"repos/{repo}/contents/content/versions/versions.json?ref={result['head']['sha']}")
+            result["repository_docs_versions"] = json.loads(b64decode(data["content"]))
+            result["alignment"] = (
+                "adjacent/deferred; compare repository version metadata with deployed official docs; no auth/session implementation"
+            )
+        except Exception:
+            result["errors"].append("repository docs version metadata unavailable")
+    if name == "acp" and "head" in result:
         try:
             tree = gh(f"repos/{repo}/git/trees/{result['head']['sha']}?recursive=1")
-            result['dated_spec_directories'] = sorted({x['path'].split('/')[1] for x in tree['tree']
-                 if x['path'].startswith('spec/20')})
+            result["dated_spec_directories"] = sorted(
+                {x["path"].split("/")[1] for x in tree["tree"] if x["path"].startswith("spec/20")}
+            )
         except Exception:
-            result['errors'].append('dated spec tree unavailable')
+            result["errors"].append("dated spec tree unavailable")
     return result
+
 
 def link_audit(url):
     try:
-        with urlopen(Request(url, headers={'User-Agent': 'Black4-OCP-local-audit/0.1'}), timeout=20) as r:
+        with urlopen(Request(url, headers={"User-Agent": "Black4-OCP-local-audit/0.1"}), timeout=20) as r:
             body = r.read(8_000_001)
             if len(body) > 8_000_000:
-                raise ValueError('oversize')
-            return {'url': url, 'resolved_url': r.url, 'status': r.status,
-                    'sha256': sha256(body).hexdigest(), 'bytes': len(body)}
+                raise ValueError("oversize")
+            return {
+                "url": url,
+                "resolved_url": r.url,
+                "status": r.status,
+                "sha256": sha256(body).hexdigest(),
+                "bytes": len(body),
+            }
     except Exception:
-        return {'url': url, 'error': 'network/HTTP failure; not checked'}
+        return {"url": url, "error": "network/HTTP failure; not checked"}
+
 
 def compatibility(snapshot, baseline):
     """Drift requires review; an audit can never declare protocol compliance."""
     if not baseline:
-        return 'unreviewed'
+        return "unreviewed"
     for key, expected in baseline.items():
-        repo = next((r for r in snapshot['repositories'] if r['name'] == key), {})
-        stable = next((x['tag'] for x in repo.get('releases', []) if not x['prerelease']), None)
-        dated = repo.get('dated_spec_directories', [None])[-1]
-        if repo.get('head', {}).get('sha') != expected['head'] or (stable or dated) != expected['version']:
-            return 'review_required'
-    return 'reviewed_snapshot_unchanged'
+        repo = next((r for r in snapshot["repositories"] if r["name"] == key), {})
+        stable = next((x["tag"] for x in repo.get("releases", []) if not x["prerelease"]), None)
+        dated = repo.get("dated_spec_directories", [None])[-1]
+        if repo.get("head", {}).get("sha") != expected["head"] or (stable or dated) != expected["version"]:
+            return "review_required"
+    return "reviewed_snapshot_unchanged"
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path)
-    parser.add_argument('--baseline', type=Path, default=Path(__file__).parents[1]/'docs/upstream/baseline.json')
+    parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--baseline", type=Path, default=Path(__file__).parents[1] / "docs/upstream/baseline.json"
+    )
     args = parser.parse_args()
-    now = datetime.now(ZoneInfo('America/Los_Angeles'))
+    now = datetime.now(ZoneInfo("America/Los_Angeles"))
     with ThreadPoolExecutor(max_workers=6) as pool:
         repos = list(pool.map(repo_audit, REPOS.items()))
         links = list(pool.map(link_audit, LINKS))
-    result = {'checked_at': now.isoformat(), 'checked_date': now.date().isoformat(),
-              'timezone': 'America/Los_Angeles', 'repositories': repos, 'links': links,
-              'search_scope': 'open issues and PRs, six terms, first 100 per term; not exhaustive',
-              'conformance': 'not_claimed'}
-    result['network_status'] = 'incomplete' if any(x['errors'] for x in repos) or any('error' in x for x in links) else 'complete'
-    result['alignment_status'] = compatibility(result, json.loads(args.baseline.read_text()) if args.baseline.exists() else None)
-    target = args.output or Path(__file__).parents[1]/f'docs/upstream/{now.strftime("%Y-%m-%dT%H%M%S")}.json'
+    result = {
+        "checked_at": now.isoformat(),
+        "checked_date": now.date().isoformat(),
+        "timezone": "America/Los_Angeles",
+        "repositories": repos,
+        "links": links,
+        "search_scope": "open issues and PRs, six terms, first 100 per term; not exhaustive",
+        "conformance": "not_claimed",
+    }
+    result["network_status"] = (
+        "incomplete" if any(x["errors"] for x in repos) or any("error" in x for x in links) else "complete"
+    )
+    result["alignment_status"] = compatibility(
+        result, json.loads(args.baseline.read_text()) if args.baseline.exists() else None
+    )
+    target = (
+        args.output or Path(__file__).parents[1] / f"docs/upstream/{now.strftime('%Y-%m-%dT%H%M%S')}.json"
+    )
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(json.dumps(result, indent=2)+'\n')
-    print(json.dumps({'snapshot': str(target), 'network_status': result['network_status'], 'alignment_status': result['alignment_status']}))
-    if result['network_status'] != 'complete':
-        print('WARNING: one or more official sources could not be checked; see snapshot errors.', file=sys.stderr)
+    target.write_text(json.dumps(result, indent=2) + "\n")
+    print(
+        json.dumps(
+            {
+                "snapshot": str(target),
+                "network_status": result["network_status"],
+                "alignment_status": result["alignment_status"],
+            }
+        )
+    )
+    if result["network_status"] != "complete":
+        print(
+            "WARNING: one or more official sources could not be checked; see snapshot errors.",
+            file=sys.stderr,
+        )
         return 2
-    return 3 if result['alignment_status'] == 'review_required' else 0
+    return 3 if result["alignment_status"] == "review_required" else 0
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     sys.exit(main())

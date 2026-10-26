@@ -8,7 +8,7 @@ The human interface is a static React/HeroUI build served by the same loopback-o
 
 ## Placement
 
-The owning repository is `joeyblack4/open-commerce-performance`, created privately at the human's request. Retail Edge was inspected at commit `0b7a1ac25f31dbdeffe6c810c758f39a1c86d9e3` and remains a read-only reference. No Retail Edge code changes are required by this prototype. Its original untracked output was preserved; its unused implementation worktree contains no OCP changes.
+The owning repository is `joeyblack4/open-commerce-performance`, created privately at the human's request. Retail Edge was inspected at commit `0b7a1ac25f31dbdeffe6c810c758f39a1c86d9e3` and remains a read-only reference. No Retail Edge code changes are required by this prototype. Its original untracked output was preserved; the unused managed worktree was archived without OCP changes.
 
 Inspected ownership and actual code:
 
@@ -33,3 +33,11 @@ All synthetic keys are independently generated per tenant in memory and disappea
 Free HeroUI React/styles `3.2.6`, Inter, Black 4 black accent/neutral base, Medium radius and Large form radius. `web/black4-theme.css` is an unchanged copy of the approved Black 4 shared export from Retail Edge at the revision above, retained as an explicit cross-repository snapshot. No monorepo dependency or alternate theme is introduced. Controls/dialog geometry and focus behavior remain native; CSS owns layout. This repository does not migrate or deploy any existing product application.
 
 Visual thesis: quiet neutral workspace, readable numbers and visible uncertainty. Content plan: shopper priorities, decision with reasons, comparable evidence, proof drilldown. Interaction thesis: native selection feedback and modal/disclosure transitions, with reduced-motion behavior inherited from HeroUI; no decorative motion or marketing imagery in this utility interface.
+
+## Three-path product experience
+
+The same static app offers Shop, For merchants and For builders. Shopper preferences are bounded GET parameters (budget 1500–3000 cents, price/delivery priority, 75/85/95 historical threshold and evidence on/off). They never alter source cohorts. Recommendations and feasible adjustment actions are calculated server-side from the registry's verified evidence, through the same pure policy used by the independently pinned consumer; callers cannot submit verified flags or evidence.
+
+Merchant preview uses a copied in-memory consent/status projection for shared, withdrawn and disputed states. The original registry, keys, snapshots and publication state remain untouched. It shows the complete metric bundle or its status consequence, never a favorable-metric selector. Real connection/publication/consent authoring is absent.
+
+The builder path exposes pinned protocol fixtures, consumer commands and a prepared review-archive download. The deterministic allowlist exporter reads only clean committed HEAD blobs, retains notices and per-file digests, and excludes credentials, pins, dependencies, git state and local paths. It does not publish, grant a license, create a hosted service or contact an ecosystem participant.

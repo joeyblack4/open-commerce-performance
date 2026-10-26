@@ -6,9 +6,11 @@ from hashlib import sha256
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import mimetypes
 from time import monotonic
-from urllib.parse import unquote, urlsplit
+from urllib.parse import unquote, urlsplit, parse_qs
 from .contract import ROOT, encode
-from .decision import decide, SCENARIOS
+from .decision import decide, decide_with_preferences, SCENARIOS
+from .preview import merchant_preview
+from .interop import demonstration
 from .metrics import METHODS
 from .model import instant
 from .registry import Registry
@@ -26,7 +28,7 @@ def create_server(port=8787, registry=None, clock=None):
         def log_message(self, *_):
             pass  # no request identifiers in logs
 
-        def answer(self, code, data, content_type="application/json"):
+        def answer(self, code, data, content_type="application/json", extra_headers=None):
             body = encode(data) if isinstance(data, (dict, list)) else data
             digest = sha256(body).hexdigest()
             etag = '"' + digest + '"'
@@ -35,6 +37,8 @@ def create_server(port=8787, registry=None, clock=None):
             self.send_response(code)
             self.send_header("Content-Type", content_type)
             self.send_header("Content-Length", str(len(body)))
+            for name, value in (extra_headers or {}).items():
+                self.send_header(name, value)
             self.send_header("Cache-Control", "no-store")
             self.send_header("ETag", etag)
             self.send_header("X-Content-Type-Options", "nosniff")
@@ -58,7 +62,9 @@ def create_server(port=8787, registry=None, clock=None):
             if len(self.path) > 2000:
                 return self.answer(414, {"error": "path_too_long"})
             parsed = urlsplit(self.path)
-            if parsed.query or parsed.fragment:
+            if parsed.fragment or (
+                parsed.query and parsed.path not in ("/v0/recommendation", "/v0/merchant-preview")
+            ):
                 return self.answer(400, {"error": "arbitrary_segments_and_queries_not_supported"})
             path = unquote(parsed.path)
             if "\\" in path or ".." in path.split("/"):
@@ -70,6 +76,64 @@ def create_server(port=8787, registry=None, clock=None):
                 return self.answer(429, {"error": "local_read_limit"})
             requests.append(now_m)
             now = clock()
+            if path in ("/v0/recommendation", "/v0/merchant-preview"):
+                try:
+                    query = parse_qs(parsed.query, strict_parsing=True, max_num_fields=5)
+                    if any(len(v) != 1 for v in query.values()):
+                        raise ValueError("duplicate preference")
+                    if path == "/v0/merchant-preview":
+                        if set(query) != {"state"}:
+                            raise ValueError("exact preview state required")
+                        return self.answer(200, merchant_preview(registry, query["state"][0], now))
+                    if set(query) != {"budget", "priority", "threshold", "evidence"}:
+                        raise ValueError("exact shopper preferences required")
+                    budget = int(query["budget"][0]) / 100
+                    priority = query["priority"][0]
+                    if priority not in ("price", "delivery") or query["evidence"][0] not in ("on", "off"):
+                        raise ValueError("unknown shopper choice")
+                    threshold = int(query["threshold"][0]) / 100
+                    if threshold not in (0.75, 0.85, 0.95):
+                        raise ValueError("unsupported delivery preference")
+                    preference = {
+                        "max_price": budget,
+                        "min_historical_on_time": threshold if priority == "delivery" else None,
+                    }
+                    return self.answer(
+                        200,
+                        decide_with_preferences(
+                            registry.bundle(now), preference, query["evidence"][0] == "on"
+                        ),
+                    )
+                except (ValueError, KeyError, OverflowError):
+                    return self.answer(400, {"error": "invalid_preview_or_shopper_preferences"})
+            if path == "/v0/interop":
+                return self.answer(200, demonstration())
+            if path == "/v0/release-info":
+                package = ROOT / "artifacts/open-commerce-performance-review.zip"
+                return self.answer(
+                    200,
+                    {
+                        "prepared": package.is_file(),
+                        "private_review_only": True,
+                        "prepare_command": "npm run package:review",
+                    },
+                )
+            if path == "/v0/release-package":
+                package = ROOT / "artifacts/open-commerce-performance-review.zip"
+                if not package.is_file():
+                    return self.answer(
+                        409,
+                        {
+                            "error": "review_package_not_prepared",
+                            "instruction": "Run python scripts/package_release.py from a committed checkout.",
+                        },
+                    )
+                return self.answer(
+                    200,
+                    package.read_bytes(),
+                    "application/zip",
+                    {"Content-Disposition": 'attachment; filename="open-commerce-performance-review.zip"'},
+                )
             if path == "/v0/scenarios":
                 return self.answer(
                     200,

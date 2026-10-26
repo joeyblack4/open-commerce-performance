@@ -10,7 +10,7 @@ Checked 2026-10-25, America/Los_Angeles. Owner: Black 4. Synthetic reference, no
 | Provenance | Protected flattened JWS via joserfc, fully specified Ed25519, Node crypto interoperability, signed current status | Explicit local TOFU, ephemeral keys/status, no independent merchant identity attestation |
 | Consumer | Runnable separate client, pinned keys and status authority; never calls issuer verifier or decision endpoint | Same reference verification code; no access to private-source truth/recomputation |
 | Consent/isolation | Withdrawal removes all merchant claims, key revocation/status TTL, supersession/tenant/subject/digest binding tested | No durable consent/audit/correction store or distributed cache/key infrastructure |
-| Human path | Shopper-specific choices and abstention, readable inspector, exact counts and unknowns | Publisher recomputation is not independent audit; deterministic policy is not model validation |
+| Human path | Live budget/history controls, feasible adjustment actions, whole-bundle merchant status preview, builder path, readable evidence and unknowns | Publisher recomputation is not independent audit; deterministic policy is not model validation |
 | UCP | Offline profile/catalog/order validation and namespaced catalog-reference composition; unchanged unsupported-client products | Unhosted HTTPS fixtures; no live discovery/signature handshake, full negotiation engine or conformance certification |
 | Evaluation | Plan saved before deterministic synthetic results, fixed offers/four arms, constraints/abstention | No model runs, blind raters, post-purchase outcomes, power/causal lift or real consumer improvement |
 
@@ -39,3 +39,9 @@ Persist correction/status/revocation with an existing platform owner, configure 
 Threshold 30 and fixed bundles are conservative prototype controls, not a privacy guarantee or differential privacy. Arbitrary auxiliary data and cross-release differencing remain unproven. Proposed 30-day raw/13-month aggregate retention from the handoff is not adopted or implemented; actual purposes, processing terms and deletion policy need qualified review.
 
 The loopback Python development server is not Internet hosting infrastructure. Keys/consent reset at restart and consumers deliberately re-pin. No deployment manifest exists. Build notices about upstream React `use client` directives are bundler notices. Rendering and remaining verification limits are recorded in VERIFICATION.md.
+
+## Second milestone review
+
+The first UI limitations have received targeted verification: connected Chrome desktop, independent clean-session 320px/390px views, keyboard budget/threshold controls, actual network-failure/retry injection and reduced-motion dialog focus return. These are point-in-time checks, not accessibility certification or real participant comprehension testing. See the current VERIFICATION record for exact scope.
+
+A private review package and screenshots now accompany the source. Apache-2.0 is recommended but not applied to Black 4-authored code. Square's official UCP Food TC role and Poppy's adjacent in-progress Draft 0.3/source-version discrepancy are documented; no additional connector/auth runtime was invented. Consumer enthusiasm, merchant commercial benefit and platform uptake remain unmeasured.

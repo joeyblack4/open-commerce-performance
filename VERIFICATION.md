@@ -1,45 +1,59 @@
-# Local verification — 2026-10-25
+# Current local verification — 2026-10-25
 
-Owning repository: private `joeyblack4/open-commerce-performance`. Branch: `codex/local-synthetic-prototype`. Implementation remains synthetic and loopback-only. No public release, deployed endpoint, actual merchant access or upstream submission.
+Private repository `joeyblack4/open-commerce-performance`, branch `codex/local-synthetic-prototype`, draft review PR #1. Source and synthetic demo only; no public release, live merchant data, production deployment, named outreach or upstream submission.
 
-## Executed checks
+## Automated checks
 
-| Command | Result |
+| Check | Result |
 |---|---|
-| `uv sync --frozen` | Locked environment available; runtime cryptography/jsonschema/joserfc installed |
-| `npm ci --ignore-scripts` / initial install | Dependency lock produced; final audit below clean |
-| `npm test` | **58 tests passed**, 0 skipped, about 8.5 seconds |
-| `uv run ruff check src tests scripts` | Passed |
-| `uv run ruff format --check src tests scripts` | Passed after formatting one new future-expiry regression |
-| `npm run build` | TypeScript and Vite passed; upstream HeroUI `use client` directive notices during bundling |
-| `npm audit` | **0 vulnerabilities** after updating Vite to 7.3.7 |
-| `PYTHONPATH=src uv run python -m ocp.interop` | Passed offline pinned-schema/fixture intersection; base products unchanged |
-| `npm run evaluate` | 12 deterministic scenario/arm cases; no selected offer violated hard price/availability constraints |
-| `./scripts/protocol_audit --output artifacts/final-protocol-audit.json` | Network complete; reviewed upstream baseline unchanged |
-| `git diff --check` | Passed |
+| Clean `npm ci --ignore-scripts` using the locked dependencies | Passed; standard npm installation works |
+| `npm test` | **69 Python tests + 9 React UI tests passed**, no skips |
+| `uv run ruff check src tests scripts` and format check | Passed |
+| `npm run build` | TypeScript/Vite passed; upstream HeroUI `use client` bundler notices remain informational |
+| `npm audit` | **0 vulnerabilities** |
+| `python -m ocp.interop` | Offline immutable UCP schema validation and narrow fixture intersection passed; unsupported-client products unchanged |
+| `npm run evaluate` | 12 deterministic preset/arm cases; no selected offer violates hard price/availability constraints |
+| Product preference matrix | All **192** budget/priority/history/evidence combinations match independently specified fixture choices |
+| Adjustment actions | Each proposed combined budget/threshold or price-only adjustment produces an option meeting the preferences it explicitly states |
+| Review exporter | Fixed timestamp/order and per-file digests; repeated exports byte-identical; tracked environment material excluded; dirty source refused |
+| Markdown relative links and `git diff --check` | Passed |
+| Fresh protocol audit | Network complete, reviewed UCP/ACP/AP2 baseline unchanged; adjacent Poppy metadata and official ecosystem links recorded |
 
-Final protocol check: `2026-10-25T18:42:44.049979-07:00`; snapshot SHA256 `884807323c2e048e534ddb3de3f83b9dd38607f6b52a409a48c9b4be17e039dd`. The first dated audit is tracked in docs/upstream; final runtime logs/screenshot are local ignored artifacts. No platform/MDW code changed, so their monorepo suites/deployment gates were not run in this independent repository.
+The extensionless protocol-audit script is explicitly included in Ruff checks. Locked test dependencies were updated to Vitest 4.1.12 and happy-dom 21.0.4 after their earlier versions produced audit findings. A one-time npm 11 resolver invocation handled an npm 10 peer-resolution crash during dependency updates; the resulting lock was then installed successfully with the normal `npm ci` command. No global npm installation or user configuration was changed.
 
-## Actual consumer and human path
+Exact primary-source observations are in `docs/upstream/2026-10-25-ecosystem-refresh.json`. Poppy deployed docs redirect to working Draft 0.3 while public repository metadata lists 0.2/0.1; no released 0.3 or OCP/Poppy conformance is inferred. No Platform Control or MDW code changed, so unrelated monorepo/deployment suites were not run.
 
-Restarted the implementation server at `http://127.0.0.1:8787` on final source with explicit fixture clock `2026-10-25T20:00:00Z`. Separate consumer bootstrapped public fixture keys/status authority into a new explicit trust file and independently verified all nine JWS envelopes without issuer verifier/decision endpoints.
+## Consumer, shopper and merchant paths
 
-| Shopper condition | Independent consumer and Chrome result |
+The implementation server uses `http://127.0.0.1:8787`; independent review used a fresh isolated server at `http://127.0.0.1:8788`. Both use explicitly simulated fixture clock `2026-10-25T20:00:00Z`. Normal consumer verification uses strict real UTC unless that fixture clock is explicitly supplied.
+
+| Condition | Demonstrated result |
 |---|---|
-| Delivery history preference ≥85%, budget ≤$25 | A ($24): 900/1000 historical on-time/in-full |
-| Price first, budget ≤$21 | C ($18), with delivery evidence still unknown |
-| Delivery preference, under $20 | Abstained; missing evidence did not label C unreliable |
-| Retrieved payload tamper, withdrawn consent or stale status injections | No current evidence; delivery abstention |
-| Consumer clock `2027-01-01T00:00:00Z` | Expired fixture rejected; delivery abstention |
+| $25 budget, 85% historical delivery preference | Cedar Market, $24, 900/1000 historical on-time/in-full; explains the $6 tradeoff against the lowest price |
+| $20 budget, 75% preference | Grove Goods, $20, 750/1000; explains the $2 tradeoff |
+| Price first | Little Pantry, $18; delivery history remains unknown |
+| $19 delivery-first or a 95% requirement | Abstention; adjustment choices explicitly alter the relevant budget and/or history preference |
+| $15 budget | No affordable offer; a price-only action raises to the feasible $18 option rather than promising a nonexistent one |
+| Payload tamper, withdrawn consent or stale status injection | No current evidence; delivery abstention |
+| Consumer clock 2027-01-01 | Expired fixture rejected; delivery abstention |
+| Merchant shared / withdrawn / disputed previews | Actual status verifier used; full three-measure bundle or no usable public claims; live registry retains all nine statements |
 
-Connected Chrome desktop verified synthetic clock, load completion, changed preference choices, readable claim/cohort/source/status/issuer inspector, collapsed developer JWS disclosure, Escape dismissal and focus return. Screenshot: `artifacts/shopper-desktop.png`. The browser's loading state was observed on reload. API tests cover withdrawal/empty public bundles, server refusals and consumer failures.
+The separately pinned consumer verifies all nine actual JWS envelopes without calling issuer `/verification` or `/scenarios`. It accepts custom budget/priority/threshold inputs and uses the same policy as the UI API. Signatures, semantic arithmetic, current permission and private-source reproduction remain distinct. Python/joserfc ↔ Node crypto interoperability tests pass. A valid signature on coherent fabricated figures still does not establish source truth.
 
-**Not visually verified:** narrow/mobile viewport, rendered network-error/empty screen, reduced-motion settings and every keyboard sequence. Responsive CSS and native HeroUI behavior are present, but these remaining UI states must not be called proven. This does not limit the demonstrated desktop path or replace future UI acceptance before deployment.
+## Point-in-time browser QA
 
-## Adversarial coverage and limits
+- Connected Chrome desktop: shopper controls, result/tradeoff/unknowns, evidence drilldown, full merchant bundle, withdrawal/restoration and builder entry point. Screenshots are tracked under `docs/screenshots/`.
+- Independent clean testing session at **390×844**, with reduced-motion emulation: no page-level horizontal overflow; mobile “See my options” moves the result to approximately 16px from the viewport top.
+- Keyboard: budget Home reaches $15; five ArrowRight steps reach $20; changing to 75% selects Grove; 95% abstains; the combined 85%/$24 adjustment selects Cedar.
+- Evidence dialog Escape closes it and focus returns to the originating evidence button after focus-scope settling. No active animation remained after closing in reduced-motion mode.
+- All three paths fit a **320px** viewport (document width approximately 305px including scrollbar).
+- Real browser request aborts for initial `/v0/demo` and subsequent `/v0/recommendation`: understandable error, no stale recommendation, and retry recovers after network restoration.
+- React tests additionally cover loading, missing published evidence, initial error/retry, stale-result removal, merchant preview states, developer entry and human-first evidence disclosure.
 
-Tests reject duplicate/nonfinite/oversized JSON, false arithmetic/population counts, source ledger contradictions, wrong subjects/issuers/tenants, sparse diagnostic/outcome leaks, unknown protocol versions, authority confusion, unsupported/critical/key-URL JOSE headers, algorithm substitution and duplicate protected headers. They cover immutable-promise conflicts, incomplete lines/substitution, missing delivery vs fulfillment, cancellation retention, refund maturity/boundaries/deduplication, source omissions, revocation, signed status TTL/digest, key rotation, future expiry and validly signed internally consistent claims failing source recomputation.
+These are focused observations, not full accessibility certification, a comprehensive device matrix, blind consumer comprehension research or proof people will love the product. Real merchant benefit, source authenticity/corroboration, independent audit and actual platform adoption remain unproven.
 
-Node crypto verifies Python/ joserfc JWS signing inputs, and joserfc verifies a Node-generated signature. That proves framing/key interoperability, not status authority independence or input truth. The consumer cannot reproduce private source records. No real consumer, LLM, carrier, merchant or independent auditor validation occurred. Deterministic scenario agreement is regression evidence, not a blinded utility experiment or measured commerce improvement.
+## Review package
 
-Private branch backup and a private draft PR are owned by the coordinating chat after this clean commit. No second push/PR is created by this implementation chat.
+`npm run package:review` exports only allowlisted committed source and screenshots, with the upstream license/notices and per-file SHA256 manifest. It refuses machine-local paths and known private-key material, excludes environment/key files, pins, dependencies and git internals, and requires clean committed source. The archive is a private review snapshot; public Apache-2.0 licensing is recommended, not yet applied.
+
+The final archive is rebuilt after each source commit. Its exact commit, bytes and digest are reported by the exporter and final handoff, avoiding a self-referential hash in this source document. Clean extracted-source reproduction and archive inspection are performed before handoff; any remaining failure is reported explicitly rather than called a public release.

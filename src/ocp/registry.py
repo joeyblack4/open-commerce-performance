@@ -109,9 +109,9 @@ class Registry:
                 {
                     "subject": subject,
                     "name": {
-                        "fixture-a": "Example Merchant A",
-                        "fixture-b": "Example Merchant B",
-                        "fixture-unknown": "Example Merchant C",
+                        "fixture-a": "Cedar Market",
+                        "fixture-b": "Grove Goods",
+                        "fixture-unknown": "Little Pantry",
                     }[tenant],
                     "evidence": [x for x in evidence if x],
                 }

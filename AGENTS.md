@@ -1,14 +1,15 @@
-# Engineering instructions for any coding agent working on OCP
+# Engineering guidance for Open Commerce Performance
 
-Read `CODEX_HANDOFF.md`, `docs/01_STANDARDS_AND_DECISIONS.md`, and `docs/04_PRIVACY_SECURITY_AND_GAMEABILITY.md` before changes.
+Start with `README.md`, `docs/PRODUCT_RELEASE_BRIEF.md`, `docs/SHARE_PACKAGE.md`, the current alignment/JWS ADRs and `docs/METRICS.md`. `CODEX_HANDOFF.md` and the numbered handoff documents are historical requirements/context; current checked versions and implementation status live in the ADRs, audit snapshots and gap report.
 
-Order of precedence:
-1. Official upstream protocol conformance and their governance rules; refresh versions at runtime.
-2. Accurate evidence semantics, security, privacy and explicit opt-in.
-3. Better consumer decisions and independent evaluation.
-4. Reuse Black 4's existing Platform Control and Connector Hub after inspecting them.
-5. Favor an incrementally shipping open implementation, not premature breadth.
+Priorities:
 
-Do not claim official UCP/ACP endorsement, create fictional merchant metrics as fact, infer hardware product reliability from order fulfillment, or submit public upstream proposals automatically. Any schema here marked `experimental` is OCP-authored only. Keep all real merchant interactions read-only until human approvals. When blocked, document blocker and proceed with synthetic data instead.
+1. Extend existing official commerce protocols; use released schemas and record HEAD versus release/draft explicitly. Refresh the runnable audit before integration or sharing changes. Never imply UCP/ACP/Poppy adoption or conformance from a hypothetical fixture.
+2. Preserve accurate evidence, privacy, explicit opt-in, tenant/issuer/subject isolation and current consent/status. A signature proves origin, not source truth, completeness, carrier authentication or audit. Merchant fulfillment/refunds cannot establish product reliability.
+3. Make the consumer's budget/preferences, tradeoffs and uncertainty understandable. Missing participation is not poor performance. Refund incidence is never a low-is-good ranking signal. Merchant previews show the whole bundle and never change live authority.
+4. Keep Platform Control identity/authority/consent/Reviews/receipts, Connector Hub credentials/provider execution and MDW governed evidence with their existing owners. Do not create another platform, auth/session system or credential store here.
+5. Keep this build synthetic and local. No real merchant/provider connections, purchasing, production changes, public hosting, repository-visibility change, company outreach or upstream submission without the applicable explicit human authorization.
 
-After each task: run tests; report evidence and new issues; no production deployments without an explicit approval. If another repository's AGENTS.md conflicts, follow the target repo's stricter requirements.
+Use the free HeroUI components and the unchanged Black 4 theme snapshot. Keep technical detail in useful drilldowns. Verify desktop/narrow screens, keyboard, loading/empty/error/retry and reduced motion for UI changes.
+
+Run `npm test`, `npm run build`, `uv run ruff check src tests scripts`, formatting checks and `git diff --check` for relevant changes. Preserve meaningful adversarial/privacy/proof tests. Keep the private feature branch and review PR current within authorized development scope. Build review archives only from clean committed source with the allowlist script; no pins, secrets, local paths, dependencies or git internals. Public licensing remains a reviewable decision.

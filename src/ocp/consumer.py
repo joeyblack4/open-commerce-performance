@@ -11,7 +11,7 @@ from joserfc.errors import JoseError
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 from .adapters.shopify_mock import TENANTS
 from .contract import encode, parse_json, parse_statement, MAX_BYTES
-from .decision import decide, SCENARIOS
+from .decision import decide, decide_with_preferences, SCENARIOS
 from .provenance import TrustedKey, unb64, verify_envelope, verify_status
 
 
@@ -55,7 +55,7 @@ def bootstrap_local(base, destination):
     return pinned
 
 
-def consume(pinned, scenario, fetch=None, now=None, inject=None):
+def consume(pinned, scenario, fetch=None, now=None, inject=None, preferences=None):
     now = now or datetime.now(timezone.utc)
     fetch = fetch or (lambda path: read_local(pinned["origin"], path))
     keys = {
@@ -113,7 +113,9 @@ def consume(pinned, scenario, fetch=None, now=None, inject=None):
     return {
         "consumer": "independent local reference",
         "trust_assumption": pinned["assumption"],
-        "decision": decide({"merchants": merchants}, scenario),
+        "decision": decide_with_preferences({"merchants": merchants}, preferences)
+        if preferences is not None
+        else decide({"merchants": merchants}, scenario),
         "verification_receipts": receipts,
         "source_truth": "not_established",
         "source_recomputation": "not_available_to_consumer",
@@ -128,6 +130,9 @@ def main():
     )
     parser.add_argument("--origin", default="http://127.0.0.1:8787")
     parser.add_argument("--scenario", choices=SCENARIOS, default="delivery")
+    parser.add_argument("--budget-cents", type=int, help="Custom total budget, 1500–3000 cents")
+    parser.add_argument("--priority", choices=["price", "delivery"], default="delivery")
+    parser.add_argument("--threshold", type=int, choices=[75, 85, 95], default=85)
     parser.add_argument(
         "--fixture-as-of", help="Explicit synthetic verification clock (UTC); default is strict real time"
     )
@@ -155,6 +160,12 @@ def main():
             args.scenario,
             now=instant(args.fixture_as_of) if args.fixture_as_of else None,
             inject=args.inject,
+            preferences={
+                "max_price": args.budget_cents / 100,
+                "min_historical_on_time": args.threshold / 100 if args.priority == "delivery" else None,
+            }
+            if args.budget_cents is not None
+            else None,
         )
         result["verification_clock"] = args.fixture_as_of or "real current UTC"
         print(encode(result).decode())
