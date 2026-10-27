@@ -172,8 +172,7 @@
           "type": [
             "number",
             "null"
-          ],
-          "minimum": 0
+          ]
         },
         "unit": {
           "type": "string",
@@ -181,10 +180,9 @@
           "maxLength": 500
         },
         "aggregation": {
-          "enum": [
-            "mean",
-            "rate"
-          ]
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
         },
         "state": {
           "enum": [

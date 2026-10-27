@@ -106,6 +106,9 @@ class PortableEvidenceTests(unittest.TestCase):
         c = deepcopy(original)
         m = deepcopy(METHODS["pickup"])
         m["id"] = "https://example.invalid/methods/new-industry-method"
+        m["aggregation"] = "median"
+        m["formula"] = "median(recorded values)"
+        c["result"]["aggregation"] = "median"
         c["method"] = {"id": m["id"], "version": m["version"], "sha256": sha256(encode(m)).hexdigest()}
         validate_claim(c, {m["id"]: m})
 

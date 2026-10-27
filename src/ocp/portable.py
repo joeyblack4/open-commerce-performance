@@ -39,6 +39,7 @@ def method(name, field, unit, aggregation, population, limit):
         "field": field,
         "unit": unit,
         "aggregation": aggregation,
+        "minimum": 0,
         "formula": "sum(recorded values) / observed_count",
         "population": population,
         "exclusions": ["Test records"],
@@ -169,8 +170,11 @@ def validate_claim(claim, methods):
         raise ValueError("observation_state_mismatch")
     if observed != (result["value"] is not None):
         raise ValueError("unknown_is_not_a_number")
-    if result["aggregation"] == "rate" and result["value"] is not None and result["value"] > 1:
-        raise ValueError("invalid_fraction")
+    if result["value"] is not None:
+        if result["value"] < manifest["minimum"]:
+            raise ValueError("method_value_out_of_range")
+        if result["aggregation"] == "rate" and not 0 <= result["value"] <= 1:
+            raise ValueError("invalid_fraction")
     dates = [instant(claim[k]) for k in ("observed_at", "issued_at", "expires_at")]
     if not instant(p["start"]) < instant(p["end"]) <= dates[0] <= dates[1] < dates[2]:
         raise ValueError("unordered_dates")
