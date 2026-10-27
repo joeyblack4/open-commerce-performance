@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc --noEmit && vite build",
+    "build:site": "tsc --noEmit && VITE_STATIC_DEMO=true vite build --base=/open-commerce-performance/ && PYTHONPATH=src uv run python scripts/export_site.py",
     "test": "npm run test:core && npm run test:ui",
     "demo": "PYTHONPATH=src uv run python -m ocp.server",
     "audit:protocols": "./scripts/protocol_audit",

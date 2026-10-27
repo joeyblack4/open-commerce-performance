@@ -1,5 +1,13 @@
 # Product verification — 2026-10-26
 
+## Public distribution October 27 2026
+
+Public synthetic hosting and proposal publication were authorized October 27. GitHub Pages serves a static bundle with all 72 fictional preview combinations and a normal HTTPS proposal PDF. `publication.json` binds exported bytes to the deployment source commit. No Python server or live provider access is exposed.
+
+87 Python and 18 React tests pass, including static export coverage, omission and withdrawal behavior, public-key-only export, PDF presence, manifest digests and strict hosted file lookup. The hosted Vite build, Ruff, formatting and relative documentation links pass. The two-page PDF was regenerated with its main-branch reference and both rendered pages inspected. The exact static build was exercised in connected Chrome under its deployment subpath before publication.
+
+The Pages workflow validates pull requests and deploys main after checks. Live publication and download verification are reported in the GitHub release; the demo's origin/status results remain recorded synthetic checks at the declared fixture clock.
+
 ## Portable business evidence rewrite October 27 2026
 
 The current concept uses business-selected claims in a generic 0.3 candidate envelope. Six separately versioned methods across restaurant, ecommerce and B2B examples use the same schema. The original 0.2 calculator, verifier and offline UCP fixture remain unchanged technical references.

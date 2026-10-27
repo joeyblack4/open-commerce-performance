@@ -20,7 +20,7 @@ A business should be able to authorize publication inside a system it already us
 4. **Retrieve and assess.** An agent checks identity, signature, status, method, freshness and relevance. It cites claims that influenced its explanation and identifies unanswered questions.
 5. **Refresh and correct.** Later observations produce new versions. Expiry, correction, dispute and withdrawal remain visible; a cached signature cannot restore a withdrawn feed's current status.
 
-The initial implementation remains a synthetic local demonstration. It is not a global discovery implementation or a source-provider endorsement.
+The reference is a synthetic demonstration with a public static replay and a local runtime. It is not a global discovery implementation or a source-provider endorsement.
 
 ## What the standard defines
 

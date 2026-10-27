@@ -10,6 +10,8 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = {
+    ".github/workflows/pages.yml",
+    "CONTRIBUTING.md",
     "README.md",
     "LICENSE",
     "NOTICE",

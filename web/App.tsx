@@ -5,6 +5,7 @@ import { Shop } from "./Shop";
 import { Builders } from "./Builders";
 import { Portable } from "./Portable";
 import { type Bundle } from "./types";
+import { hosted, repository } from "./hosting";
 export function App() {
   const [view, setView] = useState("concept"),
     [bundle, setBundle] = useState<Bundle | null>(null),
@@ -45,26 +46,33 @@ export function App() {
           >
             Portable evidence
           </Button>
-          <Button
-            variant={view === "shop" ? "primary" : "tertiary"}
-            aria-pressed={view === "shop"}
-            onPress={() => setView("shop")}
-          >
-            Comparison reference
-          </Button>
-          <Button
-            variant={view === "builders" ? "primary" : "tertiary"}
-            aria-pressed={view === "builders"}
-            onPress={() => setView("builders")}
-          >
-            For builders
-          </Button>
+          {!hosted && (
+            <Button
+              variant={view === "shop" ? "primary" : "tertiary"}
+              aria-pressed={view === "shop"}
+              onPress={() => setView("shop")}
+            >
+              Comparison reference
+            </Button>
+          )}
+          {!hosted && (
+            <Button
+              variant={view === "builders" ? "primary" : "tertiary"}
+              aria-pressed={view === "builders"}
+              onPress={() => setView("builders")}
+            >
+              For builders
+            </Button>
+          )}
+          {hosted && <a href={repository}>Source on GitHub</a>}
         </nav>
       </header>
       <div className="demo-label">
         <span>
           <i aria-hidden="true" />
-          Fictional demo · no real stores or purchases
+          {hosted
+            ? "Fictional demo · recorded checks · simulated time"
+            : "Fictional demo · no real stores or purchases"}
         </span>
         <Button size="sm" variant="tertiary" onPress={() => setAbout(true)}>
           About the evidence
@@ -101,7 +109,7 @@ export function App() {
           relevant facts.
         </span>
         <span className="meta">
-          Experimental proposal · fictional local reference
+          Experimental proposal · fictional reference
         </span>
       </footer>
       {about && (
@@ -118,6 +126,14 @@ export function App() {
                 </Modal.Heading>
               </Modal.Header>
               <Modal.Body>
+                {hosted && (
+                  <p>
+                    This public demo replays precomputed signed examples.
+                    Signature and status checks were run during export at the
+                    simulated clock below. Your choices do not publish or
+                    withdraw real business data.
+                  </p>
+                )}
                 <p>
                   These business examples, source records and outcomes are
                   generated. No actual business, source provider, carrier or

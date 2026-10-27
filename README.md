@@ -6,7 +6,13 @@ Businesses choose what to publish. A system of record or named calculation servi
 
 The proposal standardizes the evidence format, permission and lifecycle. Metric definitions remain open and separately versioned. The goal is better consumer decisions and competition on service businesses can substantiate.
 
-**Experimental reference · Apache-2.0 · fictional local data.** No provider endorsement, live integrations or AI-platform adoption is claimed.
+**Experimental reference · Apache-2.0 · fictional data.** No provider endorsement, live source integrations or AI-platform adoption is claimed.
+
+**[Try the public demo](https://joeyblack4.github.io/open-commerce-performance/) · [Read the PDF proposal](https://joeyblack4.github.io/open-commerce-performance/proposal.pdf) · [Download the PDF from this repo](docs/proposal/portable-business-evidence.pdf)**
+
+The public demo works without installation. It replays 72 precomputed publication and buyer-need combinations across three fictional businesses. Signature and status checks are recorded at an explicit simulated clock; the site is not a live merchant feed. No private records, credentials or signing keys are hosted.
+
+To contribute, [open a proposal discussion](https://github.com/joeyblack4/open-commerce-performance/issues/new) or read [how to participate](CONTRIBUTING.md). The [launch copy](docs/LAUNCH.md) is ready to share.
 
 ## Start here
 
@@ -57,7 +63,7 @@ Merchants choose metrics, not handpicked favorable records inside a declared pop
 | `/v0/portable-preview?business=restaurant&claims=pickup&state=published&need=pickup` | Bounded read-only publication and interpretation preview |
 | `/v0/portable-schema`, `/v0/portable-methods` | Candidate 0.3 envelope and local method definitions |
 | `/brief.md`, `/concept.md`, `/protocol.md` | Executive and technical proposal |
-| `/brief.pdf` | Executive PDF when separately prepared locally; Markdown remains available |
+| `/brief.pdf` | Local executive PDF; the public site serves `proposal.pdf` |
 
 No generic file serving, arbitrary cohort queries or provider writes are implemented. Existing 0.2 signed-evidence, status, consumer and comparison routes remain for technical regression and interoperability work. The UI's **Comparison reference** and **For builders** paths expose that earlier narrow experiment. Its three-measure fixed bundle does not define the new optional-publication proposal.
 
@@ -85,6 +91,6 @@ The protocol should be openly usable across source providers, issuers and AI pla
 
 ## Share the reference
 
-The repository is public under Apache-2.0. LICENSE, NOTICE and third-party notices apply. `npm run package:review` builds an allowlisted archive from clean committed source, excluding credentials, trust pins, dependencies and local artifacts. The executive PDF is a separately prepared local deliverable; it is not required to run the source archive.
+The repository is public under Apache-2.0. LICENSE, NOTICE and third-party notices apply. `npm run package:review` builds an allowlisted archive from clean committed source, excluding credentials, trust pins, dependencies and local artifacts. The proposal PDF and editable Word source are included in the repository and the public site.
 
-Public hosting, real merchant access, company outreach and upstream submission require their applicable authorization. None is performed by the demo.
+Public hosting of this fictional reference was authorized October 27, 2026. GitHub Pages deploys the validated main branch; see [deployment](docs/DEPLOYMENT.md). Real merchant access, company outreach and upstream submission remain separate actions.

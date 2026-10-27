@@ -8,7 +8,7 @@ The protocol exchanges optional aggregate claims about a business. It standardiz
 
 A claim binds a business subject, named issuer, public versioned method, population, result, source assurance and validity. The [JSON Schema](../spec/schemas/portable-claim.schema.json) defines the candidate envelope. A method has a stable identifier, version and content digest. Its definition explains the calculation, required records, eligibility, exclusions, unit, privacy and limits. Aggregation names and numeric ranges belong to methods, so a median or signed price difference does not require a core schema change. New methods do not require changing the envelope schema; an agent must understand or explicitly accept a method before interpreting it.
 
-The local demonstration supports six fixed method examples across three fictional businesses. Execution is bounded: no arbitrary queries or untrusted URL fetching. It is not a global method registry. Production adapters, issuer discovery, public method hosting, persistent status and governance remain unimplemented.
+The local demonstration supports six fixed method examples across three fictional businesses. Execution is bounded: no arbitrary queries or untrusted URL fetching. It is not a global method registry. Production adapters, issuer discovery, production method hosting, persistent status and governance remain unimplemented. The public site serves fictional definitions and precomputed claims at a simulated clock; its verification results were recorded during export.
 
 ## Issuance and verification
 

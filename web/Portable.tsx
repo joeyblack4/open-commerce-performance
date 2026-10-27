@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Modal, Spinner } from "@heroui/react";
 import { request } from "./api";
+import { hosted, resource, repository } from "./hosting";
 
 const businesses = {
   restaurant: {
@@ -151,12 +152,11 @@ export function Portable() {
           calculation. An agent decides what matters to the buyer.
         </p>
         <div className="button-row">
-          <a href="/brief.md" download>
-            Read the CEO brief
-          </a>
-          <a href="/concept.md" download>
+          <a href={resource("brief")}>Read the proposal (PDF)</a>
+          <a href={resource("concept")} download>
             Read the concept
           </a>
+          {hosted && <a href={repository}>Explore the repo</a>}
         </div>
       </div>
       <section aria-labelledby="try-heading">
@@ -187,7 +187,7 @@ export function Portable() {
               What should {businesses[business].name} share?
             </h2>
             <p>
-              Choose either measure, both, or neither. This changes a local
+              Choose either measure, both, or neither. This changes a fictional
               preview only.
             </p>
             <div className="stack" role="group" aria-label="Metrics to publish">
@@ -290,7 +290,9 @@ export function Portable() {
                     </p>
                     <p className="meta">
                       {e.verification.usable
-                        ? "Local signature and current status checked"
+                        ? hosted
+                          ? "Signature and status checked at export’s simulated time"
+                          : "Local signature and current status checked"
                         : "Current use not established"}
                       . Source accuracy unestablished.
                     </p>
@@ -415,13 +417,11 @@ export function Portable() {
           claims with independent agents.
         </p>
         <div className="button-row">
-          <a href="/brief.md" download>
-            Executive brief
-          </a>
-          <a href="/protocol.md" download>
+          <a href={resource("brief")}>Executive brief</a>
+          <a href={resource("protocol")} download>
             Protocol proposal
           </a>
-          <a href="/v0/portable-schema">Candidate claim schema</a>
+          <a href={resource("schema")}>Candidate claim schema</a>
         </div>
       </section>
       {inspect && (
@@ -459,9 +459,12 @@ export function Portable() {
                   {inspect.publisher_reproduced
                     ? "yes, on its own generated records"
                     : "no"}
-                  . Consumer signature check:{" "}
-                  {inspect.verification.signature_valid ? "passed" : "failed"}.
-                  Current status:{" "}
+                  .{" "}
+                  {hosted
+                    ? "Recorded signature check"
+                    : "Consumer signature check"}
+                  : {inspect.verification.signature_valid ? "passed" : "failed"}
+                  . Status at the simulated clock:{" "}
                   {inspect.verification.current ? "usable" : "not usable"}.
                 </p>
                 <p>Source accuracy and independent audit are unestablished.</p>

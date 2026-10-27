@@ -34,8 +34,8 @@ We are seeking a small founding group of source providers and AI platforms to re
 
 Success would first mean interoperable claims, meaningful permission and correction, and clear consumer explanations. We would then measure decision quality, realized service outcomes, participation costs and exposure for smaller businesses. Better consumer outcomes must be demonstrated.
 
-Black 4 has an open-source experimental reference with a local fictional demonstration. Real source-provider issuance, live integrations and AI-platform adoption are the work we want to align on. The standard should remain openly usable across providers and agents, with shared governance that includes businesses and consumers.
+Black 4 has an open-source experimental reference with a fictional demonstration. Real source-provider issuance, live integrations and AI-platform adoption are the work we want to align on. The standard should remain openly usable across providers and agents, with shared governance that includes businesses and consumers.
 
 **Would you nominate a product and technical owner to help test a shared format for portable business evidence?**
 
-Reference and proposal: https://github.com/joeyblack4/open-commerce-performance/blob/codex/business-discovery-concept/docs/BUSINESS_DISCOVERY_CONCEPT.md
+Reference and proposal: https://github.com/joeyblack4/open-commerce-performance/blob/main/docs/BUSINESS_DISCOVERY_CONCEPT.md

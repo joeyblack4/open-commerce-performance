@@ -17,7 +17,7 @@ I've attached a short brief. Would you nominate a product and technical owner to
 Joey
 Black 4
 
-Reference: https://github.com/joeyblack4/open-commerce-performance/blob/codex/business-discovery-concept/docs/BUSINESS_DISCOVERY_CONCEPT.md
+Reference: https://github.com/joeyblack4/open-commerce-performance/blob/main/docs/BUSINESS_DISCOVERY_CONCEPT.md
 
 ## Recipient specific opening
 
