@@ -2,13 +2,13 @@
 
 **Experimental reference · Apache-2.0 · fictional data.** See [LICENSE](LICENSE), [NOTICE](NOTICE) and [third-party notices](THIRD_PARTY_NOTICES.md).
 
-A **local synthetic prototype** for shopper-directed commerce decisions using optional, explicitly scoped operational evidence. No universal score, paid placement, product-quality inference, real merchant access or purchasing.
+A **local synthetic prototype** for consumer-directed business comparison using optional, explicitly scoped operational evidence. The business is the comparison subject; a product or service gives the context. No universal score, paid placement, product-quality inference, real merchant access or purchasing.
 
 Three fictional merchants sell the same grocery box at fixed delivered prices. Set a real budget and a 75%, 85% or 95% historical delivery preference; see the choice, its price tradeoff and when there is not enough evidence. Unknown history never establishes poor performance.
 
-Explore **Shop**, **For merchants** and **For builders** in the same app. The merchant path previews the full bundle, withdrawal and dispute through actual status rules without changing the served registry. The builder path leads to the independently pinned consumer, exact protocol fixture and review archive.
+Start with **The concept** for the interactive commerce stack and business-context experiment, then **Compare**, **For merchants** and **For builders**. The merchant path previews the full bundle, withdrawal and dispute through actual status rules without changing the served registry. The builder path leads to the independently pinned consumer, exact protocol fixture and review archive.
 
-For a concise walkthrough and the ecosystem contribution question, start with [the sharing package](docs/SHARE_PACKAGE.md).
+Read the [full business discovery concept](docs/BUSINESS_DISCOVERY_CONCEPT.md) for the global stack, identity, incentives, fairness, evidence limits and outcome test plan. For the runnable walkthrough, use [the sharing package](docs/SHARE_PACKAGE.md).
 
 ## Run in minutes
 
@@ -92,6 +92,8 @@ The protocol audit uses authenticated `gh` for read-only GitHub access and publi
 | `/v0/demo`, `/v0/scenarios` | Demo data and preserved deterministic preset traces |
 | `/v0/recommendation?budget=2500&priority=delivery&threshold=85&evidence=on` | Bounded shopper preferences; no source cohort slicing or submitted evidence |
 | `/v0/merchant-preview?state=shared` | Read-only projection; `shared`, `withdrawn`, `disputed`; served registry is unchanged |
+| `/v0/business-discovery?context=shipped-order&budget=2500&priority=delivery&threshold=85&evidence=on` | Seeded business-fit experiment; pickup/meal scope stays unknown and yields no decision |
+| `/concept.md` | Full checked-in business discovery concept |
 | `/v0/interop` | Offline pinned UCP fixture result |
 | `/v0/release-info`, `/v0/release-package` | Prepared experimental reference ZIP status/download |
 

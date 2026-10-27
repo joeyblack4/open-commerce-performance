@@ -1,14 +1,15 @@
-# Better choices from useful operational facts
+# Business discovery from useful operational facts
 
 **Experimental reference · Apache-2.0 · publication authorized 2026-10-26.** No merchant data, purchasing, deployment, upstream submission or platform endorsement.
 
 A shopper choosing the same grocery box can prefer low price or an established delivery record. A merchant can voluntarily make that record understandable. An agent can independently verify signed origin and current status before deciding what the facts mean for that shopper. No universal merchant score or paid ranking advantage.
 
-## Try the three paths
+## Try the concept and working paths
 
 Run the [quickstart](../README.md), then open `http://127.0.0.1:8787`.
 
-- **Shop:** set a $25 budget and 85% historical delivery preference → Cedar Market at $24. Lower that preference to 75% → Grove Goods at $20. Price first → Little Pantry at $18, while its delivery history stays unknown. A $19 delivery-first budget or 95% threshold leads to an understandable abstention.
+- **The concept:** explore the full commerce stack, then switch the business need from shipped orders to pickup or meal delivery. No business recommendation is made from out-of-scope evidence, even on price. Read the [full paper](BUSINESS_DISCOVERY_CONCEPT.md) for business/brand identity, candidate discovery, incentives, global fit and measured consumer outcomes.
+- **Compare:** set a $25 budget and 85% historical delivery preference → Cedar Market at $24. Lower that preference to 75% → Grove Goods at $20. Price first → Little Pantry at $18, while its delivery history stays unknown. A $19 delivery-first budget or 95% threshold leads to an understandable abstention.
 - **For merchants:** inspect Cedar's full three-measure bundle, source requirements and privacy boundary. Preview withdrawal or a disputed state through actual signature/status rules. Nothing connects, publishes or changes the served registry.
 - **For builders:** run the independently pinned consumer, inspect the schema/JWS/status resources and reproduce a release-pinned UCP vendor-extension experiment. Unsupported clients retain unchanged base catalog behavior.
 
@@ -16,7 +17,7 @@ The controls change bounded shopper preferences, never source cohorts. Refund in
 
 ## The contribution
 
-Keep discovery, catalog, checkout and payments in existing protocols. Explore one optional namespaced catalog reference to independently consumable aggregate evidence. Each claim carries counts, population/window, coverage, method, issuer/incentives and current status; the shopper owns the decision.
+Keep candidate discovery explicit and retain capability discovery, catalog, checkout and payments with their existing owners. The merchant is the comparison subject. The catalog-reference experiment is one attachment point to independently consumable aggregate evidence; business-first and location-specific access remain design options, not implemented UCP capabilities. Each claim carries counts, population/window, coverage, method, issuer/incentives and current status; the shopper owns the decision.
 
 The local UCP fixture uses immutable `v2026-08-25` schemas at `87dd4b1fcff9105d68173120897237fa784c74ef`. It includes an unhosted vendor namespace, exact-version fixture intersection and composition with a distinct field. It is not a live UCP endpoint, complete negotiator or certification. ACP's checked source uses dated `2026-04-17`; no undocumented feed fields are added. AP2 v0.2.0 remains the payments boundary. Square is a verified UCP Food Technical Council participant; its APIs/MCP remain prospective consented OCP source integrations. Neither participation nor API access implies OCP adoption. Poppy is adjacent/deferred: deployed Draft 0.3 docs and public repository version metadata differ, explicitly recorded in the audit. OCP adds no auth/session layer.
 
@@ -35,6 +36,10 @@ This demonstrates coherent behavior on fictional data. Consumer enthusiasm, merc
 Repository publication under Apache-2.0 was explicitly authorized on October 26, 2026. This is an experimental reference for technical review and local testing. Hosting a demo, sending the package to named companies and posting upstream remain separate decisions.
 
 ## Walkthrough images
+
+![Business discovery concept](screenshots/business-concept-desktop.png)
+
+![Scope boundary on mobile](screenshots/business-context-mobile.png)
 
 ![Shopper priorities and price tradeoff](screenshots/shopper-desktop.png)
 

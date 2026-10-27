@@ -88,3 +88,11 @@ The [W3C/GS1 ecommerce-agent workshop agenda](https://www.w3.org/2026/ecommerce-
 ## Publication refresh — October 26, 2026
 
 The [fresh audit](../upstream/2026-10-26-publication.json) completed network checks and correctly flagged UCP HEAD drift. Reviewed the [four-commit comparison](https://github.com/Universal-Commerce-Protocol/ucp/compare/ba9795a6a1c55dc98ec50032cc124a77fba16750...69895b84b451925a92ac0c9122353eab310e1a23): dependency updates (Pillow/Python minimum, Black and certifi) and an RFC 9421 section-citation correction. The signature requirement is unchanged; no schema files changed. Published UCP remains v2026-08-25, and the reference continues to use its immutable schemas. ACP and AP2 baselines were unchanged. Accepted the new development HEAD in the audit baseline after review; no implementation or conformance claim changed.
+
+## Business discovery revision — October 26, 2026
+
+The current [concept paper](../BUSINESS_DISCOVERY_CONCEPT.md) separates candidate discovery, protocol capability discovery and consumer-specific business suitability. The merchant is the comparison subject; the identical basket is a controlled context. Brand, branch and seller identity cannot be conflated, and broader relationships are not implemented.
+
+Fresh audit `2026-10-26-business-discovery.json` completed with the accepted baseline unchanged. Read the current UCP overview, core concepts, location search/lookup and contribution guidance. The immutable v2026-08-25 tree also contains location schemas/specifications. Location capabilities discover locations from a business; they are not treated here as a global competing-business performance directory. The existing catalog extension is one tested attachment point, not a decision that every business claim belongs under product lookup.
+
+A business-first resource/capability and a location-specific reference are design options for further standards review, not new emitted UCP declarations. No official profile/schema was changed and no new link relation was represented as standard. The standalone local `/v0/business-discovery` is explicitly a seeded synthetic scope experiment, not UCP discovery. It reuses the existing verified decision policy and rejects pickup/meal suitability inference from shipped-order fixtures.

@@ -63,10 +63,12 @@ export function Shop({ bundle }: { bundle: Bundle }) {
   return (
     <>
       <div className="page-heading">
-        <p className="eyebrow">Same grocery box. Three fictional merchants.</p>
-        <h1>Find the delivery that fits you.</h1>
+        <p className="eyebrow">Business comparison · same grocery box.</p>
+        <h1>Choose a business for this order.</h1>
         <p className="lead">
-          Set your budget and what matters. See the tradeoff before you choose.
+          Compare three fictional merchants by your budget and service
+          priorities. The product stays the same; there is no universal best
+          business.
         </p>
       </div>
       <div className="shopping-workspace">

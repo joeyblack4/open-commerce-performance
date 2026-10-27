@@ -1,0 +1,1758 @@
+{
+  "checked_at": "2026-10-26T19:10:08.068842-07:00",
+  "checked_date": "2026-10-26",
+  "timezone": "America/Los_Angeles",
+  "repositories": [
+    {
+      "name": "ucp",
+      "repository": "Universal-Commerce-Protocol/ucp",
+      "errors": [],
+      "head": {
+        "sha": "69895b84b451925a92ac0c9122353eab310e1a23",
+        "committed_at": "2026-10-26T09:35:08Z"
+      },
+      "releases": [
+        {
+          "tag": "v2026-08-25",
+          "published_at": "2026-08-25T13:53:03Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/releases/tag/v2026-08-25"
+        },
+        {
+          "tag": "v2026-04-08",
+          "published_at": "2026-04-09T01:48:20Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/releases/tag/v2026-04-08"
+        },
+        {
+          "tag": "v2026-01-23",
+          "published_at": "2026-01-23T22:48:51Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/releases/tag/v2026-01-23"
+        },
+        {
+          "tag": "v2026-01-11",
+          "published_at": "2026-01-23T17:58:21Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/releases/tag/v2026-01-11"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "v2026-08-25",
+          "sha": "87dd4b1fcff9105d68173120897237fa784c74ef"
+        },
+        {
+          "tag": "v2026-04-08",
+          "sha": "9c9d6fce39ffa8bf7cb66309c378b79fb75b5382"
+        },
+        {
+          "tag": "v2026-01-23",
+          "sha": "dcf7eac71fc370dcc8768fcdbc5aa737037cca05"
+        },
+        {
+          "tag": "v2026-01-11",
+          "sha": "806a5b74d3a5a918206844ea980450233b38664e"
+        }
+      ],
+      "open_search_matches": [
+        {
+          "number": 188,
+          "title": "Enhancement Proposal: Ancillaries Extension",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/188",
+          "pr": false
+        },
+        {
+          "number": 287,
+          "title": "Wallet Attestation \u2014 Identity Mechanism + Eligibility Extension",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/287",
+          "pr": false
+        },
+        {
+          "number": 302,
+          "title": "Proposal: Brand Certification Extension \u2014 com.2aagency.brand-certification",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/302",
+          "pr": false
+        },
+        {
+          "number": 303,
+          "title": "[Feat]: Services Vertical \u2014 Extending UCP Beyond Physical Goods",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/303",
+          "pr": false
+        },
+        {
+          "number": 375,
+          "title": "[RFC] Store-Based Local Inventory & Fulfillment Options",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/375",
+          "pr": false
+        },
+        {
+          "number": 384,
+          "title": "[Proposal]: Add Provider participant type and offer discovery to dev.ucp.common.identity_linking",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/384",
+          "pr": false
+        },
+        {
+          "number": 385,
+          "title": "[Proposal]: Product Compatibility and Fitment Signals for Product Discovery",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/385",
+          "pr": false
+        },
+        {
+          "number": 394,
+          "title": "[Proposal]: Clarify processor-tokenizer participant identifier and rename binding.identity.access_token",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/394",
+          "pr": false
+        },
+        {
+          "number": 400,
+          "title": "[Proposal]: Structured product attributes via schema.org PropertyValue",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/400",
+          "pr": false
+        },
+        {
+          "number": 410,
+          "title": "[Proposal]: Post-Purchase Returns Capability",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/410",
+          "pr": false
+        },
+        {
+          "number": 413,
+          "title": "[Proposal]: Platform Correlation Reference for Checkout and Order Webhook Events",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/413",
+          "pr": false
+        },
+        {
+          "number": 415,
+          "title": "feat: identity linking \u2014 mechanism extensibility with wallet attestation",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/415",
+          "pr": true
+        },
+        {
+          "number": 417,
+          "title": "[Feat]:  Transaction accountability: cryptographic binding between authorization and execution",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/417",
+          "pr": false
+        },
+        {
+          "number": 426,
+          "title": "[Proposal]: WebMCP as a UCP Transport",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/426",
+          "pr": false
+        },
+        {
+          "number": 450,
+          "title": "[Discussion] Smart-account credential provider for agent-led commerce (AP2 / UCP)",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/450",
+          "pr": false
+        },
+        {
+          "number": 459,
+          "title": "[Proposal]: Add distribution and verified-purchase count to Rating",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/459",
+          "pr": false
+        },
+        {
+          "number": 463,
+          "title": "[Proposal]: Standardized apparel fit-profile extension for UCP checkout flows",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/463",
+          "pr": false
+        },
+        {
+          "number": 484,
+          "title": "[RFC] Proposal: UCP Open Source Unified Toolchain and SDK Generation",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/484",
+          "pr": false
+        },
+        {
+          "number": 515,
+          "title": "Enhancement Proposal: Mandate Evaluation and Receipts (resolves #512)",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/515",
+          "pr": false
+        },
+        {
+          "number": 531,
+          "title": "[Proposal]: Delivery Instruction",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/531",
+          "pr": false
+        },
+        {
+          "number": 532,
+          "title": "[Proposal]: Partner Sourced Fulfillment",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/532",
+          "pr": false
+        },
+        {
+          "number": 540,
+          "title": "feat(checkout): mandate-evaluation extension for AP2 TTL at admission (resolves #512)",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/540",
+          "pr": true
+        },
+        {
+          "number": 591,
+          "title": "[Feat]: Support for Public/Private Key Asymmetric Cryptography (Alternative to HTTP Message Signatures)",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/591",
+          "pr": false
+        },
+        {
+          "number": 604,
+          "title": "[Proposal]: Add agentic channel source",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/604",
+          "pr": false
+        },
+        {
+          "number": 625,
+          "title": "fix(schema): machine-enforce the P-521/ES512 key pairing in profile.json",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/625",
+          "pr": true
+        },
+        {
+          "number": 628,
+          "title": "feat: typed error responses and checkout conditional writes",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/628",
+          "pr": true
+        },
+        {
+          "number": 629,
+          "title": "[Proposal]: Recurring Billing & Subscription Setup for Checkout",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/629",
+          "pr": false
+        },
+        {
+          "number": 630,
+          "title": "RFC: Expanding Well-Known Signals for Agent-Originated Commerce",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/630",
+          "pr": false
+        },
+        {
+          "number": 641,
+          "title": "[Proposal]: Out-of-session payment collection \u2014 Actions on Order + per-instrument collection_status",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/641",
+          "pr": false
+        },
+        {
+          "number": 650,
+          "title": "[Proposal]: Add an optional human-readable `display_value` to money objects",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/650",
+          "pr": false
+        },
+        {
+          "number": 682,
+          "title": "Domain Working Group (DWG) Charter: Bulk Product Discovery",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/682",
+          "pr": false
+        },
+        {
+          "number": 698,
+          "title": "[Proposal]: Bind signed REST responses to their request (RFC 9421 \u00a72.4)",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/698",
+          "pr": false
+        },
+        {
+          "number": 727,
+          "title": "[Feat]: Support platform-funded discount issuance and reimbursement to the Business",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/727",
+          "pr": false
+        },
+        {
+          "number": 729,
+          "title": "[Proposal]: Standardize consumer-facing fulfillment event types",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/729",
+          "pr": false
+        },
+        {
+          "number": 735,
+          "title": "docs: clarify saved fulfillment destination selection",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/735",
+          "pr": true
+        },
+        {
+          "number": 738,
+          "title": "[Proposal]: State-bound Offer extension for merchant-proposed Cart changes",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/738",
+          "pr": false
+        },
+        {
+          "number": 739,
+          "title": "[Proposal]: Cart terminal status  - platform cannot tell an ordered cart from an abandoned one",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/739",
+          "pr": false
+        },
+        {
+          "number": 742,
+          "title": "[Proposal]: Optional payer identity on the payment instrument (taxpayer document) \u2014 required by Pix/boleto and Latin American tax rules",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/742",
+          "pr": false
+        },
+        {
+          "number": 751,
+          "title": "[Proposal]: Return `list_price` in Cart, Checkout, and Order item responses",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/751",
+          "pr": false
+        },
+        {
+          "number": 778,
+          "title": "[Proposal]: Generic payment render artifact Action for in-session out-of-band payments",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/778",
+          "pr": false
+        },
+        {
+          "number": 783,
+          "title": "docs(identity-linking): clarify subject token acquisition and consent models",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/783",
+          "pr": true
+        },
+        {
+          "number": 792,
+          "title": "feat(payment): carry token issuance context through checkout",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/792",
+          "pr": true
+        },
+        {
+          "number": 797,
+          "title": "[Proposal]: Expand Signals for Fraud Risk Assessment",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/797",
+          "pr": false
+        },
+        {
+          "number": 807,
+          "title": "[Proposal]: Add deterministic schedules to lodging cancellation policies",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/807",
+          "pr": false
+        },
+        {
+          "number": 810,
+          "title": "[Proposal]: Add per-seller offers to catalog variants",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/810",
+          "pr": false
+        },
+        {
+          "number": 815,
+          "title": "[Proposal]: Record the Checkout payment maximum and Order payment summaries",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/815",
+          "pr": false
+        },
+        {
+          "number": 821,
+          "title": "[Proposal]: Nested Options",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/821",
+          "pr": false
+        },
+        {
+          "number": 827,
+          "title": "[Enhancement Proposal] Cross-boundary projection contract for persistence-sensitive carriers (Cart \u2192 Checkout)",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/827",
+          "pr": false
+        },
+        {
+          "number": 835,
+          "title": "feat: add well-known signals describing agent behavior during a transaction",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/835",
+          "pr": true
+        },
+        {
+          "number": 836,
+          "title": "feat: add Correspondence, stating which record a record continues and whether they agree",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/836",
+          "pr": true
+        },
+        {
+          "number": 837,
+          "title": "feat: add optional cause to Adjustment, recording what went wrong",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/837",
+          "pr": true
+        },
+        {
+          "number": 841,
+          "title": "[Proposal]: Structured inapplicable discount codes in the Discount extension",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/841",
+          "pr": false
+        },
+        {
+          "number": 845,
+          "title": "[Proposal]: Accepted commercial term handoff into UCP Cart/Checkout",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/845",
+          "pr": false
+        },
+        {
+          "number": 846,
+          "title": "[Proposal]: Admission coverage and satisfaction evidence for agent-initiated transaction changes",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/846",
+          "pr": false
+        },
+        {
+          "number": 850,
+          "title": "fix(identity-linking): anchor provider selection to a recognized issuer",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/850",
+          "pr": true
+        },
+        {
+          "number": 852,
+          "title": "[Proposal]: Attestation-based platform client authentication for first-contact accelerated IdP chaining",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/852",
+          "pr": false
+        },
+        {
+          "number": 861,
+          "title": "feat: add deterministic schedules to lodging cancellation policies",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/861",
+          "pr": true
+        },
+        {
+          "number": 862,
+          "title": "feat: add Nano (XNO) payment instrument schema",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/862",
+          "pr": true
+        },
+        {
+          "number": 896,
+          "title": "[Proposal]: Contingencies, buyer approved handling of surprises after an order",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/896",
+          "pr": false
+        },
+        {
+          "number": 899,
+          "title": "feat: add UI extension with A2UI and MCP Apps bindings",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/899",
+          "pr": true
+        },
+        {
+          "number": 905,
+          "title": "[Proposal]: Define the UCP Checkout JWT so AP2 checkout-payment binding is computable",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/905",
+          "pr": false
+        },
+        {
+          "number": 916,
+          "title": "feat(ap2-mandate-extension): CP verifies payment mandate and issue payment token (PSP\u2026",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/916",
+          "pr": true
+        },
+        {
+          "number": 924,
+          "title": "Domain Working Group (DWG) Charter: Mapping Agentic Donations to UCP",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/924",
+          "pr": false
+        },
+        {
+          "number": 929,
+          "title": "[Proposal]: Quote extension \u2014 Business-authoritative quotation binding on Cart and Checkout",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/929",
+          "pr": false
+        },
+        {
+          "number": 930,
+          "title": "feat(common): add quote extension (Working Draft reference for #929)",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/930",
+          "pr": true
+        },
+        {
+          "number": 937,
+          "title": "[RFC] Hosted Business Directory",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/937",
+          "pr": false
+        },
+        {
+          "number": 938,
+          "title": "feat: [RFC] Capability Event Webhooks",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/938",
+          "pr": true
+        },
+        {
+          "number": 939,
+          "title": "feat: [RFC] Business Identity",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/939",
+          "pr": true
+        },
+        {
+          "number": 943,
+          "title": "[Proposal]: Order Cancellation Extension \u2014 Safe Post-Purchase Modifications and Reconciliation",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/943",
+          "pr": false
+        },
+        {
+          "number": 944,
+          "title": "[Proposal]: Business-Initiated Post-Order Consultation \u2014 Revision-Bound Buyer Authorization and Decision Reconciliation",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/944",
+          "pr": false
+        },
+        {
+          "number": 946,
+          "title": "feat: propose business-initiated post-order consultation extension (EP #944)",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/pull/946",
+          "pr": true
+        },
+        {
+          "number": 949,
+          "title": "[Bug]: Checkout never requires ready_for_complete, and the two REST samples disagree on it",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/949",
+          "pr": false
+        },
+        {
+          "number": 967,
+          "title": "[Proposal]: Browser-to-UCP Cart Continuation",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/967",
+          "pr": false
+        },
+        {
+          "number": 969,
+          "title": "[Proposal]: Caller-dependent catalog pricing states for price-on-request",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/969",
+          "pr": false
+        },
+        {
+          "number": 970,
+          "title": "[Proposal]: Require per-user subject token binding in the Accelerated IdP Flow",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/970",
+          "pr": false
+        },
+        {
+          "number": 973,
+          "title": "[Proposal]: Commercial influence provenance semantics across commerce stages",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/973",
+          "pr": false
+        },
+        {
+          "number": 983,
+          "title": "[Proposal]: Namespace Isolation for Third-Party Entity Extensions",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/983",
+          "pr": false
+        },
+        {
+          "number": 986,
+          "title": "Lodging DTC: can a Business mint a pre-composed stay.id on its own origin, and can the quote be signed by the Business? (follow-up to #780)",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/986",
+          "pr": false
+        },
+        {
+          "number": 991,
+          "title": "[Proposal]: Corporate negotiated-rate entitlement for lodging",
+          "url": "https://github.com/Universal-Commerce-Protocol/ucp/issues/991",
+          "pr": false
+        }
+      ]
+    },
+    {
+      "name": "ucp_js",
+      "repository": "Universal-Commerce-Protocol/js-sdk",
+      "errors": [],
+      "head": {
+        "sha": "6f7a6da79739a2ccf868953ed5138f85fb2b6ce3",
+        "committed_at": "2026-10-05T09:18:28Z"
+      },
+      "releases": [
+        {
+          "tag": "v0.5.1",
+          "published_at": "2026-09-02T19:10:11Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.5.1"
+        },
+        {
+          "tag": "v0.5.0",
+          "published_at": "2026-09-02T14:31:09Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.5.0"
+        },
+        {
+          "tag": "v0.4.6",
+          "published_at": "2026-08-24T08:06:14Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.4.6"
+        },
+        {
+          "tag": "v0.4.5",
+          "published_at": "2026-08-20T13:56:17Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.4.5"
+        },
+        {
+          "tag": "v0.4.4",
+          "published_at": "2026-07-30T08:01:30Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.4.4"
+        },
+        {
+          "tag": "v0.4.3",
+          "published_at": "2026-07-29T09:33:46Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.4.3"
+        },
+        {
+          "tag": "v0.4.2",
+          "published_at": "2026-07-29T09:01:59Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.4.2"
+        },
+        {
+          "tag": "v0.4.1",
+          "published_at": "2026-07-22T12:05:10Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.4.1"
+        },
+        {
+          "tag": "v0.4.0",
+          "published_at": "2026-07-02T10:13:36Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.4.0"
+        },
+        {
+          "tag": "v0.1.1",
+          "published_at": "2026-06-16T11:14:21Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.1.1"
+        },
+        {
+          "tag": "v0.1.0",
+          "published_at": "2026-01-14T17:33:41Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/js-sdk/releases/tag/v0.1.0"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "v0.5.1",
+          "sha": "688b6276f4fc90899da265745cef19fec917b24a"
+        },
+        {
+          "tag": "v0.5.0",
+          "sha": "3df494843b2c66dc975a6575d231aec814b91a38"
+        },
+        {
+          "tag": "v0.4.6",
+          "sha": "44c448dfccfd312c8650b8a9baa2c441662cd289"
+        },
+        {
+          "tag": "v0.4.5",
+          "sha": "77752ca75bd2b369ab0854cd1aaa4c102ee86786"
+        },
+        {
+          "tag": "v0.4.4",
+          "sha": "958d26343476387a4025bf5d86b8eaa4f397ad22"
+        },
+        {
+          "tag": "v0.4.3",
+          "sha": "c72db4a19689d0232db08b30c992351b6221aea7"
+        },
+        {
+          "tag": "v0.4.2",
+          "sha": "0ecd18d21fa1d480004874ea0acd80555f096f35"
+        },
+        {
+          "tag": "v0.4.1",
+          "sha": "b6230bdc56e601b407dedd739497534077ce900e"
+        },
+        {
+          "tag": "v0.4.0",
+          "sha": "e53d22fbdb75f9c36a16f71e3ff91bfa91119267"
+        },
+        {
+          "tag": "v0.1.1",
+          "sha": "ccffa8a4068b2121ee107c79f8042bdc7a46c850"
+        },
+        {
+          "tag": "v0.1.0",
+          "sha": "e0e036454f864c41cb15c6ef4558bb18fc218160"
+        }
+      ]
+    },
+    {
+      "name": "ucp_python",
+      "repository": "Universal-Commerce-Protocol/python-sdk",
+      "errors": [],
+      "head": {
+        "sha": "eea5af1f7e569fe0fab1d179ed0786be289bef6f",
+        "committed_at": "2026-10-23T10:52:06Z"
+      },
+      "releases": [
+        {
+          "tag": "v2026-08-25",
+          "published_at": "2026-08-27T16:04:19Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/python-sdk/releases/tag/v2026-08-25"
+        },
+        {
+          "tag": "v2026-04-08-6",
+          "published_at": "2026-08-24T12:02:20Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/python-sdk/releases/tag/v2026-04-08-6"
+        },
+        {
+          "tag": "v2026-04-08-5",
+          "published_at": "2026-08-20T14:20:06Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/python-sdk/releases/tag/v2026-04-08-5"
+        },
+        {
+          "tag": "v2026-04-08-4",
+          "published_at": "2026-08-03T09:15:43Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/python-sdk/releases/tag/v2026-04-08-4"
+        },
+        {
+          "tag": "v2026-04-08-3",
+          "published_at": "2026-07-14T10:37:13Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/python-sdk/releases/tag/v2026-04-08-3"
+        },
+        {
+          "tag": "v2026-04-08-2",
+          "published_at": "2026-07-10T16:17:47Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/python-sdk/releases/tag/v2026-04-08-2"
+        },
+        {
+          "tag": "v2026-04-08-1",
+          "published_at": "2026-07-10T14:25:19Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/python-sdk/releases/tag/v2026-04-08-1"
+        },
+        {
+          "tag": "v2026-04-08",
+          "published_at": "2026-06-30T09:09:19Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/python-sdk/releases/tag/v2026-04-08"
+        },
+        {
+          "tag": "v2026-01-23",
+          "published_at": "2026-03-31T11:28:58Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/python-sdk/releases/tag/v2026-01-23"
+        },
+        {
+          "tag": "2023-01-11",
+          "published_at": "2026-02-06T18:01:45Z",
+          "prerelease": false,
+          "url": "https://github.com/Universal-Commerce-Protocol/python-sdk/releases/tag/2023-01-11"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "v2026-08-25",
+          "sha": "b6f9b91c018f748a92166266004c8b625142cdfb"
+        },
+        {
+          "tag": "v2026-04-08",
+          "sha": "298c2958faec9065fae1891018a3342e46fc2215"
+        },
+        {
+          "tag": "v2026-04-08-6",
+          "sha": "51bf73cec92cfe321a9282b8f49fc8f647068c2e"
+        },
+        {
+          "tag": "v2026-04-08-5",
+          "sha": "d650f0b7018d8fdf72d7a86daae8869943f43a64"
+        },
+        {
+          "tag": "v2026-04-08-4",
+          "sha": "ba23d978b772eeea615bbb46767b8ed74b8dddfd"
+        },
+        {
+          "tag": "v2026-04-08-3",
+          "sha": "9fd0674e173a198d823e4984108a8a6acd962478"
+        },
+        {
+          "tag": "v2026-04-08-2",
+          "sha": "b1631ad95c69caa5b27f93adf9802d0e8367fb5a"
+        },
+        {
+          "tag": "v2026-04-08-1",
+          "sha": "ebd6fc8234c641bbfbb9f115675471005aaef321"
+        },
+        {
+          "tag": "v2026-01-23",
+          "sha": "a79c66e31efd22f1bfb977de6fddd2673bc9deaf"
+        },
+        {
+          "tag": "2026-01-23",
+          "sha": "9a1a92127672946f858315bed04488493c291839"
+        },
+        {
+          "tag": "2023-01-11",
+          "sha": "de68bb5de40bc1944b3e0984c38b10d0cd93e345"
+        }
+      ]
+    },
+    {
+      "name": "ucp_conformance",
+      "repository": "Universal-Commerce-Protocol/conformance",
+      "errors": [],
+      "head": {
+        "sha": "016ecbc22240affdec4429a60d539bedd04ab51b",
+        "committed_at": "2026-09-07T22:09:31Z"
+      },
+      "releases": [],
+      "tags": []
+    },
+    {
+      "name": "acp",
+      "repository": "agentic-commerce-protocol/agentic-commerce-protocol",
+      "errors": [],
+      "head": {
+        "sha": "7fdd78df677a94dce04c770644b0fbbb1401272b",
+        "committed_at": "2026-07-18T04:51:51Z"
+      },
+      "releases": [],
+      "tags": [],
+      "open_search_matches": [
+        {
+          "number": 5,
+          "title": "Feature Request: Merchant UI Customization for Agentic Commerce Protocol",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/5",
+          "pr": false
+        },
+        {
+          "number": 10,
+          "title": "SEP: Split Address into BillingAddress and FulfillmentAddress",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/pull/10",
+          "pr": true
+        },
+        {
+          "number": 20,
+          "title": "docs: add community implementation \u2014 ACP + zkML authorization",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/pull/20",
+          "pr": true
+        },
+        {
+          "number": 79,
+          "title": "[SEP] [Proposal] Open Authentication Provider Model for 3DS",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/79",
+          "pr": false
+        },
+        {
+          "number": 107,
+          "title": "[SEP][Proposal]: Universal Product Types",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/107",
+          "pr": false
+        },
+        {
+          "number": 120,
+          "title": "[SEP][Proposal]: Idempotency Requirements and Guarantees",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/120",
+          "pr": false
+        },
+        {
+          "number": 122,
+          "title": "[SEP][Proposal]: Sale Extension - Sale Pricing Context & Discount Eligibility",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/122",
+          "pr": false
+        },
+        {
+          "number": 124,
+          "title": "[SEP][Proposal]: Consolidate DiscountDetail and AppliedDiscount",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/124",
+          "pr": false
+        },
+        {
+          "number": 135,
+          "title": "[SEP][Proposal]: MCP Transport Binding for Agentic Checkout",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/135",
+          "pr": false
+        },
+        {
+          "number": 136,
+          "title": "[SEP][Proposal] SEP: Discovery Capabilities Endpoint",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/136",
+          "pr": false
+        },
+        {
+          "number": 148,
+          "title": "[SEP][Proposal]: Content Citation Attribution Extension",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/148",
+          "pr": false
+        },
+        {
+          "number": 152,
+          "title": "[SEP][Proposal] Discovery Attribution Extension",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/152",
+          "pr": false
+        },
+        {
+          "number": 189,
+          "title": "[SEP] Product Feeds",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/189",
+          "pr": false
+        },
+        {
+          "number": 197,
+          "title": "Issue: Suggested Pricing on Checkout Create",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/197",
+          "pr": false
+        },
+        {
+          "number": 211,
+          "title": "SEP: Markdown Content Specification (CommonMark)",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/211",
+          "pr": false
+        },
+        {
+          "number": 221,
+          "title": "Many performance related fields have been removed from the old spec",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/221",
+          "pr": false
+        },
+        {
+          "number": 229,
+          "title": "SEP: Embedded App Deep Links for Product Feeds",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/229",
+          "pr": false
+        },
+        {
+          "number": 237,
+          "title": "SEP: Embedded App Deep Links for Product Feeds",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/pull/237",
+          "pr": true
+        },
+        {
+          "number": 244,
+          "title": "Proposal: Agent Economics + Transaction protocols for verifiable agent commerce",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/244",
+          "pr": false
+        },
+        {
+          "number": 248,
+          "title": "Clarify which merchants currently support native Instant Checkout / ACP checkout in ChatGPT",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/248",
+          "pr": false
+        },
+        {
+          "number": 254,
+          "title": "ci: validate embedded schema examples",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/pull/254",
+          "pr": true
+        },
+        {
+          "number": 287,
+          "title": "fix(spec): require Signature on delegate_authentication OpenAPI",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/pull/287",
+          "pr": true
+        },
+        {
+          "number": 291,
+          "title": "Purchase-order-only PaymentData does not require account-owner approval",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/291",
+          "pr": false
+        },
+        {
+          "number": 294,
+          "title": "Mutating REST requests do not have a consistent mandatory signature and freshness contract",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/294",
+          "pr": false
+        },
+        {
+          "number": 301,
+          "title": "Listing Request: NEX Agent Co. as a Production x402 + A2A Implementation",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/301",
+          "pr": false
+        },
+        {
+          "number": 303,
+          "title": "SEP: Dispute Resolution Extension for Agent-Initiated Transactions (ATDRP)",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/303",
+          "pr": false
+        },
+        {
+          "number": 308,
+          "title": "SEP: terms_digest field on AuthenticationResult to bind 3DS results to specific checkout terms",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/308",
+          "pr": false
+        },
+        {
+          "number": 314,
+          "title": "docs: optional host-side authorization before ACP spend steps",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/pull/314",
+          "pr": true
+        },
+        {
+          "number": 315,
+          "title": "merchant has no stored agent identity",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/issues/315",
+          "pr": false
+        },
+        {
+          "number": 316,
+          "title": "SEP: Dispute Resolution Extension for Agent-Initiated Transactions (ATDRP) (#303)",
+          "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/pull/316",
+          "pr": true
+        }
+      ],
+      "dated_spec_directories": [
+        "2025-09-29",
+        "2025-12-12",
+        "2026-01-16",
+        "2026-01-30",
+        "2026-04-17"
+      ]
+    },
+    {
+      "name": "ap2",
+      "repository": "google-agentic-commerce/AP2",
+      "errors": [],
+      "head": {
+        "sha": "e1ea56db72a6385bce3e5c1112b3a56ce60acb43",
+        "committed_at": "2026-04-29T16:51:41Z"
+      },
+      "releases": [
+        {
+          "tag": "v0.2.0",
+          "published_at": "2026-04-28T12:40:54Z",
+          "prerelease": false,
+          "url": "https://github.com/google-agentic-commerce/AP2/releases/tag/v0.2.0"
+        },
+        {
+          "tag": "v0.1.0",
+          "published_at": "2025-09-16T12:32:33Z",
+          "prerelease": false,
+          "url": "https://github.com/google-agentic-commerce/AP2/releases/tag/v0.1.0"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "v0.2.0",
+          "sha": "b4587ac1d055888a73b4b21750973cffba961793"
+        },
+        {
+          "tag": "v0.1.0",
+          "sha": "bb57b6bfdb9a1caafffe7d024ca04d99cefa40be"
+        }
+      ],
+      "open_search_matches": [
+        {
+          "number": 23,
+          "title": "[Feat]: Support for Alternative Payment Methods in AP2",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/23",
+          "pr": false
+        },
+        {
+          "number": 36,
+          "title": "[Feat]: Introduce \"Checkout Agent\" Role to Bridge Shopping and Payment Processing",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/36",
+          "pr": false
+        },
+        {
+          "number": 45,
+          "title": "[Feat]: Add support and examples for mandate revocation, amendment, and lifecycle management",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/45",
+          "pr": false
+        },
+        {
+          "number": 46,
+          "title": "[Feat]: Provide a standard audit log format and error schema for mandate enforcement",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/46",
+          "pr": false
+        },
+        {
+          "number": 51,
+          "title": "[Feat]: Supporting Issuers & Networks",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/51",
+          "pr": false
+        },
+        {
+          "number": 64,
+          "title": "feat(validation): Add enhanced error handling and validation system",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/64",
+          "pr": true
+        },
+        {
+          "number": 69,
+          "title": "[Feat]: Multi-Attribute Negotiation and Coordination Protocol for AP2",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/69",
+          "pr": false
+        },
+        {
+          "number": 78,
+          "title": "[Feat]: Add IntentMandate support for human-not-present flows with cryptographic session keys and programmable spending rules",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/78",
+          "pr": false
+        },
+        {
+          "number": 83,
+          "title": "feat: Micropayment channel extension for AP2",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/83",
+          "pr": true
+        },
+        {
+          "number": 96,
+          "title": "Introducing npx agentic-payments: AP2 Reference Implementation with Visa TAP and QUIC Support",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/96",
+          "pr": false
+        },
+        {
+          "number": 99,
+          "title": "[Proposal] Verifiable Receipts \u2014 Proof of Exchange for A2A Economy",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/99",
+          "pr": false
+        },
+        {
+          "number": 118,
+          "title": "[Feat]: Standardize Mandate Verification Flow",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/118",
+          "pr": false
+        },
+        {
+          "number": 120,
+          "title": "[Proposal]: Optional Privacy-Preserving Authorization for IntentMandate using Anonymous VDCs ",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/120",
+          "pr": false
+        },
+        {
+          "number": 133,
+          "title": "[Feat]: Standardized budget limitation field",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/133",
+          "pr": false
+        },
+        {
+          "number": 142,
+          "title": "docs: add AGENT.md for AI coding assistants",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/142",
+          "pr": true
+        },
+        {
+          "number": 149,
+          "title": "fix(samples): move misplaced docstring to correct position in watch_log.py",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/149",
+          "pr": true
+        },
+        {
+          "number": 157,
+          "title": "docs: fix duplicate 'iat' typo in JWT claim description",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/157",
+          "pr": true
+        },
+        {
+          "number": 163,
+          "title": "[Feat]: Define structured Risk Payload schema for Section 7.4 Risk Signals",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/163",
+          "pr": false
+        },
+        {
+          "number": 165,
+          "title": "feat(types): add Fiduciary Circuit Breaker risk extension",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/165",
+          "pr": true
+        },
+        {
+          "number": 172,
+          "title": "Implementing Social Welfare Mandates in Autonomous Spending: Insights from Project Mulberry (Inje-gun Case Study)",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/172",
+          "pr": false
+        },
+        {
+          "number": 178,
+          "title": "AgentPay MCP: Open-source MCP payment server for AP2 scenarios",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/178",
+          "pr": false
+        },
+        {
+          "number": 180,
+          "title": "[Proposal]: Restrict IntentMandate Visibility to User \u2194 Shopping Agent Boundary",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/180",
+          "pr": false
+        },
+        {
+          "number": 189,
+          "title": "fix: add user_authorization to IntentMandate and intent binding to PaymentMandate",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/189",
+          "pr": true
+        },
+        {
+          "number": 190,
+          "title": "chore(deps): bump google.golang.org/grpc from 1.76.0 to 1.79.3 in /samples/go",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/190",
+          "pr": true
+        },
+        {
+          "number": 207,
+          "title": "[Feat]: Cross-merchant budget enforcement for IntentMandates",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/207",
+          "pr": false
+        },
+        {
+          "number": 211,
+          "title": "[Security Hardening Suggestion]AP2 Human-Present: CartMandate \u2194 PaymentMandate Binding and Verification Gap",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/211",
+          "pr": false
+        },
+        {
+          "number": 214,
+          "title": "[Docs]AP2 challenge flow underdefined at the AP2/A2A contract layer",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/214",
+          "pr": false
+        },
+        {
+          "number": 215,
+          "title": "[Docs]Human-present approval chain remains underdefined in AP2",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/215",
+          "pr": false
+        },
+        {
+          "number": 224,
+          "title": "[Proposal] PactEscrow as trustless on-chain settlement adapter for AP2 \u2014 proof-of-delivery before payment release",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/224",
+          "pr": false
+        },
+        {
+          "number": 231,
+          "title": "docs: add Panya.health to partner directory",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/231",
+          "pr": true
+        },
+        {
+          "number": 235,
+          "title": "chore(deps): bump postcss from 8.5.8 to 8.5.12 in /code/web-client",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/235",
+          "pr": true
+        },
+        {
+          "number": 250,
+          "title": "Proposal: Post-Quantum Extension to AP2 (ML-DSA-65 / FIPS 204)",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/250",
+          "pr": false
+        },
+        {
+          "number": 252,
+          "title": "feat: cross-merchant budget enforcement sample",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/252",
+          "pr": true
+        },
+        {
+          "number": 255,
+          "title": "[Proposal] On-chain settlement-side mandate binding for AP2",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/255",
+          "pr": false
+        },
+        {
+          "number": 259,
+          "title": "[Feat]: enforce `iss` payload for SD-JWT",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/259",
+          "pr": false
+        },
+        {
+          "number": 265,
+          "title": "[Proposal] v0 conformance vectors for open_mandate_hash derivation (cross-impl validated)",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/265",
+          "pr": false
+        },
+        {
+          "number": 280,
+          "title": "[Feat]: Add BlindOracle (agent-trust verification / attestation provider) to the AP2 ecosystem",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/280",
+          "pr": false
+        },
+        {
+          "number": 282,
+          "title": "chore(deps): bump esbuild, @vitejs/plugin-react and vite in /code/web-client",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/282",
+          "pr": true
+        },
+        {
+          "number": 290,
+          "title": "[Feat]: Post-checkout agent action record \u2014 verifiable audit trail after Checkout Receipt",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/290",
+          "pr": false
+        },
+        {
+          "number": 293,
+          "title": "[Proposal]: Optional Bitcoin-anchored proof-of-when for signed Mandates (extension, outside signed bytes)",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/293",
+          "pr": false
+        },
+        {
+          "number": 297,
+          "title": "[Docs/SDK] Define and enforce `payment.agent_recurrence` frequency semantics",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/297",
+          "pr": false
+        },
+        {
+          "number": 308,
+          "title": "[Bug]: x402 sample persists payment token as used before settlement is confirmed",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/308",
+          "pr": false
+        },
+        {
+          "number": 310,
+          "title": "fix(samples): fail closed in x402 PSP when agent-provider key is missing",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/310",
+          "pr": true
+        },
+        {
+          "number": 314,
+          "title": "[Bug]: Sample violates Trusted-Surface isolation for Agent Provider signing",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/314",
+          "pr": false
+        },
+        {
+          "number": 317,
+          "title": "[Bug]: Execution-date constraints pass when the closed mandate omits `execution_date`",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/317",
+          "pr": false
+        },
+        {
+          "number": 327,
+          "title": "[Bug]: Payment receipt `Success` can be issued without payment-rail success evidence",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/327",
+          "pr": false
+        },
+        {
+          "number": 338,
+          "title": "Dispute-time evidence: a self-contained storage format for mandates + issuer key material",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/338",
+          "pr": false
+        },
+        {
+          "number": 345,
+          "title": "Merchant-side AP2 v0.2 implementation report: Suede Agent Studio",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/345",
+          "pr": false
+        },
+        {
+          "number": 348,
+          "title": "[Proposal] Deterministic selective disclosure for AP2 constraint verification",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/348",
+          "pr": false
+        },
+        {
+          "number": 352,
+          "title": "feat: add a post-transaction dispute resolution sample",
+          "url": "https://github.com/google-agentic-commerce/AP2/pull/352",
+          "pr": true
+        },
+        {
+          "number": 361,
+          "title": "Found and fixed AP2-17 (weak merchant identity binding) while building a third-party AP2 verifier",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/361",
+          "pr": false
+        },
+        {
+          "number": 375,
+          "title": "[Feat]: Verified merchant identity from a register-backed trust provider",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/375",
+          "pr": false
+        },
+        {
+          "number": 386,
+          "title": "[Feat]: Revocation path for open Mandates \u2014 rescinding standing agent authority bound to a cnf key",
+          "url": "https://github.com/google-agentic-commerce/AP2/issues/386",
+          "pr": false
+        }
+      ]
+    },
+    {
+      "name": "mcp",
+      "repository": "modelcontextprotocol/modelcontextprotocol",
+      "errors": [],
+      "head": {
+        "sha": "54b91cdb8f21825ce586c452704f319d49866ef8",
+        "committed_at": "2026-10-26T21:57:26Z"
+      },
+      "releases": [
+        {
+          "tag": "2026-07-28",
+          "published_at": "2026-07-28T16:47:49Z",
+          "prerelease": false,
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28"
+        },
+        {
+          "tag": "2026-07-28-RC",
+          "published_at": "2026-05-29T12:51:22Z",
+          "prerelease": true,
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28-RC"
+        },
+        {
+          "tag": "2025-11-25",
+          "published_at": "2025-11-25T21:17:42Z",
+          "prerelease": false,
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2025-11-25"
+        },
+        {
+          "tag": "2025-11-25-RC",
+          "published_at": "2025-11-15T06:06:55Z",
+          "prerelease": true,
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2025-11-25-RC"
+        },
+        {
+          "tag": "2025-06-18",
+          "published_at": "2025-06-18T20:09:59Z",
+          "prerelease": false,
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2025-06-18"
+        },
+        {
+          "tag": "2025-03-26",
+          "published_at": "2025-03-26T14:28:27Z",
+          "prerelease": false,
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2025-03-26"
+        },
+        {
+          "tag": "2024-11-05-final",
+          "published_at": "2025-03-26T13:53:30Z",
+          "prerelease": false,
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2024-11-05-final"
+        },
+        {
+          "tag": "2024-11-05",
+          "published_at": "2025-01-17T20:37:02Z",
+          "prerelease": false,
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2024-11-05"
+        },
+        {
+          "tag": "2024-10-07",
+          "published_at": "2024-11-06T10:59:21Z",
+          "prerelease": false,
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2024-10-07"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "2026-07-28",
+          "sha": "5f5440bb26a62e2cf3440b92da5a667efa03b267"
+        },
+        {
+          "tag": "2026-07-28-RC",
+          "sha": "9d700ed62dcf86cb77475c9b81930611a9182f46"
+        },
+        {
+          "tag": "2025-11-25",
+          "sha": "38c84e9f93ad191d9eb26d92b945d17bd0efcaf3"
+        },
+        {
+          "tag": "2025-11-25-RC",
+          "sha": "b7d269cf527c2b26e8093e914ed9025be75f9e94"
+        },
+        {
+          "tag": "2025-06-18",
+          "sha": "f5ccad944fdf2b7d9cc70cf817f66ca5a8aa03a4"
+        },
+        {
+          "tag": "2025-03-26",
+          "sha": "9236eb1cbfa02c17ab45c83a7bdbe55c450070be"
+        },
+        {
+          "tag": "2024-11-05",
+          "sha": "0d63bea927001bedf3be3e59be735c979ba0aacb"
+        },
+        {
+          "tag": "2024-11-05-final",
+          "sha": "48234828288ec5e5011398f17b8736f61645f130"
+        },
+        {
+          "tag": "2024-10-07",
+          "sha": "ed35f718be83a2e3e1e568f7ba3562b81ed69c40"
+        }
+      ]
+    },
+    {
+      "name": "a2a",
+      "repository": "a2aproject/A2A",
+      "errors": [],
+      "head": {
+        "sha": "98279d62316361ba8451eaef300f72b72e169185",
+        "committed_at": "2026-10-20T17:28:30Z"
+      },
+      "releases": [
+        {
+          "tag": "v1.0.1",
+          "published_at": "2026-05-28T11:34:36Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v1.0.1"
+        },
+        {
+          "tag": "v1.0.0",
+          "published_at": "2026-03-12T16:34:41Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v1.0.0"
+        },
+        {
+          "tag": "v0.3.0",
+          "published_at": "2025-07-30T17:05:22Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v0.3.0"
+        },
+        {
+          "tag": "v0.2.6",
+          "published_at": "2025-07-17T17:07:38Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v0.2.6"
+        },
+        {
+          "tag": "v0.2.5",
+          "published_at": "2025-06-30T20:10:37Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v0.2.5"
+        },
+        {
+          "tag": "v0.2.4",
+          "published_at": "2025-06-30T17:54:29Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v0.2.4"
+        },
+        {
+          "tag": "v0.2.3",
+          "published_at": "2025-06-14T19:20:49Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v0.2.3"
+        },
+        {
+          "tag": "v0.2.2",
+          "published_at": "2025-06-09T16:50:39Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v0.2.2"
+        },
+        {
+          "tag": "v0.2.1",
+          "published_at": "2025-05-27T17:41:27Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v0.2.1"
+        },
+        {
+          "tag": "v0.2.0",
+          "published_at": "2025-06-09T19:37:05Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v0.2.0"
+        },
+        {
+          "tag": "v0.1.0",
+          "published_at": "2025-06-09T19:37:28Z",
+          "prerelease": false,
+          "url": "https://github.com/a2aproject/A2A/releases/tag/v0.1.0"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "v1.0.1",
+          "sha": "3303592588e388e62e0f69f701af531d2f4e3991"
+        },
+        {
+          "tag": "v1.0.0",
+          "sha": "173695755607e884aa9acf8ce4feed90e32727a1"
+        },
+        {
+          "tag": "v1.0.0-rc",
+          "sha": "6292104e359efca05bd8703174517b6f961ae4e1"
+        },
+        {
+          "tag": "v0.3.0",
+          "sha": "8d57eba286de756176892518a8fc39b0ac2ccefb"
+        },
+        {
+          "tag": "v0.2.6",
+          "sha": "026200b38247d37ee3364cdb1fc19de4f95e9e05"
+        },
+        {
+          "tag": "v0.2.5",
+          "sha": "22b52705a169123aa06cdf28261e12150ee5777f"
+        },
+        {
+          "tag": "v0.2.4",
+          "sha": "f328234d37179c62ebf1c3418b8382592bd69ffe"
+        },
+        {
+          "tag": "v0.2.3",
+          "sha": "0ae93843903dcba264f89b41fd031086ee17e0dc"
+        },
+        {
+          "tag": "v0.2.2",
+          "sha": "d66af72658a9dcf73b559c81ef8b2788ce7fea18"
+        },
+        {
+          "tag": "v0.2.1",
+          "sha": "c778e66ead9be711f1b4f9370dd0e3d4c0794c3f"
+        },
+        {
+          "tag": "v0.2.0",
+          "sha": "3eda07ed4eadc76dffcd1d4e69c1c41b6a21d5f2"
+        },
+        {
+          "tag": "v0.1.0",
+          "sha": "ce95d60c49c44511b73a391c798e8e8c814bce66"
+        }
+      ]
+    },
+    {
+      "name": "vc",
+      "repository": "w3c/vc-data-model",
+      "errors": [],
+      "head": {
+        "sha": "8838afd011a17758a225cfb742275592b82c53df",
+        "committed_at": "2026-10-22T04:19:43Z"
+      },
+      "releases": [],
+      "tags": [
+        {
+          "tag": "REC-v1.1-2021-11-09",
+          "sha": "5daf7a6835469dabcb2cad88a9b732ac243fcbaf"
+        },
+        {
+          "tag": "REC-v1.0-2019-11-19",
+          "sha": "46fedabe196906ebf92b37a2ef8aaae818cf1c97"
+        }
+      ]
+    },
+    {
+      "name": "poppy",
+      "repository": "personal-agent-protocol/personal-agent-protocol",
+      "errors": [],
+      "head": {
+        "sha": "a95b757872533a6ef1e1a9bcf29802857d2e5ff4",
+        "committed_at": "2026-10-26T18:13:10Z"
+      },
+      "releases": [],
+      "tags": [],
+      "repository_docs_versions": [
+        {
+          "id": "0.3",
+          "pages": [
+            "spec",
+            "extensions",
+            "extensions/operations",
+            "guides"
+          ]
+        },
+        {
+          "id": "0.2",
+          "published": "2026-10-24",
+          "pages": {
+            "spec": "5f6ac40cb2c2114fe85ebe3f1c2fec8a2cbfc90f2a92a2bf44e6ce0e518e0a26",
+            "extensions": "f7b71b97f3151337a6ce67f015b0fe8fdf28234df2700335aca47dd5afad2eff",
+            "extensions/operations": "2daa248b43d2ae91a89c66f73de95a4a8e4db090773b6e88bb35e18ce88aed87",
+            "guides": "70ca417b8cd323485792db5652b4686d9cbf5059f9e9c6f1843ace6d15697e8c"
+          }
+        },
+        {
+          "id": "0.1",
+          "published": "2026-10-09",
+          "pages": {
+            "spec": "0177017aeb839313979bcfccf6836c81c79ea2328db9864c3ec1f70a18a54ff0",
+            "extensions": "f7b71b97f3151337a6ce67f015b0fe8fdf28234df2700335aca47dd5afad2eff",
+            "extensions/operations": "693c9c3e6c1c21d788194d12950985c08d60b5c042a9aa6efd30248d5c2315b1",
+            "guides": "3432c145a045daab70e9ea15885c0b52250041b8de683afc28e730cd921bad07"
+          }
+        }
+      ],
+      "alignment": "adjacent/deferred; compare repository version metadata with deployed official docs; no auth/session implementation"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://ucp.dev/specification/overview/",
+      "resolved_url": "https://ucp.dev/specification/overview/",
+      "status": 200,
+      "sha256": "0898f8e754a4c123766153326f5d0fd5e73937f0e28346829acbde93671d8626",
+      "bytes": 565554
+    },
+    {
+      "url": "https://ucp.dev/documentation/contributing/",
+      "resolved_url": "https://ucp.dev/documentation/contributing/",
+      "status": 200,
+      "sha256": "226d89fcb36e6b332c06de9b1c00db5dda1032a300294cd73d49026cad84d790",
+      "bytes": 60528
+    },
+    {
+      "url": "https://ucp.dev/versioning/",
+      "resolved_url": "https://ucp.dev/versioning/",
+      "status": 200,
+      "sha256": "fbeb532d7bb9474a89a0a6162e244dcadd751a244da9fe672dff13d7ab65af23",
+      "bytes": 42100
+    },
+    {
+      "url": "https://www.agenticcommerce.dev/",
+      "resolved_url": "https://www.agenticcommerce.dev/",
+      "status": 200,
+      "sha256": "320f8a3011fa8f4d11443d5caf0807f210510341eadee041f9f8c330258cb19d",
+      "bytes": 129551
+    },
+    {
+      "url": "https://developers.openai.com/commerce/specs/feed",
+      "resolved_url": "https://developers.openai.com/commerce/specs/file-upload/products",
+      "status": 200,
+      "sha256": "909b23bdfe4ad5d067f7d9554d85c92ce25c2c50d6739e834526d101722d5586",
+      "bytes": 429275
+    },
+    {
+      "url": "https://developers.openai.com/commerce/specs/checkout",
+      "resolved_url": "https://developers.openai.com/commerce/specs/checkout",
+      "status": 200,
+      "sha256": "6a868e470be8fed809e03c7870aa23b7c7acf95ba51d28afa0e1b47d966d2396",
+      "bytes": 574872
+    },
+    {
+      "url": "https://ap2-protocol.org/ap2/specification/",
+      "resolved_url": "https://ap2-protocol.org/ap2/specification/",
+      "status": 200,
+      "sha256": "c9bab342aa07f29c7a42d062ba55720ca829441433dadbd3f80648d9e24367ef",
+      "bytes": 68105
+    },
+    {
+      "url": "https://www.w3.org/TR/vc-data-model-2.0/",
+      "resolved_url": "https://www.w3.org/TR/vc-data-model-2.0/",
+      "status": 200,
+      "sha256": "a9196a3d0b6601356c4e127bad24f8c7f2c17f6ed22e41b35755a910104156f8",
+      "bytes": 1023165
+    },
+    {
+      "url": "https://www.w3.org/TR/vc-data-integrity/",
+      "resolved_url": "https://www.w3.org/TR/vc-data-integrity/",
+      "status": 200,
+      "sha256": "ba5c4baf13fe3bab3ebd95ab6650d6fe83720e254b383bb444b4fbbae7bcf4fe",
+      "bytes": 329758
+    },
+    {
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28",
+      "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28",
+      "status": 200,
+      "sha256": "9f7ba9d704e1b0e82f3b2889356dea9ce87594001acc0ba2490a0b4c0080aa38",
+      "bytes": 319369
+    },
+    {
+      "url": "https://a2a-protocol.org/latest/specification/",
+      "resolved_url": "https://a2a-protocol.org/latest/specification/",
+      "status": 200,
+      "sha256": "c23f78af020ace1b35e4dd8af6b7c78d9a6a4bef50c91acd81a9a3407a2e6e40",
+      "bytes": 624337
+    },
+    {
+      "url": "https://shopify.dev/docs/api/usage/access-scopes",
+      "resolved_url": "https://shopify.dev/docs/api/usage/access-scopes",
+      "status": 200,
+      "sha256": "6f2e623b54e2f88e76552b8a1b00ed3f206b10bd517ca100f7474d135b349f97",
+      "bytes": 515494
+    },
+    {
+      "url": "https://json-schema.org/draft/2020-12",
+      "resolved_url": "https://json-schema.org/draft/2020-12",
+      "status": 200,
+      "sha256": "200e7e34469e037390e68b1b4b7a98216392b5e1df98e288c7b58503904a422c",
+      "bytes": 89423
+    },
+    {
+      "url": "https://ucp.dev/documentation/announcements/",
+      "resolved_url": "https://ucp.dev/documentation/announcements/",
+      "status": 200,
+      "sha256": "9bad762f480bf53e26aae72f541f6437f6ec007d7b2f440b62b63fafa125ea4b",
+      "bytes": 50731
+    },
+    {
+      "url": "https://personalagentprotocol.org/docs/spec",
+      "resolved_url": "https://personalagentprotocol.org/docs/0.3/spec",
+      "status": 200,
+      "sha256": "727be1008fe9cf06f2c04de56833af93d5ecf9b97fa0cb81e3a3dd56c950c4de",
+      "bytes": 575653
+    },
+    {
+      "url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+      "resolved_url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+      "status": 200,
+      "sha256": "1cad54e2a29b955fa454330ecabaf6b7f2b954524f864c7773af1fc971185f2f",
+      "bytes": 187707
+    },
+    {
+      "url": "https://www.w3.org/2026/ecommerce-agents/agenda.html",
+      "resolved_url": "https://www.w3.org/2026/ecommerce-agents/agenda.html",
+      "status": 200,
+      "sha256": "4573ef03878f7563e8901bef584f663bcf5832cbcae2029361aa647f11915754",
+      "bytes": 47817
+    }
+  ],
+  "search_scope": "open issues and PRs, six terms, first 100 per term; not exhaustive",
+  "conformance": "not_claimed",
+  "network_status": "complete",
+  "alignment_status": "reviewed_snapshot_unchanged"
+}

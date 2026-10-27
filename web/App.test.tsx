@@ -132,7 +132,7 @@ describe("shopper and merchant paths", () => {
     vi.stubGlobal("fetch", mockApi());
     render(<App />);
     await screen.findByRole("heading", {
-      name: "Find the delivery that fits you.",
+      name: "Choose a business for this order.",
     });
     await screen.findByText(
       "You spend $6 more than the $18 option to choose a merchant with a qualifying delivery record.",
@@ -193,7 +193,7 @@ describe("shopper and merchant paths", () => {
       .setup()
       .click(screen.getByRole("button", { name: "Try again" }));
     await screen.findByRole("heading", {
-      name: "Find the delivery that fits you.",
+      name: "Choose a business for this order.",
     });
   });
   it("keeps missing evidence explicit while allowing price comparison", async () => {

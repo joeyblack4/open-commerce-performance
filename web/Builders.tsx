@@ -159,10 +159,11 @@ export function Builders() {
       <section className="contribution-note">
         <h2>A concrete contribution question</h2>
         <p>
-          Should an optional merchant-scoped aggregate-evidence reference extend
-          UCP catalog lookup, or remain a separate opt-in resource? The package
-          includes runnable base/opt-in fixtures, the threat model,
-          missing-source cases and the exact question.
+          How should an agent discover business-scoped evidence before choosing
+          a product? The current catalog reference is one tested attachment; a
+          business-first capability or location reference remains a design
+          question. The package includes runnable base/opt-in fixtures, the
+          threat model, missing-source cases and the exact question.
         </p>
         <p className="meta">
           The review package is prepared locally. No company has been contacted,

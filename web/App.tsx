@@ -4,6 +4,7 @@ import { request } from "./api";
 import { Shop } from "./Shop";
 import { Merchant } from "./Merchant";
 import { Builders } from "./Builders";
+import { Concept } from "./Concept";
 import { type Bundle } from "./types";
 export function App() {
   const [view, setView] = useState("shop"),
@@ -39,11 +40,18 @@ export function App() {
         </a>
         <nav aria-label="Explore">
           <Button
+            variant={view === "concept" ? "primary" : "tertiary"}
+            aria-pressed={view === "concept"}
+            onPress={() => setView("concept")}
+          >
+            The concept
+          </Button>
+          <Button
             variant={view === "shop" ? "primary" : "tertiary"}
             aria-pressed={view === "shop"}
             onPress={() => setView("shop")}
           >
-            Shop
+            Compare
           </Button>
           <Button
             variant={view === "merchant" ? "primary" : "tertiary"}
@@ -70,7 +78,9 @@ export function App() {
           About the evidence
         </Button>
       </div>
-      {view === "merchant" ? (
+      {view === "concept" ? (
+        <Concept onCompare={() => setView("shop")} />
+      ) : view === "merchant" ? (
         <Merchant />
       ) : view === "builders" ? (
         <Builders />
