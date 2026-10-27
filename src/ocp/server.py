@@ -90,7 +90,7 @@ def create_server(port=8787, registry=None, clock=None):
                 name = "CEO_BRIEF.md" if path == "/brief.md" else "PORTABLE_EVIDENCE_PROTOCOL.md"
                 return self.answer(200, (ROOT / "docs" / name).read_bytes(), "text/markdown; charset=utf-8")
             if path == "/brief.pdf":
-                brief = ROOT / "artifacts/share/portable-business-evidence.pdf"
+                brief = ROOT / "docs/proposal/portable-business-evidence.pdf"
                 if not brief.is_file():
                     return self.answer(404, {"error": "executive_pdf_not_prepared", "text": "/brief.md"})
                 return self.answer(200, brief.read_bytes(), "application/pdf")

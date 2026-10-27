@@ -163,3 +163,6 @@ class PortableHttpTests(unittest.TestCase):
         for path in ("/brief.md", "/protocol.md", "/v0/portable-schema"):
             self.assertEqual(self.get(path)[0], 200)
             self.assertEqual(self.get(path + "?file=README.md")[0], 400)
+        code, raw = self.get("/brief.pdf")
+        self.assertEqual(code, 200)
+        self.assertTrue(raw.startswith(b"%PDF-"))
