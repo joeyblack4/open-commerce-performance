@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { Button, Modal, Spinner } from "@heroui/react";
 import { request } from "./api";
 import { Shop } from "./Shop";
-import { Merchant } from "./Merchant";
 import { Builders } from "./Builders";
+import { Portable } from "./Portable";
 import { type Bundle } from "./types";
+import { hosted, repository } from "./hosting";
 export function App() {
-  const [view, setView] = useState("shop"),
+  const [view, setView] = useState("concept"),
     [bundle, setBundle] = useState<Bundle | null>(null),
     [error, setError] = useState(false),
     [about, setAbout] = useState(false);
@@ -22,8 +23,8 @@ export function App() {
     }
   }
   useEffect(() => {
-    void load();
-  }, []);
+    if (view === "shop") void load();
+  }, [view]);
   return (
     <main>
       <header className="app-header">
@@ -32,46 +33,53 @@ export function App() {
           href="#"
           onClick={(e) => {
             e.preventDefault();
-            setView("shop");
+            setView("concept");
           }}
         >
           Open Commerce Performance
         </a>
         <nav aria-label="Explore">
           <Button
-            variant={view === "shop" ? "primary" : "tertiary"}
-            aria-pressed={view === "shop"}
-            onPress={() => setView("shop")}
+            variant={view === "concept" ? "primary" : "tertiary"}
+            aria-pressed={view === "concept"}
+            onPress={() => setView("concept")}
           >
-            Shop
+            Portable evidence
           </Button>
-          <Button
-            variant={view === "merchant" ? "primary" : "tertiary"}
-            aria-pressed={view === "merchant"}
-            onPress={() => setView("merchant")}
-          >
-            For merchants
-          </Button>
-          <Button
-            variant={view === "builders" ? "primary" : "tertiary"}
-            aria-pressed={view === "builders"}
-            onPress={() => setView("builders")}
-          >
-            For builders
-          </Button>
+          {!hosted && (
+            <Button
+              variant={view === "shop" ? "primary" : "tertiary"}
+              aria-pressed={view === "shop"}
+              onPress={() => setView("shop")}
+            >
+              Comparison reference
+            </Button>
+          )}
+          {!hosted && (
+            <Button
+              variant={view === "builders" ? "primary" : "tertiary"}
+              aria-pressed={view === "builders"}
+              onPress={() => setView("builders")}
+            >
+              For builders
+            </Button>
+          )}
+          {hosted && <a href={repository}>Source on GitHub</a>}
         </nav>
       </header>
       <div className="demo-label">
         <span>
           <i aria-hidden="true" />
-          Fictional demo · no real stores or purchases
+          {hosted
+            ? "Fictional demo · recorded checks · simulated time"
+            : "Fictional demo · no real stores or purchases"}
         </span>
         <Button size="sm" variant="tertiary" onPress={() => setAbout(true)}>
           About the evidence
         </Button>
       </div>
-      {view === "merchant" ? (
-        <Merchant />
+      {view === "concept" ? (
+        <Portable />
       ) : view === "builders" ? (
         <Builders />
       ) : error ? (
@@ -96,8 +104,13 @@ export function App() {
         </>
       )}
       <footer>
-        <span>Useful facts. Your priorities. No universal merchant score.</span>
-        <span className="meta">Synthetic reference · experimental 0.2.0</span>
+        <span>
+          Business choice. Portable evidence. Recommendations grounded in
+          relevant facts.
+        </span>
+        <span className="meta">
+          Experimental proposal · fictional reference
+        </span>
       </footer>
       {about && (
         <Modal.Backdrop
@@ -113,15 +126,24 @@ export function App() {
                 </Modal.Heading>
               </Modal.Header>
               <Modal.Body>
+                {hosted && (
+                  <p>
+                    This public demo replays precomputed signed examples.
+                    Signature and status checks were run during export at the
+                    simulated clock below. Your choices do not publish or
+                    withdraw real business data.
+                  </p>
+                )}
                 <p>
-                  These three merchants, their orders and their outcomes are
-                  generated examples. No actual store, carrier or customer is
-                  connected.
+                  These business examples, source records and outcomes are
+                  generated. No actual business, source provider, carrier or
+                  customer is connected.
                 </p>
                 <p>
-                  Historical orders: April–June 2026. Observed October 25. Demo
-                  clock: {bundle?.demo_clock ?? "2026-10-25T20:00:00Z"}{" "}
-                  (explicitly simulated).
+                  Portable examples: October 1–24, 2026. Earlier comparison:
+                  April–June 2026. Observed October 25. Demo clock:{" "}
+                  {bundle?.demo_clock ?? "2026-10-25T20:00:00Z"} (explicitly
+                  simulated).
                 </p>
                 <p>
                   JWS signatures prove signed origin. Internal consistency and
@@ -129,10 +151,10 @@ export function App() {
                   independent audit are not established.
                 </p>
                 <p>
-                  Recommendations follow visible rules using budget and optional
-                  historical delivery preferences. This is not an LLM
-                  evaluation, a delivery guarantee or evidence that any commerce
-                  platform uses OCP.
+                  Explanations follow visible rules using the buyer's stated
+                  need and applicable evidence. This is not an LLM evaluation, a
+                  delivery guarantee or evidence that any commerce platform uses
+                  OCP.
                 </p>
               </Modal.Body>
               <Modal.Footer>

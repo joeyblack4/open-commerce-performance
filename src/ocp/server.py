@@ -14,10 +14,13 @@ from .interop import demonstration
 from .metrics import METHODS
 from .model import instant
 from .registry import Registry
+from .discovery import discover_businesses
+from .portable import PortablePreview, METHODS as PORTABLE_METHODS
 
 
 def create_server(port=8787, registry=None, clock=None):
     registry = registry or Registry()
+    portable = PortablePreview()
     clock = clock or (lambda: datetime.now(timezone.utc))
     dist = (ROOT / "dist").resolve()
     requests = []  # one loopback identity; bounded rolling window, local demo only
@@ -63,7 +66,14 @@ def create_server(port=8787, registry=None, clock=None):
                 return self.answer(414, {"error": "path_too_long"})
             parsed = urlsplit(self.path)
             if parsed.fragment or (
-                parsed.query and parsed.path not in ("/v0/recommendation", "/v0/merchant-preview")
+                parsed.query
+                and parsed.path
+                not in (
+                    "/v0/recommendation",
+                    "/v0/merchant-preview",
+                    "/v0/business-discovery",
+                    "/v0/portable-preview",
+                )
             ):
                 return self.answer(400, {"error": "arbitrary_segments_and_queries_not_supported"})
             path = unquote(parsed.path)
@@ -76,16 +86,57 @@ def create_server(port=8787, registry=None, clock=None):
                 return self.answer(429, {"error": "local_read_limit"})
             requests.append(now_m)
             now = clock()
-            if path in ("/v0/recommendation", "/v0/merchant-preview"):
+            if path in ("/brief.md", "/protocol.md"):
+                name = "CEO_BRIEF.md" if path == "/brief.md" else "PORTABLE_EVIDENCE_PROTOCOL.md"
+                return self.answer(200, (ROOT / "docs" / name).read_bytes(), "text/markdown; charset=utf-8")
+            if path == "/brief.pdf":
+                brief = ROOT / "docs/proposal/portable-business-evidence.pdf"
+                if not brief.is_file():
+                    return self.answer(404, {"error": "executive_pdf_not_prepared", "text": "/brief.md"})
+                return self.answer(200, brief.read_bytes(), "application/pdf")
+            if path == "/v0/portable-schema":
+                return self.answer(
+                    200,
+                    (ROOT / "spec/schemas/portable-claim.schema.json").read_bytes(),
+                    "application/schema+json",
+                )
+            if path == "/v0/portable-methods":
+                return self.answer(200, {"synthetic": True, "methods": PORTABLE_METHODS})
+            if path == "/v0/portable-preview":
                 try:
-                    query = parse_qs(parsed.query, strict_parsing=True, max_num_fields=5)
+                    query = parse_qs(parsed.query, strict_parsing=True, max_num_fields=4)
+                    if set(query) != {"business", "claims", "state", "need"} or any(
+                        len(v) != 1 for v in query.values()
+                    ):
+                        raise ValueError("exact preview choices required")
+                    selected = [] if query["claims"][0] == "none" else query["claims"][0].split(",")
+                    return self.answer(
+                        200,
+                        portable.preview(
+                            query["business"][0], selected, query["state"][0], query["need"][0], now
+                        ),
+                    )
+                except (ValueError, KeyError):
+                    return self.answer(400, {"error": "invalid_portable_preview"})
+            if path == "/concept.md":
+                return self.answer(
+                    200,
+                    (ROOT / "docs/BUSINESS_DISCOVERY_CONCEPT.md").read_bytes(),
+                    "text/markdown; charset=utf-8",
+                )
+            if path in ("/v0/recommendation", "/v0/merchant-preview", "/v0/business-discovery"):
+                try:
+                    query = parse_qs(parsed.query, strict_parsing=True, max_num_fields=6)
                     if any(len(v) != 1 for v in query.values()):
                         raise ValueError("duplicate preference")
                     if path == "/v0/merchant-preview":
                         if set(query) != {"state"}:
                             raise ValueError("exact preview state required")
                         return self.answer(200, merchant_preview(registry, query["state"][0], now))
-                    if set(query) != {"budget", "priority", "threshold", "evidence"}:
+                    expected = {"budget", "priority", "threshold", "evidence"}
+                    if path == "/v0/business-discovery":
+                        expected.add("context")
+                    if set(query) != expected:
                         raise ValueError("exact shopper preferences required")
                     budget = int(query["budget"][0]) / 100
                     priority = query["priority"][0]
@@ -98,6 +149,16 @@ def create_server(port=8787, registry=None, clock=None):
                         "max_price": budget,
                         "min_historical_on_time": threshold if priority == "delivery" else None,
                     }
+                    if path == "/v0/business-discovery":
+                        return self.answer(
+                            200,
+                            discover_businesses(
+                                registry.bundle(now),
+                                query["context"][0],
+                                preference,
+                                query["evidence"][0] == "on",
+                            ),
+                        )
                     return self.answer(
                         200,
                         decide_with_preferences(

@@ -1,5 +1,7 @@
 # Architecture and future integration boundary
 
+**October 27 update:** the current direction is [portable business evidence](BUSINESS_DISCOVERY_CONCEPT.md). The [0.3 candidate profile](PORTABLE_EVIDENCE_PROTOCOL.md) and local `portable.py` preview add business-selected claims and independent method definitions. The sections below retain the narrower 0.2 implementation and its limits; fixed metrics and bundles are not requirements of the new proposal. Live providers, durable publication and agent-platform adoption remain unimplemented.
+
 Owner: Black 4. Status: local synthetic reference, 2026-10-25.
 
 `mock snapshot → pure calculator → aggregate allowlist projection → strict validator → JWS → local GET → independently pinned consumer → shopper policy`
@@ -41,3 +43,7 @@ The same static app offers Shop, For merchants and For builders. Shopper prefere
 Merchant preview uses a copied in-memory consent/status projection for shared, withdrawn and disputed states. The original registry, keys, snapshots and publication state remain untouched. It shows the complete metric bundle or its status consequence, never a favorable-metric selector. Real connection/publication/consent authoring is absent.
 
 The builder path exposes pinned protocol fixtures, consumer commands and a prepared review-archive download. The deterministic allowlist exporter reads only clean committed HEAD blobs, retains notices and per-file digests, and excludes credentials, pins, dependencies, git state and local paths. It does not publish, grant a license, create a hosted service or contact an ecosystem participant.
+
+## Business-first concept revision — October 26, 2026
+
+The [concept paper](BUSINESS_DISCOVERY_CONCEPT.md) describes candidate discovery → exact business identity → current eligibility/relevant evidence → consumer-specific choice → existing commerce rails → consented outcome measurement. These are responsibilities, not new deploy units. The current app adds an interactive explanation and a closed-world business-fit experiment. `/v0/business-discovery` accepts the existing bounded preferences plus one of three fixed need contexts. Only the shipped-order fixture is in scope; pickup/meal contexts retain seeded identities but return no decision, including for price-first requests. Market coverage stays unknown. No new directories, external reads, cohort slicing, brand identity, auth or UCP endpoints were added. `/concept.md` serves only the checked-in concept paper.

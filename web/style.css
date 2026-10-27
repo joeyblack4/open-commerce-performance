@@ -57,6 +57,7 @@ button {
 }
 .app-header nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
 }
 .demo-label {
@@ -404,6 +405,41 @@ pre {
   margin-top: 28px;
   max-width: 85ch;
 }
+.concept-stack {
+  display: grid;
+  grid-template-columns: minmax(240px, 330px) minmax(0, 1fr);
+  gap: 32px;
+  margin-top: 24px;
+  align-items: start;
+}
+.concept-detail {
+  background: var(--surface);
+  padding: 24px;
+  border-radius: var(--radius);
+  min-width: 0;
+}
+.concept-example {
+  margin-top: 40px;
+  border-top: 1px solid var(--border);
+  padding-top: 28px;
+}
+.discovery-priority {
+  margin-top: 16px;
+}
+.concept-discovery {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+.concept-discovery p {
+  max-width: 85ch;
+}
+@media (max-width: 700px) {
+  .concept-stack {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
 .load-state {
   padding: 50px 0;
   min-height: 300px;
@@ -570,6 +606,90 @@ footer {
 }
 .mobile-result-link {
   display: none;
+}
+.portable-promise {
+  font-size: 21px;
+  line-height: 1.5;
+  max-width: 48ch;
+  font-weight: 500;
+}
+.portable-intro {
+  max-width: 850px;
+}
+.portable-intro .button-row {
+  gap: 22px;
+  margin-top: 18px;
+}
+.portable-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 36px;
+  margin-top: 24px;
+}
+.portable-choices {
+  padding-top: 16px;
+}
+.portable-choices .meta {
+  margin-top: 16px;
+}
+.portable-publication {
+  min-height: 280px;
+}
+.portable-claim {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.portable-claim:first-of-type {
+  padding-top: 8px;
+}
+.portable-claim:last-of-type {
+  margin-bottom: 16px;
+}
+.portable-claim .offer-fact {
+  margin: 6px 0;
+}
+.portable-status {
+  color: var(--danger);
+}
+.portable-assessment {
+  padding: 30px 0;
+  margin-top: 30px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.portable-verdict {
+  margin-top: 24px;
+  font-size: 16px;
+}
+.claim-citation {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.claim-citation:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+}
+.portable-context {
+  margin-bottom: 30px;
+}
+.contribution-note .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (max-width: 700px) {
+  .portable-workspace {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .portable-promise {
+    font-size: 18px;
+  }
+  .portable-publication {
+    min-height: 220px;
+  }
 }
 #shop-result {
   scroll-margin-top: 16px;

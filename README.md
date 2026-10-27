@@ -1,18 +1,29 @@
 # Open Commerce Performance
 
-**Experimental reference · Apache-2.0 · fictional data.** See [LICENSE](LICENSE), [NOTICE](NOTICE) and [third-party notices](THIRD_PARTY_NOTICES.md).
+**Portable evidence about a business that an agent can consult during discovery and selection.**
 
-A **local synthetic prototype** for shopper-directed commerce decisions using optional, explicitly scoped operational evidence. No universal score, paid placement, product-quality inference, real merchant access or purchasing.
+Businesses choose what to publish. A system of record or named calculation service attests to a defined result. An agent checks the claim and decides whether it matters to the buyer's needs.
 
-Three fictional merchants sell the same grocery box at fixed delivered prices. Set a real budget and a 75%, 85% or 95% historical delivery preference; see the choice, its price tradeoff and when there is not enough evidence. Unknown history never establishes poor performance.
+The proposal standardizes the evidence format, permission and lifecycle. Metric definitions remain open and separately versioned. The goal is better consumer decisions and competition on service businesses can substantiate.
 
-Explore **Shop**, **For merchants** and **For builders** in the same app. The merchant path previews the full bundle, withdrawal and dispute through actual status rules without changing the served registry. The builder path leads to the independently pinned consumer, exact protocol fixture and review archive.
+**Experimental reference · Apache-2.0 · fictional data.** No provider endorsement, live source integrations or AI-platform adoption is claimed.
 
-For a concise walkthrough and the ecosystem contribution question, start with [the sharing package](docs/SHARE_PACKAGE.md).
+**[Try the public demo](https://joeyblack4.github.io/open-commerce-performance/) · [Read the PDF proposal](https://joeyblack4.github.io/open-commerce-performance/proposal.pdf) · [Download the PDF from this repo](docs/proposal/portable-business-evidence.pdf)**
 
-## Run in minutes
+The public demo works without installation. It replays 72 precomputed publication and buyer-need combinations across three fictional businesses. Signature and status checks are recorded at an explicit simulated clock; the site is not a live merchant feed. No private records, credentials or signing keys are hosted.
 
-Requires Python 3.11+, [uv](https://docs.astral.sh/uv/), Node 22.12+ and npm. No API keys, database, OAuth or provider account.
+To contribute, [open a proposal discussion](https://github.com/joeyblack4/open-commerce-performance/issues/new) or read [how to participate](CONTRIBUTING.md). The [launch copy](docs/LAUNCH.md) is ready to share.
+
+## Start here
+
+- [CEO brief](docs/CEO_BRIEF.md): the proposal and concrete alignment request.
+- [Full concept](docs/BUSINESS_DISCOVERY_CONCEPT.md): operation, commerce-stack fit, incentives and evaluation.
+- [Protocol proposal](docs/PORTABLE_EVIDENCE_PROTOCOL.md) and [candidate claim schema](spec/schemas/portable-claim.schema.json).
+- [Prepared outreach copy](docs/CEO_OUTREACH.md) and [walkthrough](docs/SHARE_PACKAGE.md).
+
+## Run the concept
+
+Requires Python 3.11+, uv, Node 22.12+ and npm. No API key, database or merchant account.
 
 ```sh
 uv sync --frozen
@@ -21,88 +32,65 @@ npm run build
 npm run demo -- --port 8787 --fixture-as-of 2026-10-25T20:00:00Z
 ```
 
-Open [the shopper demo](http://127.0.0.1:8787). It binds only to loopback. A persistent fictional-demo label identifies the example; About the evidence explains the simulated clock. Fixture data was observed on October 25; cohort dates remain April–June. A fresh signature does not make this old cohort current merchant performance.
+Open http://127.0.0.1:8787 in Chrome. The server binds only to loopback.
 
-**Keep the server running** for the consumer example, in another terminal:
+1. Choose a restaurant, ecommerce brand or B2B service company.
+2. Choose either of its two example metrics, both or neither. Inspect the aggregate, population, source, issuer and signed claim.
+3. Change the buyer's need. The explanation cites applicable evidence or says the requirement is unknown.
+4. Preview withdrawal or dispute. The signed claim can no longer support the assessment.
 
-```sh
-PYTHONPATH=src uv run python -m ocp.consumer \
-  --bootstrap-local --trust artifacts/local-trust.json \
-  --fixture-as-of 2026-10-25T20:00:00Z --scenario delivery
-```
+The six example methods are not a required KPI list. All use the same 0.3 candidate envelope. A new public method can use the envelope without changing the core schema; the consumer still has to understand it. The local runtime recognizes only the bounded fictional methods and fetches no remote definitions.
 
-`--bootstrap-local` is an explicit trust-on-first-use decision for this fictional process, not merchant identity verification. It pins statement keys, exact issuer/subject bindings and a separate signed-status authority. The file contains public keys only. Existing pins are never overwritten. A server restart creates new ephemeral keys: choose a new trust filename and explicitly bootstrap again.
+The demo calculates, signs and checks generated records. Source accuracy and independent audit are unestablished. Its visible deterministic interpretation is not an LLM or global market recommendation. Publication selection and status are read-only previews, not real merchant authorization or persistent publication.
 
-Use custom shopper inputs through the same consumer policy:
+## What a claim carries
 
-```sh
-PYTHONPATH=src uv run python -m ocp.consumer --trust artifacts/local-trust.json --fixture-as-of 2026-10-25T20:00:00Z --budget-cents 2500 --priority delivery --threshold 75
-```
+| Part | Purpose |
+| --- | --- |
+| Business and issuer | Who the evidence describes and who stands behind the calculation |
+| Method and version | What the number means, its unit and how it was calculated |
+| Population and coverage | Which records and period it covers, exclusions and missing observations |
+| Result | The value or an explicit unknown state |
+| Assurance | Source-provider issuance, service calculation or business assertion, kept distinct |
+| Validity and status | Observation time, expiry, withdrawal, dispute and correction |
 
-Repeat using the pins, independently of issuer `/verification` and `/scenarios`:
+Merchants choose metrics, not handpicked favorable records inside a declared population. Missing publication is unknown. Signatures establish origin and integrity, not source truth. Neither metric count nor refund incidence creates a universal quality score.
 
-```sh
-PYTHONPATH=src uv run python -m ocp.consumer --trust artifacts/local-trust.json --fixture-as-of 2026-10-25T20:00:00Z --scenario price
-PYTHONPATH=src uv run python -m ocp.consumer --trust artifacts/local-trust.json --fixture-as-of 2026-10-25T20:00:00Z --scenario tight
-PYTHONPATH=src uv run python -m ocp.consumer --trust artifacts/local-trust.json --fixture-as-of 2026-10-25T20:00:00Z --inject tamper
-PYTHONPATH=src uv run python -m ocp.consumer --trust artifacts/local-trust.json --fixture-as-of 2026-10-25T20:00:00Z --inject revoke
-PYTHONPATH=src uv run python -m ocp.consumer --trust artifacts/local-trust.json --fixture-as-of 2026-10-25T20:00:00Z --inject stale
-```
+## Local resources
 
-Expected choices: default delivery → Cedar Market ($24, 900/1000 historical on-time/in-full); price → Little Pantry ($18, unknown delivery); tight delivery budget → abstain. At a 75% threshold and sufficient budget, Grove Goods ($20, 750/1000) is the cheapest qualifying option. A 95% threshold cannot be met; adjustment actions explicitly change the preference and/or budget. All injected failures → delivery abstention. Injection changes only retrieved local objects, sends no mutation, and is not a network attack simulation. The normal verifier uses real UTC when `--fixture-as-of` is absent. Future/expired claims fail; the demo does not disable expiry. `npm run demo -- --real-clock` explicitly uses real time instead.
+| Resource | Purpose |
+| --- | --- |
+| `/v0/portable-preview?business=restaurant&claims=pickup&state=published&need=pickup` | Bounded read-only publication and interpretation preview |
+| `/v0/portable-schema`, `/v0/portable-methods` | Candidate 0.3 envelope and local method definitions |
+| `/brief.md`, `/concept.md`, `/protocol.md` | Executive and technical proposal |
+| `/brief.pdf` | Local executive PDF; the public site serves `proposal.pdf` |
 
-## Check it
+No generic file serving, arbitrary cohort queries or provider writes are implemented. Existing 0.2 signed-evidence, status, consumer and comparison routes remain for technical regression and interoperability work. The UI's **Comparison reference** and **For builders** paths expose that earlier narrow experiment. Its three-measure fixed bundle does not define the new optional-publication proposal.
+
+## Verify
 
 ```sh
 npm test
+npm run build
 uv run ruff check src tests scripts
 uv run ruff format --check src tests scripts
-npm run build
-npm audit
 PYTHONPATH=src uv run python -m ocp.interop
 npm run evaluate
 ./scripts/protocol_audit
 ```
 
-The protocol audit uses authenticated `gh` for read-only GitHub access and public official docs. It records timestamped observations; exit 2 means network/source checks incomplete, exit 3 means baseline drift requires review. It never certifies compliance. Tests are offline except loopback HTTP; independent JWS interoperability uses local Node crypto. No tests skip missing dependencies.
+The protocol audit reads official sources using authenticated gh. Exit 2 means incomplete checks; exit 3 means upstream drift needs review. It never certifies compliance. The offline UCP fixture uses unchanged pinned released v2026-08-25 schemas, not live negotiation. The reference uses flattened JWS, not a W3C VC profile.
 
-## What is implemented
+## Align on the standard
 
-- Versioned JSON Schema 2020-12 and strict parser/semantic validator; positive and adversarial fixtures.
-- Bounded pure calculator: delivered on-time/in-full, completeness at recorded fulfillment, 60-day settled refund incidence. Exact counts, cohort/window, coverage, missing states, bounds, maturity and privacy suppression.
-- Standard flattened JWS (RFC 7515) through `joserfc`, protected `alg=Ed25519` (RFC 9864), `kid`, `typ`, `cty`; no JWT or W3C VC claim.
-- Separate signature/current-status verification, reproducibility and source-truth results. Issuer/subject/tenant isolation, explicit trust, key validity/rotation/revocation and consent withdrawal.
-- Read-only synthetic Shopify-shaped adapter; separate synthetic checkout-promise/carrier fields. No real provider client.
-- Three-path shopper/merchant/builder app built with free HeroUI and Black 4's approved theme. Budget/history controls, understandable adjustments, source readiness, whole-bundle preview and human evidence inspection keep the technical JSON in drilldown.
-- An **offline** UCP vendor-extension fixture validated against unmodified, hash-pinned `v2026-08-25` schemas. Unsupported clients receive unchanged base catalog data; opted-in fixtures receive a distinct evidence-reference field. Hypothetical HTTPS URLs are **unhosted**, not deployed protocol endpoints.
+The initial ask is to nominate product and technical owners, identify a native measure each source system could responsibly issue, and test exchange between two source systems and two independent agents. Consent, completeness, identity, comparison and correction are part of the test. Consumer benefit must then be measured.
 
-## Local read API
+The protocol should be openly usable across source providers, issuers and AI platforms. A Black 4-hosted service should be optional. No consortium, provider partnership or recommendation inclusion has been agreed.
 
-| Resource | Purpose |
-|---|---|
-| `/v0/.well-known/ocp` | Experimental OCP discovery, explicitly not UCP discovery |
-| `/v0/subjects/fictional:merchant-a/performance` | Fixed published bundle, bounded list, no arbitrary segmentation |
-| `/v0/statements/{id}` | Aggregate statement; 410 after withdrawal/expiry |
-| `/v0/statements/{id}/signature` | Flattened JWS with exact payload bytes |
-| `/v0/statements/{id}/status` | Signed current status, payload digest, consent and key revocation; 60-second TTL |
-| `/v0/statements/{id}/verification` | Publisher debugging result, not a substitute for consumer verification |
-| `/v0/methods/{metric}/0.2.0` | Formula, cohort and limitations |
-| `/v0/keys` | Ephemeral public fixture keys; discovery is not trust |
-| `/v0/schema/0.2.0` | Experimental schema |
-| `/v0/demo`, `/v0/scenarios` | Demo data and preserved deterministic preset traces |
-| `/v0/recommendation?budget=2500&priority=delivery&threshold=85&evidence=on` | Bounded shopper preferences; no source cohort slicing or submitted evidence |
-| `/v0/merchant-preview?state=shared` | Read-only projection; `shared`, `withdrawn`, `disputed`; served registry is unchanged |
-| `/v0/interop` | Offline pinned UCP fixture result |
-| `/v0/release-info`, `/v0/release-package` | Prepared experimental reference ZIP status/download |
+[Architecture](docs/ARCHITECTURE.md) · [0.2 methods](docs/METRICS.md) · [signature profile](docs/ADRs/0002-jws-profile.md) · [0.3 direction](docs/ADRs/0003-portable-business-evidence.md) · [validation](VERIFICATION.md) · [implementation gaps](docs/IMPLEMENTATION_GAP_REPORT.md).
 
-All reads use `Cache-Control: no-store`, ETags and security headers. No write API, remote fetches, UCP checkout or ACP feeds. Shopper preference queries never select source cohorts; unknown or duplicate parameters are rejected. GET `/.well-known/ucp` intentionally returns 404. Revocation lives only in this process; restart resets the synthetic demonstration, so this is not a production revocation service.
+## Share the reference
 
-Read [upstream alignment](docs/ADRs/0001-upstream-alignment.md), [signature profile](docs/ADRs/0002-jws-profile.md), [architecture](docs/ARCHITECTURE.md), [metric rules](docs/METRICS.md), [implementation gaps](docs/IMPLEMENTATION_GAP_REPORT.md), [UCP discussion draft](docs/DRAFT_UCP_DISCUSSION.md) and [consented pilot plan](docs/MERCHANT_PILOT_PLAN.md). No public hosting, outreach, real data or deployment has been authorized by this prototype.
+The repository is public under Apache-2.0. LICENSE, NOTICE and third-party notices apply. `npm run package:review` builds an allowlisted archive from clean committed source, excluding credentials, trust pins, dependencies and local artifacts. The proposal PDF and editable Word source are included in the repository and the public site.
 
-## Prepare a review archive
-
-After committing the reviewed source, run `npm run package:review`. The ZIP in `artifacts/open-commerce-performance-review.zip` contains allowlisted committed source, screenshots, locked dependencies, protocol snapshots, notices and a per-file digest manifest. It excludes dependency directories, environment/key files, git internals, trust pins and machine-local paths. The builder path offers the download only when the archive exists. The archive does not include installed dependencies or a prebuilt dist; the same quickstart works from extracted source. Git is needed to repackage; authenticated gh is needed only for a fresh protocol audit.
-
-Black 4-authored material is licensed under [Apache-2.0](LICENSE); third-party material retains its own notices. Repository publication was authorized on October 26, 2026. The app still runs locally with fictional data. Hosted deployment, named outreach, real merchant access and upstream submission remain separate decisions. See the [licensing decision](docs/LICENSE_RECOMMENDATION.md).
-
-![Shopper controls and tradeoff](docs/screenshots/shopper-desktop.png)
+Public hosting of this fictional reference was authorized October 27, 2026. GitHub Pages deploys the validated main branch; see [deployment](docs/DEPLOYMENT.md). Real merchant access, company outreach and upstream submission remain separate actions.

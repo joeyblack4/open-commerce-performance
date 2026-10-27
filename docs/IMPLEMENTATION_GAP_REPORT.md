@@ -1,5 +1,7 @@
 # Implementation gap report
 
+**October 27 update:** the current direction is [portable business evidence](BUSINESS_DISCOVERY_CONCEPT.md). The [0.3 candidate profile](PORTABLE_EVIDENCE_PROTOCOL.md) and local `portable.py` preview add business-selected claims and independent method definitions. The sections below retain the narrower 0.2 implementation and its limits; fixed metrics and bundles are not requirements of the new proposal. Live providers, durable publication and agent-platform adoption remain unimplemented.
+
 Checked 2026-10-25, America/Los_Angeles. Owner: Black 4. Synthetic reference, not merchant certification or a production service.
 
 | Area | Implemented evidence | Practical limit |
@@ -45,3 +47,9 @@ The loopback Python development server is not Internet hosting infrastructure. K
 The first UI limitations have received targeted verification: connected Chrome desktop, independent clean-session 320px/390px views, keyboard budget/threshold controls, actual network-failure/retry injection and reduced-motion dialog focus return. These are point-in-time checks, not accessibility certification or real participant comprehension testing. See the current VERIFICATION record for exact scope.
 
 An experimental reference package and screenshots now accompany the source. Apache-2.0 applies to Black 4-authored material following explicit owner authorization on October 26, 2026. Square's official UCP Food TC role and Poppy's adjacent in-progress Draft 0.3/source-version discrepancy are documented; no additional connector/auth runtime was invented. Consumer enthusiasm, merchant commercial benefit and platform uptake remain unmeasured.
+
+## Business discovery revision — October 26, 2026
+
+The [full concept](BUSINESS_DISCOVERY_CONCEPT.md) now distinguishes finding candidates, discovering capabilities and judging suitability. The app's interactive stack explains ownership and current limits. A server-side, seeded business-context experiment reuses actual verified preference policy for shipped orders and refuses to infer pickup/meal eligibility or performance. It also refuses a price-only recommendation for those unsupported needs. This closes a conceptual scope hole; it does not implement a global index or general service matching.
+
+Additional gaps are explicit: candidate/market coverage, independently verified entity/brand/branch relationships, real serviceability, live business-first UCP attachment, independent issuers/clients, method governance, affordable cold-start access, platform incentive constraints and consumer/competition studies. The current evidence contract and UCP catalog fixture are unchanged. New location/business-first UCP mechanisms remain proposals.

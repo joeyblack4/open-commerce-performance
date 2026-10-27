@@ -1,45 +1,39 @@
-# Better choices from useful operational facts
+# Portable business evidence sharing package
 
-**Experimental reference · Apache-2.0 · publication authorized 2026-10-26.** No merchant data, purchasing, deployment, upstream submission or platform endorsement.
+Start with the [PDF proposal](https://joeyblack4.github.io/open-commerce-performance/proposal.pdf), [public demo](https://joeyblack4.github.io/open-commerce-performance/) and [CEO brief source](CEO_BRIEF.md). It asks source providers and AI platforms to help define a common format for optional business evidence and test it across independent implementations. [Prepared email copy](CEO_OUTREACH.md) accompanies it. No outreach has been sent.
 
-A shopper choosing the same grocery box can prefer low price or an established delivery record. A merchant can voluntarily make that record understandable. An agent can independently verify signed origin and current status before deciding what the facts mean for that shopper. No universal merchant score or paid ranking advantage.
+## The message
 
-## Try the three paths
+Portable evidence about a business that an agent can consult during discovery and selection. Businesses choose what to publish. An identified issuer attests to a defined result. The agent decides its relevance to the buyer. Metric definitions remain open; scope and provenance are explicit.
 
-Run the [quickstart](../README.md), then open `http://127.0.0.1:8787`.
+## The working demonstration
 
-- **Shop:** set a $25 budget and 85% historical delivery preference → Cedar Market at $24. Lower that preference to 75% → Grove Goods at $20. Price first → Little Pantry at $18, while its delivery history stays unknown. A $19 delivery-first budget or 95% threshold leads to an understandable abstention.
-- **For merchants:** inspect Cedar's full three-measure bundle, source requirements and privacy boundary. Preview withdrawal or a disputed state through actual signature/status rules. Nothing connects, publishes or changes the served registry.
-- **For builders:** run the independently pinned consumer, inspect the schema/JWS/status resources and reproduce a release-pinned UCP vendor-extension experiment. Unsupported clients retain unchanged base catalog behavior.
+Open the public demo with no installation, or run the [local quickstart](../README.md). The landing view has one flow, across three fictional businesses:
 
-The controls change bounded shopper preferences, never source cohorts. Refund incidence is shown with its policy and never becomes a low-is-good product-quality ranking. The consumer verifier does not rely on the issuer's `/verification` result. Signatures authenticate origin; they do not establish source truth, completeness or independent audit.
+- **Restaurant:** select pickup preparation time or average net check. The latter is per check, never per person.
+- **Ecommerce:** select delivery by original promise or average dispatch time. The generated source explicitly supplies the required observations; no commerce API is claimed to supply them universally.
+- **B2B services:** select first human support response or invoices within accepted fixed-scope quotes.
 
-## The contribution
+Choose either measure, both or neither. Change the buyer need. A selected but irrelevant claim does not satisfy a different requirement. Missing, expired, withdrawn and disputed evidence cannot support the assessment. Inspect the exact signed claim and its status in the evidence dialog. Private source rows and keys never appear in the response.
 
-Keep discovery, catalog, checkout and payments in existing protocols. Explore one optional namespaced catalog reference to independently consumable aggregate evidence. Each claim carries counts, population/window, coverage, method, issuer/incentives and current status; the shopper owns the decision.
+The hosted version replays 72 precomputed, signed publication and buyer-need examples. Its checks were recorded at the explicitly simulated October 25 clock. It runs no Python server, live provider integration or mutable publication service. The local version calculates and checks the examples in process. Both are read-only previews. The claim issuer, source records and business identities are fictional. Signature and status checks use real cryptography with explicit local trust; source accuracy and independent audit remain unestablished. The explanation is a deterministic example, not an LLM call, market search or measured consumer benefit.
 
-The local UCP fixture uses immutable `v2026-08-25` schemas at `87dd4b1fcff9105d68173120897237fa784c74ef`. It includes an unhosted vendor namespace, exact-version fixture intersection and composition with a distinct field. It is not a live UCP endpoint, complete negotiator or certification. ACP's checked source uses dated `2026-04-17`; no undocumented feed fields are added. AP2 v0.2.0 remains the payments boundary. Square is a verified UCP Food Technical Council participant; its APIs/MCP remain prospective consented OCP source integrations. Neither participation nor API access implies OCP adoption. Poppy is adjacent/deferred: deployed Draft 0.3 docs and public repository version metadata differ, explicitly recorded in the audit. OCP adds no auth/session layer.
+## The proposed standard
 
-**Question for UCP builders:** is catalog lookup the right extension parent for a merchant-scoped aggregate reference, or should the evidence remain an external opt-in resource? The [specific discussion draft](DRAFT_UCP_DISCUSSION.md), [ecosystem positioning](ECOSYSTEM_POSITIONING.md) and runnable positive/adversarial fixtures make that question concrete. ACP and Square have distinct integration questions and data contracts.
+Read the [concept](BUSINESS_DISCOVERY_CONCEPT.md), [protocol](PORTABLE_EVIDENCE_PROTOCOL.md) and [candidate schema](../spec/schemas/portable-claim.schema.json). Provider, business and industry methods can evolve independently. Shared definitions enable comparisons; the protocol imposes no universal KPI list or business score.
 
-## Review the evidence
+The 0.3 candidate is separate from the earlier 0.2 closed fixture contract, which remains tested. The old fixed bundle is retained only as a technical reference. Standard signing is reused. Neither profile claims W3C VC conformance.
 
-[Architecture](ARCHITECTURE.md) · [methods](METRICS.md) · [JWS profile](ADRs/0002-jws-profile.md) · [exact upstream audit](ADRs/0001-upstream-alignment.md) · [validation](../VERIFICATION.md) · [gaps](IMPLEMENTATION_GAP_REPORT.md) · [consented pilot](MERCHANT_PILOT_PLAN.md).
+## Existing commerce protocols
 
-This demonstrates coherent behavior on fictional data. Consumer enthusiasm, merchant commercial benefit and real recommendation improvement remain hypotheses. Next, test comprehension with people and consented merchant/source coverage before claiming utility or distributing live evidence.
+The evidence is independently retrievable before purchase and can be referenced by discovery surfaces or supported protocol integrations. UCP catalog, checkout and order responsibilities stay with UCP. The existing catalog-extension fixture passes against immutable released v2026-08-25 schemas; it is offline, with unhosted example URLs. No live negotiation, official adoption or ingestion by an AI platform is claimed.
 
-## Package and release boundary
+The [October 27 audit](upstream/2026-10-27-portable-evidence.json) completed network checks and detected UCP development drift. Review found changes in documentation rendering and its tests only; released schema pins remain unchanged. The [review](upstream/2026-10-27-portable-review.json) records the baseline decision. Development HEAD is not a release.
 
-`npm run package:review` exports allowlisted committed files from a clean HEAD into a deterministic ZIP with a per-file SHA256 manifest. It excludes ignored artifacts/trust pins, dependencies, git internals, environment/key files and machine-local paths. Upstream licenses/notices travel with it. The root Apache-2.0 license and NOTICE travel with the archive; third-party licenses remain intact. See the [licensing decision](LICENSE_RECOMMENDATION.md).
+## The alignment request
 
-Repository publication under Apache-2.0 was explicitly authorized on October 26, 2026. This is an experimental reference for technical review and local testing. Hosting a demo, sending the package to named companies and posting upstream remain separate decisions.
+Nominate a product and technical owner. Identify a native metric your system can responsibly support. Test consented claims from two source systems with two independent agents, then measure consumer decision quality and participation effects. Source-provider issuance, persistent publication, real identity and discovery integration are still future work.
 
-## Walkthrough images
+## Distribution
 
-![Shopper priorities and price tradeoff](screenshots/shopper-desktop.png)
-
-![Merchant full-bundle preview](screenshots/merchant-desktop.png)
-
-![Merchant withdrawal preview](screenshots/merchant-withdrawal.png)
-
-![Builder entry point](screenshots/builders-desktop.png)
+The public repository is Apache-2.0 with third-party notices. `npm run package:review` creates an allowlisted source archive from a clean commit. Executive PDF and Word files are checked in and served by the public site. The validated main branch is deployed to GitHub Pages; local runtime demonstrations still require the Python server. No participant or provider endorsement is claimed.

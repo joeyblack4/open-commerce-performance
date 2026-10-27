@@ -1,5 +1,7 @@
 # Ecosystem fit and the contribution we want to make
 
+**October 27 update:** the current direction is [portable business evidence](BUSINESS_DISCOVERY_CONCEPT.md). The [0.3 candidate profile](PORTABLE_EVIDENCE_PROTOCOL.md) and local `portable.py` preview add business-selected claims and independent method definitions. The sections below retain the narrower 0.2 implementation and its limits; fixed metrics and bundles are not requirements of the new proposal. Live providers, durable publication and agent-platform adoption remain unimplemented.
+
 Checked: 2026-10-25, America/Los_Angeles. Research and sharing preparation only; no outreach, endorsement or production integration.
 
 ## The proposal

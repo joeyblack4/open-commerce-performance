@@ -1,4 +1,24 @@
-# Product verification — 2026-10-25; publication update — 2026-10-26
+# Product verification — 2026-10-26
+
+## Public distribution October 27 2026
+
+Public synthetic hosting and proposal publication were authorized October 27. GitHub Pages serves a static bundle with all 72 fictional preview combinations and a normal HTTPS proposal PDF. `publication.json` binds exported bytes to the deployment source commit. No Python server or live provider access is exposed.
+
+87 Python and 18 React tests pass, including static export coverage, omission and withdrawal behavior, public-key-only export, PDF presence, manifest digests and strict hosted file lookup. The hosted Vite build, Ruff, formatting and relative documentation links pass. The two-page PDF was regenerated with its main-branch reference and both rendered pages inspected. The exact static build was exercised in connected Chrome under its deployment subpath before publication.
+
+The Pages workflow validates pull requests and deploys main after checks. Live publication and download verification are reported in the GitHub release; the demo's origin/status results remain recorded synthetic checks at the declared fixture clock.
+
+## Portable business evidence rewrite October 27 2026
+
+The current concept uses business-selected claims in a generic 0.3 candidate envelope. Six separately versioned methods across restaurant, ecommerce and B2B examples use the same schema. The original 0.2 calculator, verifier and offline UCP fixture remain unchanged technical references.
+
+- 84 Python tests and 16 React tests pass. New checks cover optional publication, omission as unknown, cross-subject and cross-method isolation, method digest and population binding, missing observations, expired or withdrawn status, signature tampering and fixture authority limits. UI checks cover changed buyer needs, empty publication, failure/retry, citation inspection and focus restoration.
+- TypeScript/Vite build, Ruff, formatting and diff checks pass; npm audit reports no vulnerabilities. Existing deterministic evaluation and pinned offline UCP fixture pass. No real AI, source provider or consumer outcome was evaluated.
+- Connected work-profile Chrome verified all three business examples, metric omission, withdrawal and citation inspection. Desktop and 390px layouts have no horizontal overflow; mobile overlays remain readable and dismiss correctly. Temporary viewport overrides were reset.
+- The two-page executive brief was rendered and visually inspected. Its reference links to the current proposal branch. Prepared email copy has not been sent.
+- Official-source network checks completed. UCP development HEAD changed only documentation rendering and its tests relative to the prior baseline; the review records that decision. Released schema pins are unchanged. No conformance or adoption claim follows from this review.
+
+Current screenshots: [desktop](docs/screenshots/portable-desktop.png) and [mobile](docs/screenshots/portable-mobile.png).
 
 Repository `joeyblack4/open-commerce-performance`, implemented in PR #1. The owner authorized public distribution under Apache-2.0 on October 26, 2026. Source and synthetic demo only; no live merchant data, production deployment, named outreach or upstream submission.
 
@@ -7,7 +27,7 @@ Repository `joeyblack4/open-commerce-performance`, implemented in PR #1. The own
 | Check | Result |
 |---|---|
 | Clean `npm ci --ignore-scripts` using the locked dependencies | Passed; standard npm installation works |
-| `npm test` | **69 Python tests + 9 React UI tests passed**, no skips |
+| `npm test` | **75 Python tests + 11 React UI tests passed**, no skips |
 | `uv run ruff check src tests scripts` and format check | Passed |
 | `npm run build` | TypeScript/Vite passed; upstream HeroUI `use client` bundler notices remain informational |
 | `npm audit` | **0 vulnerabilities** |
@@ -67,3 +87,13 @@ Reviewed all 175 pre-publication historical file blobs for known credential-toke
 The fresh official-source audit detected UCP development HEAD changes and was reviewed explicitly, as documented in ADR 0001 and the dated publication snapshot. Released schemas are unchanged. Evaluating that snapshot against the updated reviewed baseline passes; the original drift result is retained in the snapshot for provenance.
 
 Public repository distribution is authorized. The demo remains local and synthetic; no hosted deployment, real merchant access, company outreach or upstream submission accompanies publication.
+
+## Business discovery concept — October 26, 2026
+
+The app adds The concept and renames Shop to Compare, identifying the merchant as the comparison subject and the identical basket as controlled context. The deep concept paper is available through the fixed `/concept.md` read route and the app download. No generic filesystem route was added.
+
+Six new Python tests cover different consumer winners, unsupported pickup/meal scope even on price, verification reuse, source immutability, invalid/extra/duplicate query rejection, and the fixed document route. Two new React tests exercise stack selection, real context/priority query changes, abstention, stale-result removal, retry and navigation to the full comparator. Full test suite: 75 Python + 11 UI, no skips; build and Ruff pass.
+
+Connected Chrome confirms the $24 delivery-history choice, $18 price-only choice with unknown history, and pickup abstention after choosing price. A stack layer selects with Space and retains a visible focus ring. New concept views were inspected at normal desktop, 390×844 and 320×844; document widths were 375px and 305px respectively, with no page overflow. Temporary viewport overrides were reset. New screenshots are `docs/screenshots/business-concept-desktop.png` and `docs/screenshots/business-context-mobile.png`. This focused QA does not replace broader accessibility or participant testing.
+
+The refreshed official-source audit completed with `reviewed_snapshot_unchanged`. The immutable UCP v2026-08-25 tree includes location schemas/specs; no new location/business-first UCP extension was emitted. Real candidate coverage, brand/branch identity, serviceability, agent adoption, source truth and consumer/competition gains remain unproven. The current loopback app is a synthetic scope canary, not a global index.

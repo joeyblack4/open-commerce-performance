@@ -1,8 +1,8 @@
 # LOCAL DRAFT — do not submit
 
-**Title:** Optional catalog references to aggregate merchant outcome evidence
+**Title:** Business-first access to scoped merchant outcome evidence
 
-We are exploring an independently namespaced catalog extension, `ai.black4.commerce.performance`, pointing to opt-in aggregate operational evidence. No merchant score, checkout/payment change or inference of product reliability from shipping/refunds.
+The [business discovery concept](BUSINESS_DISCOVERY_CONCEPT.md) separates candidate discovery, capability discovery and consumer suitability. Our existing experiment is an independently namespaced catalog extension, `ai.black4.commerce.performance`, pointing to opt-in aggregate operational evidence. No merchant score, checkout/payment change or inference of product reliability from shipping/refunds.
 
 Two eligible offers may differ in original-promise versus observed-delivery history, completeness or settled-refund incidence. Useful evidence needs the actual population/window, numerator/denominator, coverage, maturity, policy, source provenance and current consent/status. A signature authenticates origin, not input truth/audit. Missing participation must not become poor performance.
 
@@ -24,7 +24,8 @@ These are not hosted URLs, a full UCP server/negotiator, live fetch conformance 
 
 [Open #836](https://github.com/Universal-Commerce-Protocol/ucp/pull/836) proposes transaction correspondence and `unverifiable`; [open #837](https://github.com/Universal-Commerce-Protocol/ucp/pull/837) proposes adjustment causes, including fulfillment mismatch. They may become source inputs if adopted. They are not released fields. Security/risk signals address different transaction concerns.
 
-- Is catalog lookup the right extension parent for merchant-scoped aggregates, or should this stay an external opt-in resource?
+- How should a consumer discover merchant-scoped evidence before selecting a product: an independent resource, a vendor capability, or a supported business/location reference? The catalog attachment works for offer-first journeys but should not define the whole model.
+- How should business, seller, branch and brand bindings be represented without implying scope inheritance?
 - Is there a useful existing link relation/identity binding for external issuer claims, or should references stay vendor-defined until multi-party use?
 - How could adopted correspondence/adjustment inputs be reused without treating unilateral assertions as audited outcomes?
 - Which additional conformance vectors would help evaluate the exact example?
