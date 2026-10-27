@@ -1,12 +1,12 @@
 # Engineering guidance for Open Commerce Performance
 
-Start with `README.md`, `docs/PRODUCT_RELEASE_BRIEF.md`, `docs/SHARE_PACKAGE.md`, the current alignment/JWS ADRs and `docs/METRICS.md`. `CODEX_HANDOFF.md` and the numbered handoff documents are historical requirements/context; current checked versions and implementation status live in the ADRs, audit snapshots and gap report.
+Start with `README.md`, `docs/BUSINESS_DISCOVERY_CONCEPT.md`, `docs/CEO_BRIEF.md`, `docs/PORTABLE_EVIDENCE_PROTOCOL.md`, `docs/SHARE_PACKAGE.md` and the current ADRs. The October 27 direction supersedes the historical fixed-bundle product brief; `docs/METRICS.md` describes the retained 0.2 fixture. `CODEX_HANDOFF.md` and the numbered handoff documents are historical requirements/context; current checked versions and implementation status live in the ADRs, audit snapshots and gap report.
 
 Priorities:
 
 1. Extend existing official commerce protocols; use released schemas and record HEAD versus release/draft explicitly. Refresh the runnable audit before integration or sharing changes. Never imply UCP/ACP/Poppy adoption or conformance from a hypothetical fixture.
 2. Preserve accurate evidence, privacy, explicit opt-in, tenant/issuer/subject isolation and current consent/status. A signature proves origin, not source truth, completeness, carrier authentication or audit. Merchant fulfillment/refunds cannot establish product reliability.
-3. Make the consumer's budget/preferences, tradeoffs and uncertainty understandable. Missing participation is not poor performance. Refund incidence is never a low-is-good ranking signal. Merchant previews show the whole bundle and never change live authority.
+3. Make the consumer's budget/preferences, tradeoffs and uncertainty understandable. Missing participation is not poor performance. Refund incidence is never a low-is-good ranking signal. Businesses choose which metrics to publish. Each selected claim preserves its declared population, method, exclusions and coverage. Previews never change live authority.
 4. Keep Platform Control identity/authority/consent/Reviews/receipts, Connector Hub credentials/provider execution and MDW governed evidence with their existing owners. Do not create another platform, auth/session system or credential store here.
 5. Keep this build synthetic and local. No real merchant/provider connections, purchasing, production changes, public hosting, repository-visibility change, company outreach or upstream submission without the applicable explicit human authorization.
 

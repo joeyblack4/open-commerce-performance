@@ -1,5 +1,7 @@
 # Architecture and future integration boundary
 
+**October 27 update:** the current direction is [portable business evidence](BUSINESS_DISCOVERY_CONCEPT.md). The [0.3 candidate profile](PORTABLE_EVIDENCE_PROTOCOL.md) and local `portable.py` preview add business-selected claims and independent method definitions. The sections below retain the narrower 0.2 implementation and its limits; fixed metrics and bundles are not requirements of the new proposal. Live providers, durable publication and agent-platform adoption remain unimplemented.
+
 Owner: Black 4. Status: local synthetic reference, 2026-10-25.
 
 `mock snapshot → pure calculator → aggregate allowlist projection → strict validator → JWS → local GET → independently pinned consumer → shopper policy`

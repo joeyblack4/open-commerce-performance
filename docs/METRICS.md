@@ -1,5 +1,7 @@
 # Metric methods 0.2.0
 
+**October 27 update:** the current direction is [portable business evidence](BUSINESS_DISCOVERY_CONCEPT.md). The [0.3 candidate profile](PORTABLE_EVIDENCE_PROTOCOL.md) and local `portable.py` preview add business-selected claims and independent method definitions. The sections below retain the narrower 0.2 implementation and its limits; fixed metrics and bundles are not requirements of the new proposal. Live providers, durable publication and agent-platform adoption remain unimplemented.
+
 The initial handoff is archived in `CODEX_HANDOFF.md`. Runtime definitions live in `src/ocp/metrics.py` and are hashed in each statement. All figures in this repository are fictional.
 
 All cohorts use paid, non-test purchases in a fixed UTC calendar quarter `[start,end)`. Source ledger count may include paid/test exclusions, which remain disclosed through cohort-vs-source reconciliation. No geographic or product slicing API is implemented. Comparison requires identical method, cohort, geography, service, category and refund policy. Missing participation never lowers a score; no score exists.

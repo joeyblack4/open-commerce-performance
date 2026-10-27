@@ -1,0 +1,14 @@
+{
+  "checked_date": "2026-10-27",
+  "audit": "2026-10-27-portable-evidence.json",
+  "original_result": "review_required",
+  "reviewed_repository": "Universal-Commerce-Protocol/ucp",
+  "previous_head": "69895b84b451925a92ac0c9122353eab310e1a23",
+  "reviewed_head": "514fc8f8b2676cea24231652da11ad2700117955",
+  "compare_url": "https://github.com/Universal-Commerce-Protocol/ucp/compare/69895b84b451925a92ac0c9122353eab310e1a23...514fc8f8b2676cea24231652da11ad2700117955",
+  "changed_files": [
+    "main.py",
+    "scripts/test_schema_tables.py"
+  ],
+  "decision": "Documentation renderer and regression tests only. Released v2026-08-25 schema pins unchanged. Development baseline updated; no conformance claim."
+}

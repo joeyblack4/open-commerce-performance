@@ -4,6 +4,7 @@ import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { App } from "./App";
 import { Shop } from "./Shop";
+import { Merchant } from "./Merchant";
 import { type Bundle, type Decision, type MerchantPreview } from "./types";
 
 const metric = {
@@ -128,9 +129,12 @@ function mockApi() {
 }
 
 describe("shopper and merchant paths", () => {
-  it("leads with the shopping brief and shows a budget/evidence tradeoff", async () => {
+  it("keeps the earlier comparison available behind the portable evidence concept", async () => {
     vi.stubGlobal("fetch", mockApi());
     render(<App />);
+    await userEvent
+      .setup()
+      .click(screen.getByRole("button", { name: "Comparison reference" }));
     await screen.findByRole("heading", {
       name: "Choose a business for this order.",
     });
@@ -179,15 +183,20 @@ describe("shopper and merchant paths", () => {
     expect(screen.queryByText(/You spend \$6 more/)).toBeNull();
   });
   it("handles initial loading, error and retry", async () => {
-    const fetch = vi
-      .fn()
-      .mockRejectedValueOnce(new Error("offline"))
-      .mockImplementation(mockApi());
+    const base = mockApi();
+    let firstDemoRead = true;
+    const fetch = vi.fn((url: string) => {
+      if (url === "/v0/demo" && firstDemoRead) {
+        firstDemoRead = false;
+        return Promise.reject(new Error("offline"));
+      }
+      return base(url);
+    });
     vi.stubGlobal("fetch", fetch);
     render(<App />);
-    expect(
-      screen.getByText("Loading your fictional shopping options…"),
-    ).toBeTruthy();
+    await userEvent
+      .setup()
+      .click(screen.getByRole("button", { name: "Comparison reference" }));
     await screen.findByRole("alert");
     await userEvent
       .setup()
@@ -222,6 +231,9 @@ describe("shopper and merchant paths", () => {
     );
     vi.stubGlobal("fetch", fetch);
     render(<App />);
+    await userEvent
+      .setup()
+      .click(screen.getByRole("button", { name: "Comparison reference" }));
     await screen.findByText(
       "No usable evidence is currently shared. You can still compare prices; delivery history stays unknown.",
     );
@@ -235,9 +247,8 @@ describe("shopper and merchant paths", () => {
   it("previews full-bundle withdrawal and restoration with no write request", async () => {
     const fetch = mockApi();
     vi.stubGlobal("fetch", fetch);
-    render(<App />);
+    render(<Merchant />);
     const user = userEvent.setup();
-    await user.click(screen.getByRole("button", { name: "For merchants" }));
     await screen.findByText("Delivered on time, with every item");
     await user.click(
       screen.getByRole("button", { name: "Preview withdrawal" }),
@@ -255,9 +266,8 @@ describe("shopper and merchant paths", () => {
   });
   it("shows a disputed state and source requirements instead of a connection action", async () => {
     vi.stubGlobal("fetch", mockApi());
-    render(<App />);
+    render(<Merchant />);
     const user = userEvent.setup();
-    await user.click(screen.getByRole("button", { name: "For merchants" }));
     await user.click(
       screen.getByRole("button", { name: "Preview a disputed record" }),
     );

@@ -1,5 +1,7 @@
 # Next milestone: a product people can understand and an ecosystem can try
 
+**Historical 0.2 build context. The October 27 direction is [portable business evidence](BUSINESS_DISCOVERY_CONCEPT.md), with business-selected metrics and a common claim envelope. The old fixed-bundle requirement applies only to the retained 0.2 fixture.**
+
 Historical build brief. Publication update: on October 26, 2026, the owner authorized public repository distribution under Apache-2.0; see [the licensing decision](LICENSE_RECOMMENDATION.md). Hosted deployment, merchant access and outreach remain separate.
 
 Decision: 2026-10-25. Continue the existing private branch and draft PR. This brief extends the first technical prototype under the user's delegated product authority.

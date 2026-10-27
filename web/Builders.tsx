@@ -15,12 +15,27 @@ export function Builders() {
     <>
       <div className="page-heading">
         <p className="eyebrow">For builders</p>
-        <h1>Try useful evidence beside the commerce flow.</h1>
+        <h1>Make business evidence portable across agents.</h1>
         <p className="lead">
-          A small reference implementation: signed aggregate facts, explicit
-          trust, and a shopper who can say “not enough evidence.”
+          Start with the candidate claim format and business-selected metrics.
+          The earlier comparison and independent verifier remain technical
+          references.
         </p>
       </div>
+      <section className="contribution-note">
+        <h2>The portable evidence proposal</h2>
+        <p>
+          The 0.3 candidate envelope supports separately versioned methods. The
+          local examples share only business-selected claims, disclose source
+          and issuer separately, and check signed status before interpreting a
+          result. No provider endorsement or live AI integration is implied.
+        </p>
+        <div className="button-row">
+          <a href="/protocol.md">Protocol proposal</a>
+          <a href="/v0/portable-schema">Claim schema</a>
+          <a href="/v0/portable-methods">Local method definitions</a>
+        </div>
+      </section>
       <div className="builder-workspace">
         <section>
           <h2>Run it locally</h2>

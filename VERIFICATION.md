@@ -1,5 +1,17 @@
 # Product verification — 2026-10-26
 
+## Portable business evidence rewrite October 27 2026
+
+The current concept uses business-selected claims in a generic 0.3 candidate envelope. Six separately versioned methods across restaurant, ecommerce and B2B examples use the same schema. The original 0.2 calculator, verifier and offline UCP fixture remain unchanged technical references.
+
+- 84 Python tests and 16 React tests pass. New checks cover optional publication, omission as unknown, cross-subject and cross-method isolation, method digest and population binding, missing observations, expired or withdrawn status, signature tampering and fixture authority limits. UI checks cover changed buyer needs, empty publication, failure/retry, citation inspection and focus restoration.
+- TypeScript/Vite build, Ruff, formatting and diff checks pass; npm audit reports no vulnerabilities. Existing deterministic evaluation and pinned offline UCP fixture pass. No real AI, source provider or consumer outcome was evaluated.
+- Connected work-profile Chrome verified all three business examples, metric omission, withdrawal and citation inspection. Desktop and 390px layouts have no horizontal overflow; mobile overlays remain readable and dismiss correctly. Temporary viewport overrides were reset.
+- The two-page executive brief was rendered and visually inspected. Its reference links to the current proposal branch. Prepared email copy has not been sent.
+- Official-source network checks completed. UCP development HEAD changed only documentation rendering and its tests relative to the prior baseline; the review records that decision. Released schema pins are unchanged. No conformance or adoption claim follows from this review.
+
+Current screenshots: [desktop](docs/screenshots/portable-desktop.png) and [mobile](docs/screenshots/portable-mobile.png).
+
 Repository `joeyblack4/open-commerce-performance`, implemented in PR #1. The owner authorized public distribution under Apache-2.0 on October 26, 2026. Source and synthetic demo only; no live merchant data, production deployment, named outreach or upstream submission.
 
 ## Automated checks
