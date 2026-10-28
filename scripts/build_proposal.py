@@ -37,7 +37,7 @@ for block in blocks:
     elif block.startswith("## "):
         heading = block[3:]
         p = doc.add_paragraph(heading, "Heading 1")
-        if heading == "Make service improvements easier to discover":
+        if heading == "Make performance count in recommendations":
             p.paragraph_format.page_break_before = True
     elif block.startswith("Reference and proposal:"):
         p = doc.add_paragraph("Reference and proposal: ")

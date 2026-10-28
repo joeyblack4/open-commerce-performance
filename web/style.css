@@ -620,6 +620,44 @@ footer {
   gap: 22px;
   margin-top: 18px;
 }
+.portable-problem {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.discovery-incentives {
+  margin: 20px 0;
+}
+.discovery-incentives > div {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.3fr) minmax(0, 1fr);
+  gap: 24px;
+  padding: 12px 0;
+}
+.discovery-incentives dt {
+  font-weight: 600;
+}
+.discovery-incentives dd {
+  margin: 0;
+  max-width: 70ch;
+}
+.portable-problem > p,
+.portable-explanation,
+.portable-accountability {
+  max-width: 85ch;
+}
+.portable-explanation {
+  margin-bottom: 32px;
+}
+.portable-situation {
+  margin-top: 24px;
+  max-width: 72ch;
+  font-size: 17px;
+}
+.portable-accountability {
+  padding: 30px 0;
+}
 .portable-workspace {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -680,6 +718,10 @@ footer {
   gap: 20px;
 }
 @media (max-width: 700px) {
+  .discovery-incentives > div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
   .portable-workspace {
     grid-template-columns: 1fr;
     gap: 22px;

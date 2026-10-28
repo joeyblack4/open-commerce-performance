@@ -8,16 +8,22 @@ const businesses = {
     label: "Restaurant",
     name: "Juniper Kitchen",
     metrics: ["pickup", "net-check"],
+    situation:
+      "You have a short lunch break. A creator's rave about a restaurant doesn't tell you how long its pickup orders take to prepare.",
   },
   ecommerce: {
     label: "Ecommerce brand",
     name: "Fieldwork Goods",
     metrics: ["delivery", "dispatch"],
+    situation:
+      "You need an order before a birthday. An affiliate list of best brands doesn't tell you how often a retailer meets its original delivery promises.",
   },
   b2b: {
     label: "B2B services",
     name: "Northline Services",
     metrics: ["response", "quote"],
+    situation:
+      "You need help when work stops. A sponsored comparison doesn't show how long customers waited for a human reply.",
   },
 };
 const names: Record<string, string> = {
@@ -142,14 +148,15 @@ export function Portable() {
         <p className="eyebrow">
           An open proposal for systems of record and AI platforms
         </p>
-        <h1>Help the best businesses get found.</h1>
+        <h1>Recommendations should serve the buyer.</h1>
         <p className="portable-promise">
-          Portable evidence about a business that an agent can consult during
-          discovery and selection.
+          Ads, affiliate commissions and sponsored endorsements can shape what
+          people discover. When the recommendation fails, the consumer pays in
+          money, time and frustration.
         </p>
         <p>
-          Businesses choose what to publish. A named issuer attests to the
-          calculation. An agent decides what matters to the buyer.
+          Give businesses a way to make their service record count. Give AI
+          evidence it can check before recommending them.
         </p>
         <div className="button-row">
           <a href={resource("brief")}>Read the proposal (PDF)</a>
@@ -159,12 +166,73 @@ export function Portable() {
           {hosted && <a href={repository}>Explore the repo</a>}
         </div>
       </div>
+      <section className="portable-problem" aria-labelledby="problem-heading">
+        <h2 id="problem-heading">
+          The incentives behind a recommendation matter.
+        </h2>
+        <dl className="discovery-incentives">
+          <div>
+            <dt>Paid placement</dt>
+            <dd>
+              A business can buy visibility without establishing that it meets
+              this buyer's needs.
+            </dd>
+          </div>
+          <div>
+            <dt>Affiliate rankings</dt>
+            <dd>
+              A recommender can earn a commission for a sale. That incentive
+              says little about delivery, service or total cost.
+            </dd>
+          </div>
+          <div>
+            <dt>Sponsored influence</dt>
+            <dd>
+              A persuasive endorsement or one person's experience cannot
+              establish what customers generally receive.
+            </dd>
+          </div>
+        </dl>
+        <p>
+          The buyer risks the late order, the wasted lunch break or the
+          unexpected bill. A business that delivers dependable service still
+          needs a way to make that performance visible.
+        </p>
+        <p className="meta">
+          These are incentive risks, not a claim that every recommendation is
+          compromised. Read the{" "}
+          <a
+            href={`${repository}/blob/main/docs/BUSINESS_DISCOVERY_CONCEPT.md#the-problem-with-todays-discovery`}
+          >
+            research and documented cases
+          </a>
+          .
+        </p>
+      </section>
+      <section
+        className="portable-explanation"
+        aria-labelledby="proposal-heading"
+      >
+        <h2 id="proposal-heading">
+          Make business performance usable in discovery.
+        </h2>
+        <p className="portable-promise">
+          Portable evidence about a business that an agent can consult during
+          discovery and selection.
+        </p>
+        <p>
+          Businesses choose what to publish. A system of record or named service
+          attests to a defined calculation. An agent checks the evidence and
+          explains whether it matters to this buyer.
+        </p>
+      </section>
       <section aria-labelledby="try-heading">
         <div className="section-title">
           <h2 id="try-heading">
-            One format. Different businesses. Useful evidence.
+            Follow a real buying question through the fictional demo.
           </h2>
         </div>
+        <p className="portable-situation">{businesses[business].situation}</p>
         <div className="button-row" role="group" aria-label="Business example">
           {(Object.keys(businesses) as Business[]).map((id) => (
             <Button
@@ -383,6 +451,30 @@ export function Portable() {
           No live AI, market search or future-outcome guarantee.
         </p>
       </section>
+      <section
+        className="portable-accountability"
+        aria-labelledby="accountability-heading"
+      >
+        <h2 id="accountability-heading">
+          The recommendation needs accountability too.
+        </h2>
+        <p>
+          AI platforms must keep paid placement and affiliate incentives separate
+          from their assessment of what fits the buyer. They should disclose
+          commercial relationships, cite the evidence that mattered and keep
+          businesses eligible when they offer no commission.
+        </p>
+        <p>
+          A signature cannot enforce those commitments. Open evidence only helps
+          if agents consider it and consumers can challenge the result. The pilot
+          must test better service outcomes, participation costs and exposure for
+          smaller businesses.
+        </p>
+        <p className="meta">
+          Proposed platform commitments. This demo has no advertising or
+          commission inputs and does not test real platform incentives.
+        </p>
+      </section>
       <section className="two-columns portable-context">
         <div>
           <h2>Where this fits</h2>
@@ -405,7 +497,8 @@ export function Portable() {
           </p>
           <p>
             Missing evidence stays unknown. Comparable methods support
-            comparisons. There is no universal score or paid ranking advantage.
+            comparisons. There is no universal score. Payment must not improve
+            an agent's assessment of the same evidence.
           </p>
         </div>
       </section>
@@ -414,7 +507,8 @@ export function Portable() {
         <p>
           The first ask: nominate a product and technical owner, identify one
           native measure your system can responsibly support, and test portable
-          claims with independent agents.
+          claims with independent agents. Help businesses compete through service
+          they can substantiate.
         </p>
         <div className="button-row">
           <a href={resource("brief")}>Executive brief</a>

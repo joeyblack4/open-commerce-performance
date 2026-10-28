@@ -4,11 +4,13 @@ Start with the [PDF proposal](https://joeyblack4.github.io/open-commerce-perform
 
 ## The message
 
-Portable evidence about a business that an agent can consult during discovery and selection. Businesses choose what to publish. An identified issuer attests to a defined result. The agent decides its relevance to the buyer. Metric definitions remain open; scope and provenance are explicit.
+Discovery can reward advertising spend, affiliate commissions and sponsored influence while consumers bear the cost of a bad choice. Businesses need a way to make their service record count. The [concept and research](BUSINESS_DISCOVERY_CONCEPT.md#the-problem-with-todays-discovery) explain the incentive problem without treating every recommendation as compromised.
+
+Portable evidence about a business that an agent can consult during discovery and selection. Businesses choose what to publish. An identified issuer attests to a defined result. The agent decides its relevance to the buyer. Metric definitions remain open; scope and provenance are explicit. AI platforms must separately commit to assess consumer fit independently of commercial incentives; the evidence format cannot enforce that behavior.
 
 ## The working demonstration
 
-Open the public demo with no installation, or run the [local quickstart](../README.md). The landing view has one flow, across three fictional businesses:
+Open the public demo with no installation, or run the [local quickstart](../README.md). The landing view first explains the consumer's exposure to paid discovery, then connects a buying situation to evidence across three fictional businesses:
 
 - **Restaurant:** select pickup preparation time or average net check. The latter is per check, never per person.
 - **Ecommerce:** select delivery by original promise or average dispatch time. The generated source explicitly supplies the required observations; no commerce API is claimed to supply them universally.

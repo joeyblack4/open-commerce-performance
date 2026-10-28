@@ -2,40 +2,42 @@
 
 Joey · Black 4 · October 27 2026
 
-We are proposing an open standard for **portable evidence about a business that an agent can consult during discovery and selection**. We are asking systems of record and AI platforms to help define and test it together.
+**Recommendations should serve the buyer.** Ad spend buys visibility. Affiliate commissions reward a sale. Sponsored endorsements can sound convincing without establishing what customers generally receive. When the choice goes wrong, the consumer pays in wasted money, missed commitments and time spent fixing the problem.
 
-The objective is straightforward: help consumers choose businesses using relevant operational facts, and help businesses earn recommendations through performance they can substantiate.
+A business that delivers dependable service needs a way to make that performance count in discovery. Consumers need evidence that answers their actual question: will this business deliver what matters to me?
 
-## Give businesses a way to publish what they can prove
+We are asking systems of record and AI platforms to build an open standard for **portable evidence about a business that an agent can consult during discovery and selection**.
 
-Systems of record hold information that could help buyers understand how a business operates. A restaurant's recorded pickup preparation time, a retailer's observed delivery performance or a service company's response history can answer questions that matter in a purchase decision. A business needs a practical way to make that evidence available across AI discovery surfaces with clear meaning and accountable provenance.
+## Give consumers evidence before they choose
 
-Our proposal lets **the business choose what to publish**, while its source provider or an identified calculation service attests to a specific result. A common format tells an agent what was measured, over which population and period, according to whom, with what coverage and current status. Private customer and transaction records stay behind the source boundary.
+A parent needs an order before a birthday. An affiliate list may earn a commission when they buy, but it does not establish how often a retailer meets its original delivery promises. A worker has a short lunch break. A creator's rave about a restaurant does not establish its pickup preparation time. A small company needs responsive support. A sponsored comparison does not show how long customers waited for a human reply.
 
-We do not need every industry to adopt the same KPIs. Providers and industry groups can supply versioned definitions suited to their records. Shared definitions enable comparisons; the common format lets many useful measures travel.
+These are different decisions. Each needs relevant facts, with an explanation of their limits. Paid content and genuine recommendations can both be useful. The problem is that persuasion and commercial incentives can take the place of evidence about the service the consumer will receive. The full proposal links the supporting research and documented cases.
 
-## Keep the responsibilities clear
+AI can make this problem harder to see by compressing discovery into one confident answer. It can also make it better by checking operational evidence and explaining why a business fits the buyer's needs. The data and the recommendation incentives both matter.
 
-The business authorizes publication. The issuer takes responsibility for the declared calculation and scope. The AI platform checks the claim and decides whether it is relevant to the consumer's needs. Existing commerce protocols support the resulting transaction.
+## Let businesses publish what they can substantiate
 
-A provider-issued claim must be distinguishable from a third party's calculation using provider data. A signature establishes origin and integrity; source accuracy, completeness and independent audit require additional evidence. A missing metric remains unknown. Choosing a metric must not permit quietly excluding unfavorable eligible records.
+The business chooses which measures to publish. Its source provider or an identified calculation service attests to a result with a defined method, population, period, coverage and current status. Private customer and transaction records stay behind the source boundary. Providers and industries can define useful measures without forcing every business into the same KPI list.
 
-An agent could use a restaurant's pickup record to assess a short lunch break while recognizing that the same record says little about an anniversary dinner. It should explain the evidence that influenced its recommendation and the questions that remain. There is no universal business score.
+A source provider's attestation is distinct from a third party's calculation. A signature establishes origin and integrity; source accuracy and completeness require additional evidence. Unpublished metrics stay unknown. Businesses cannot quietly remove unfavorable eligible records from a declared population. There is no universal business score.
 
-## Make service improvements easier to discover
+## Make performance count in recommendations
 
-For source providers, this could make operational data more valuable to customers through permissioned publication. Providers retain their definitions and source boundaries. Businesses gain evidence they can reuse across discovery platforms. AI platforms gain structured support for more accountable recommendations.
+Systems of record make the evidence available with permission. Agents assess its relevance, cite what influenced the decision and explain what remains unknown. Existing commerce protocols support the transaction that follows. This adds useful evidence before purchase to the commerce stack.
 
-The opportunity is to make demonstrable service a stronger basis for competition. Participation should be affordable and portable, with multiple issuers and no exclusive discovery gatekeeper. Publication or verification fees must not purchase a favorable verdict. Smaller and newer businesses must remain eligible for consideration when their history is limited.
+The economic opportunity is for better service to become easier to discover. A business that improves dispatch, billing or support should have a way to earn consideration beyond increasing its advertising budget. Source providers can help their customers demonstrate those improvements across discovery platforms.
 
-## Start with a concrete interoperability test
+**AI platforms must keep paid placement and affiliate incentives separate from their assessment of consumer fit.** Commercial relationships should be disclosed. A business offering no commission must remain eligible. Verification fees must not buy a favorable verdict. The format needs affordable participation, multiple issuers and shared governance including businesses and consumers.
 
-We are seeking a small founding group of source providers and AI platforms to review a common claim format, select a few useful native measures and test their exchange. Each participant would nominate a product and technical owner. The first pilot would publish consented claims from two source systems and have two independent agent implementations retrieve, check and explain them consistently.
+A protocol cannot enforce a platform's incentives. Voluntary publication can also be selective, and an agent can overlook a business before reading its evidence. These are responsibilities to test openly, or this risks becoming another paid badge.
 
-Success would first mean interoperable claims, meaningful permission and correction, and clear consumer explanations. We would then measure decision quality, realized service outcomes, participation costs and exposure for smaller businesses. Better consumer outcomes must be demonstrated.
+## Test consumer benefit with source providers and agents
 
-Black 4 has an open-source experimental reference with a fictional demonstration. Real source-provider issuance, live integrations and AI-platform adoption are the work we want to align on. The standard should remain openly usable across providers and agents, with shared governance that includes businesses and consumers.
+Nominate a product and technical owner. Select a native measure your system can responsibly support. Test consented claims from two source systems with two independent agents. Hold the buyer request and evidence fixed while changing commercial incentives; those changes must not improve the assessment of the evidence.
 
-**Would you nominate a product and technical owner to help test a shared format for portable business evidence?**
+Then measure whether choices work out better: realized cost, missed commitments, resolution time and regret. Track participation costs and exposure for smaller and newer businesses. More clicks or purchases do not establish consumer benefit.
+
+Black 4 has a public, open-source experimental reference and a fictional demo. Provider issuance, live integrations, platform commitments and measured consumer outcomes remain to be built. **Will your team help make business performance a usable input to AI recommendations?**
 
 Reference and proposal: https://github.com/joeyblack4/open-commerce-performance/blob/main/docs/BUSINESS_DISCOVERY_CONCEPT.md

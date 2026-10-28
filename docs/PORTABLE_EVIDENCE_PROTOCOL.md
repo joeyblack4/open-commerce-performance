@@ -30,6 +30,12 @@ Consumers check trusted identity, signed bytes, schema, method binding, period, 
 
 The demo applies a visible deterministic rule for one chosen buyer need. It explains whether an optional claim supports considering the business and lists unresolved dimensions. It is neither a market-wide recommendation nor an LLM evaluation. Refund incidence is never a low-is-good quality signal.
 
+## Recommendation incentives
+
+The [concept](BUSINESS_DISCOVERY_CONCEPT.md#a-responsibility-for-recommendation-platforms) proposes platform participation commitments in addition to claim verification. Assessment against the buyer's request must remain independent of advertising spend, affiliate commission or payment for verification. Sponsored placement and material commercial relationships should be disclosed separately. No commission and missing evidence must not automatically exclude a candidate.
+
+These commitments are outside the signed business-claim envelope. An issuer relationship does not describe every incentive of a recommender. Recommendation disclosure transport, platform enforcement and commercial-incentive tests require pilot design; they are not implemented or certified by this reference. Its bounded interpreter accepts no advertising or commission inputs. The claim schema and existing signature contract remain unchanged.
+
 ## Existing standards
 
 Keep evidence independently retrievable. Evaluate references in business profiles, indexes or optional UCP extensions without changing base transaction semantics. The existing offline UCP fixture still targets immutable released v2026-08-25 schemas; the audit records development separately. No live UCP negotiation, ACP ingestion, W3C VC conformance or provider adoption is claimed.

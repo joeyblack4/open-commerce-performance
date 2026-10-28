@@ -2,27 +2,27 @@
 
 ## Main post
 
-Good businesses should earn AI recommendations with real evidence.
+Ad spend buys visibility. Affiliate commissions reward a sale. Consumers bear the cost of a bad recommendation.
 
-An open proposal: businesses choose what to publish, systems of record attest to the numbers, and agents use relevant facts to help people choose.
+What if AI could also check evidence of how a business actually performs?
 
 Proposal + demo: https://joeyblack4.github.io/open-commerce-performance/
 
 ## Source provider follow up
 
-@Shopify @Square: what would it take for a business to publish one native metric with its definition, coverage and an attestation from your system? We're proposing a shared format that any participating AI could assess.
+@Shopify @Square: your systems hold evidence of how businesses operate. Could customers publish a defined, source-attested measure so AI can consider their service record? Help good businesses compete beyond ad spend.
 
 https://joeyblack4.github.io/open-commerce-performance/
 
 ## Restaurant systems question
 
-Toast team: could restaurants authorize a source-issued claim about a measure your system already calculates, with a precise definition and population? The proposal leaves the choice of metrics open.
+Toast team: a sponsored rave doesn't tell a worker whether lunch pickup will fit their break. Could restaurants publish defined, source-attested service measures for agents to assess? Businesses choose what to share.
 
 https://joeyblack4.github.io/open-commerce-performance/
 
 ## AI platform question
 
-AI recommendation teams: what would you need to retrieve, trust and explain portable evidence about a business? We're looking for two independent agents to test the same claims, then measure whether they improve consumer decisions.
+AI recommendation teams: can you cite evidence of business performance and keep affiliate incentives separate from consumer fit? We're proposing an open format to test that with systems of record. Better outcomes must be measured.
 
 https://joeyblack4.github.io/open-commerce-performance/
 

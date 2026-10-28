@@ -1,10 +1,14 @@
 # Open Commerce Performance
 
-**Portable evidence about a business that an agent can consult during discovery and selection.**
+**Recommendations should serve the buyer.**
 
-Businesses choose what to publish. A system of record or named calculation service attests to a defined result. An agent checks the claim and decides whether it matters to the buyer's needs.
+Ad spend buys visibility. Affiliate commissions create an incentive to close the sale. Sponsored endorsements can make a business sound convincing without showing how it serves its customers. The consumer still bears the cost of a bad choice: wasted money, missed deadlines, unexpected bills and time spent fixing the problem.
 
-The proposal standardizes the evidence format, permission and lifecycle. Metric definitions remain open and separately versioned. The goal is better consumer decisions and competition on service businesses can substantiate.
+AI discovery needs evidence about what businesses actually deliver, alongside an honest account of the incentives behind a recommendation. Otherwise it can carry the same commercial pressures into a more persuasive interface.
+
+Open Commerce Performance proposes **portable evidence about a business that an agent can consult during discovery and selection**. Businesses choose what to publish. A system of record or named calculation service attests to a defined result. An agent checks the claim and explains whether it matters to this buyer. A business should be able to earn consideration through service it can substantiate, even when it cannot outspend its competitors.
+
+The proposal standardizes the evidence format, permission and lifecycle. Metric definitions remain open. Participating AI platforms must also separate paid placement and affiliate incentives from their assessment of consumer fit. A signature cannot enforce that responsibility. The [full argument and supporting research](docs/BUSINESS_DISCOVERY_CONCEPT.md#the-problem-with-todays-discovery) explain the problem, the proposed change and its limits.
 
 **Experimental reference · Apache-2.0 · fictional data.** No provider endorsement, live source integrations or AI-platform adoption is claimed.
 
