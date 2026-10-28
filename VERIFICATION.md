@@ -1,5 +1,13 @@
 # Product verification — 2026-10-26
 
+## Consumer discovery framing October 27 2026
+
+The live-page narrative and executive proposal now lead with advertising, affiliate and sponsorship incentives and the costs a consumer can bear after a poor choice. The concept cites Google's auction explanation, FTC guidance and a dated enforcement case, and a 2018 affiliate-disclosure study. Historical findings are not presented as current market prevalence or proof that all recommendations are compromised.
+
+The proposal adds explicit AI-platform responsibilities and a pilot test holding evidence and buyer intent fixed while varying commercial incentives. These are proposed commitments. No incentive-disclosure transport, ranking enforcement, new claim field or live platform integration was implemented. Existing optional claims, provenance boundaries and deterministic interpretation remain intact.
+
+All 87 Python and 18 React tests pass. Hosted TypeScript/Vite build, Ruff, format and diff checks pass. The fresh official-source audit completed with `reviewed_snapshot_unchanged`. Both pages of the revised executive PDF were rendered and visually inspected. Connected Chrome checks confirm the revised page and mobile evidence overlay at 390px without horizontal overflow; temporary viewport overrides were reset. The versioned release records public deployment verification.
+
 ## Public distribution October 27 2026
 
 Public synthetic hosting and proposal publication were authorized October 27. GitHub Pages serves a static bundle with all 72 fictional preview combinations and a normal HTTPS proposal PDF. `publication.json` binds exported bytes to the deployment source commit. No Python server or live provider access is exposed.
